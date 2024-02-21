@@ -17,6 +17,7 @@ namespace IM_System.Model
         public frmCategoryAdd()
         {
             InitializeComponent();
+            txtName.KeyPress += txtName_KeyPress;
         }
 
         public virtual void btnClose_Click(object sender, EventArgs e)
@@ -43,11 +44,10 @@ namespace IM_System.Model
                 }
                 else //update
                 {
-                    qry = @"UPDATE Category SET catName = @name,
-                          WHERE catID = @id";
-
-
+                    qry = @"UPDATE Category SET catName = @name
+                              WHERE catID = @id";
                 }
+
 
                 Hashtable ht = new Hashtable();
                 ht.Add("@id", id);
@@ -67,6 +67,12 @@ namespace IM_System.Model
 
 
             }
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Convert the pressed key to uppercase
+            e.KeyChar = char.ToUpper(e.KeyChar);
         }
     }
 }
