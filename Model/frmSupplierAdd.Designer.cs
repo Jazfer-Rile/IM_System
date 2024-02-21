@@ -79,7 +79,7 @@
             this.txtEmail.PlaceholderText = "Enter your email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(227, 48);
-            this.txtEmail.TabIndex = 46;
+            this.txtEmail.TabIndex = 2;
             this.txtEmail.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // guna2Panel1
@@ -192,7 +192,7 @@
             this.txtAddress.PlaceholderText = "Enter your address";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(391, 48);
-            this.txtAddress.TabIndex = 52;
+            this.txtAddress.TabIndex = 3;
             this.txtAddress.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // label4
@@ -201,7 +201,7 @@
             this.label4.Location = new System.Drawing.Point(331, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 23);
-            this.label4.TabIndex = 53;
+            this.label4.TabIndex = 7;
             this.label4.Text = "Address";
             // 
             // label5
@@ -210,7 +210,7 @@
             this.label5.Location = new System.Drawing.Point(62, 247);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 23);
-            this.label5.TabIndex = 51;
+            this.label5.TabIndex = 6;
             this.label5.Text = "Email";
             // 
             // label3
@@ -219,7 +219,7 @@
             this.label3.Location = new System.Drawing.Point(331, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 23);
-            this.label3.TabIndex = 49;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Phone";
             // 
             // txtName
@@ -243,7 +243,7 @@
             this.txtName.PlaceholderText = "Enter your full name";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(227, 48);
-            this.txtName.TabIndex = 44;
+            this.txtName.TabIndex = 0;
             this.txtName.Tag = "v";
             this.txtName.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -253,7 +253,7 @@
             this.label2.Location = new System.Drawing.Point(62, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 23);
-            this.label2.TabIndex = 47;
+            this.label2.TabIndex = 4;
             this.label2.Text = "Name";
             // 
             // txtPhone
@@ -277,7 +277,7 @@
             this.txtPhone.PlaceholderText = "Enter your phone number";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(227, 48);
-            this.txtPhone.TabIndex = 45;
+            this.txtPhone.TabIndex = 1;
             this.txtPhone.Tag = "";
             this.txtPhone.TextOffset = new System.Drawing.Point(10, 0);
             // 

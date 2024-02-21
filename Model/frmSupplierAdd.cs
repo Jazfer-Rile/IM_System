@@ -33,16 +33,16 @@ namespace IM_System.Model
                 string qry = "";
                 if (id == 0)//Insert
                 {
-                    qry = @"Insert into Customer values(@name,@phone,@Email,@Address)";
+                    qry = @"Insert into Supplier values(@name,@phone,@Email,@Address)";
                 }
                 else //update
                 {
-                    qry = @"UPDATE Customer SET 
-                        cusName = @name,
-                        cusPhone = @phone,
-                        cusEmail = @email,
-                        cusAddress = @Address
-                        WHERE cusID = @id";
+                    qry = @"UPDATE Supplier SET 
+                        supName = @name,
+                        supPhone = @phone,
+                        supEmail = @email,
+                        supAddress = @Address
+                        WHERE supID = @id";
 
 
 

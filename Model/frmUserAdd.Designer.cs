@@ -77,7 +77,7 @@
             this.txtPhone.PlaceholderText = "Enter your phone number";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(227, 48);
-            this.txtPhone.TabIndex = 20;
+            this.txtPhone.TabIndex = 3;
             this.txtPhone.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // guna2Panel1
@@ -184,7 +184,7 @@
             this.btnBrowse.Location = new System.Drawing.Point(605, 238);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(88, 48);
-            this.btnBrowse.TabIndex = 21;
+            this.btnBrowse.TabIndex = 4;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
@@ -209,7 +209,7 @@
             this.label5.Location = new System.Drawing.Point(313, 247);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 23);
-            this.label5.TabIndex = 27;
+            this.label5.TabIndex = 9;
             this.label5.Text = "Phone";
             // 
             // txtPass
@@ -233,7 +233,7 @@
             this.txtPass.PlaceholderText = "Enter your password";
             this.txtPass.SelectedText = "";
             this.txtPass.Size = new System.Drawing.Size(227, 48);
-            this.txtPass.TabIndex = 19;
+            this.txtPass.TabIndex = 2;
             this.txtPass.Tag = "v";
             this.txtPass.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -243,7 +243,7 @@
             this.label4.Location = new System.Drawing.Point(44, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 23);
-            this.label4.TabIndex = 26;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Password";
             // 
             // txtUser
@@ -267,7 +267,7 @@
             this.txtUser.PlaceholderText = "Choose a unique username";
             this.txtUser.SelectedText = "";
             this.txtUser.Size = new System.Drawing.Size(227, 48);
-            this.txtUser.TabIndex = 18;
+            this.txtUser.TabIndex = 1;
             this.txtUser.Tag = "v";
             this.txtUser.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -277,7 +277,7 @@
             this.label3.Location = new System.Drawing.Point(313, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 23);
-            this.label3.TabIndex = 24;
+            this.label3.TabIndex = 7;
             this.label3.Text = "Username";
             // 
             // txtName
@@ -301,7 +301,7 @@
             this.txtName.PlaceholderText = "Enter your full name";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(227, 48);
-            this.txtName.TabIndex = 17;
+            this.txtName.TabIndex = 0;
             this.txtName.Tag = "v";
             this.txtName.TextOffset = new System.Drawing.Point(10, 0);
             // 
@@ -311,7 +311,7 @@
             this.label2.Location = new System.Drawing.Point(44, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 23);
-            this.label2.TabIndex = 22;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Name";
             // 
             // guna2MessageDialog1
@@ -376,7 +376,7 @@
             this.cmbRole.Location = new System.Drawing.Point(589, 325);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(120, 36);
-            this.cmbRole.TabIndex = 31;
+            this.cmbRole.TabIndex = 5;
             this.cmbRole.Tag = "v";
             this.cmbRole.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -386,7 +386,7 @@
             this.label6.Location = new System.Drawing.Point(600, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 23);
-            this.label6.TabIndex = 32;
+            this.label6.TabIndex = 10;
             this.label6.Text = "Select Role";
             // 
             // frmUserAdd
