@@ -18,14 +18,14 @@ namespace IM_System.Model
         {
             InitializeComponent();
         }
-        public int id = 0;
+       
 
-        private void btnClose_Click(object sender, EventArgs e)
+        public virtual void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        public int id = 0;
+        public virtual void btnSave_Click(object sender, EventArgs e)
         {
             if (MainClass.Validation(this) == false)
             {

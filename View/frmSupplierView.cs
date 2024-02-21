@@ -59,7 +59,7 @@ namespace IM_System.View
                 // Update
                 if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
-                    frmCustomerAdd frm = new frmCustomerAdd();
+                    frmSupplierAdd frm = new frmSupplierAdd();
 
                     if (guna2DataGridView1.CurrentRow.Cells["dgvid"].Value != null)
                         frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
