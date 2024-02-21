@@ -17,6 +17,7 @@ namespace IM_System.View
         public frmSupplierView()
         {
             InitializeComponent();
+            guna2MessageDialog1.Parent = frmMain.Instance;
         }
 
         public virtual void txtSearch_TextChanged(object sender, EventArgs e)
