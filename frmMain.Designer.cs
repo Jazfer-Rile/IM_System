@@ -35,7 +35,7 @@
             this.btnMax = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
@@ -110,7 +110,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BorderRadius = 60;
-            this.guna2Panel3.Controls.Add(this.guna2Button9);
+            this.guna2Panel3.Controls.Add(this.btnCategory);
             this.guna2Panel3.Controls.Add(this.lblUser);
             this.guna2Panel3.Controls.Add(this.guna2Button10);
             this.guna2Panel3.Controls.Add(this.guna2Button13);
@@ -130,32 +130,33 @@
             this.guna2Panel3.Size = new System.Drawing.Size(220, 810);
             this.guna2Panel3.TabIndex = 3;
             // 
-            // guna2Button9
+            // btnCategory
             // 
-            this.guna2Button9.Animated = true;
-            this.guna2Button9.AutoRoundedCorners = true;
-            this.guna2Button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.guna2Button9.BorderRadius = 31;
-            this.guna2Button9.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button9.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button9.Image")));
-            this.guna2Button9.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button9.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button9.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2Button9.Location = new System.Drawing.Point(3, 267);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(214, 65);
-            this.guna2Button9.TabIndex = 0;
-            this.guna2Button9.Text = "Category";
-            this.guna2Button9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button9.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnCategory.Animated = true;
+            this.btnCategory.AutoRoundedCorners = true;
+            this.btnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCategory.BorderRadius = 31;
+            this.btnCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCategory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCategory.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCategory.ForeColor = System.Drawing.Color.White;
+            this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
+            this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCategory.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnCategory.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnCategory.Location = new System.Drawing.Point(3, 267);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(214, 65);
+            this.btnCategory.TabIndex = 0;
+            this.btnCategory.Text = "Category";
+            this.btnCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCategory.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // lblUser
             // 
@@ -415,7 +416,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnMax;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2Button btnCategory;
         private System.Windows.Forms.Label lblUser;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2Button guna2Button13;

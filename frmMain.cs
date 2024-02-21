@@ -50,5 +50,10 @@ namespace IM_System
         {
             Application.Exit();
         }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmCategoryView());
+        }
     }
 }

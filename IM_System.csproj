@@ -65,6 +65,12 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="MainClass.cs" />
+    <Compile Include="Model\frmCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmCategoryAdd.Designer.cs">
+      <DependentUpon>frmCategoryAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frmUserAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\frmCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCategoryView.Designer.cs">
+      <DependentUpon>frmCategoryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmUserView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmCategoryAdd.resx">
+      <DependentUpon>frmCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmUserAdd.resx">
       <DependentUpon>frmUserAdd.cs</DependentUpon>
@@ -98,6 +113,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\frmCategoryView.resx">
+      <DependentUpon>frmCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmUserView.resx">
       <DependentUpon>frmUserView.cs</DependentUpon>
     </EmbeddedResource>
