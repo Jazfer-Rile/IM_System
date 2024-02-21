@@ -49,6 +49,7 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.cmbRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -372,12 +373,21 @@
             this.cmbRole.ItemHeight = 30;
             this.cmbRole.Items.AddRange(new object[] {
             "Admin"});
-            this.cmbRole.Location = new System.Drawing.Point(589, 303);
+            this.cmbRole.Location = new System.Drawing.Point(589, 325);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(120, 36);
             this.cmbRole.TabIndex = 31;
             this.cmbRole.Tag = "v";
             this.cmbRole.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(600, 299);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 23);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Select Role";
             // 
             // frmUserAdd
             // 
@@ -385,6 +395,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(760, 469);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.txtPhone);
@@ -440,5 +451,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         public Guna.UI2.WinForms.Guna2ComboBox cmbRole;
+        private System.Windows.Forms.Label label6;
     }
 }
