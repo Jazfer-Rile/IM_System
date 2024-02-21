@@ -123,5 +123,22 @@ namespace IM_System.Model
                 LoadImage();
             }
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (txtPass.PasswordChar == '●')
+            {
+                guna2Button3.BringToFront();
+                txtPass.PasswordChar = '\0';
+            }
+        }
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (txtPass.PasswordChar == '\0')
+            {
+                guna2Button2.BringToFront();
+                txtPass.PasswordChar = '●';
+            }
+        }
     }
 }
