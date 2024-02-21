@@ -49,38 +49,42 @@ namespace IM_System.View
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Update
-            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
+            // Check if the clicked cell is not in the header row
+            if (e.RowIndex >= 0)
             {
-                frmCategoryAdd frm = new frmCategoryAdd();
-                frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvname"].Value);
- 
-                MainClass.BlurBackground(frm);
-                LoadData();// Refresh data after update
-            }
-            //Delete
-            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
-            {
-                //Confirm Before delete
-                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-
-                if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
+                //Update
+                if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
+                    frmCategoryAdd frm = new frmCategoryAdd();
+                    frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                    frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvname"].Value);
 
-                    int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                    string qry = "Delete from Category where catID = " + id + "";
-                    Hashtable ht = new Hashtable();
-                    if (MainClass.SQl(qry, ht) > 0)
-                    {
-                        guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-                        guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-                        guna2MessageDialog1.Show("Delled successfuly..");
-                        LoadData();// Refresh data after delete
-                    }
+                    MainClass.BlurBackground(frm);
+                    LoadData();// Refresh data after update
                 }
+                //Delete
+                if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
+                {
+                    //Confirm Before delete
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
 
+                    if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
+                    {
+
+                        int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                        string qry = "Delete from Category where catID = " + id + "";
+                        Hashtable ht = new Hashtable();
+                        if (MainClass.SQl(qry, ht) > 0)
+                        {
+                            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                            guna2MessageDialog1.Show("Deleted successfuly..");
+                            LoadData();// Refresh data after delete
+                        }
+                    }
+
+                }
             }
         }
     }

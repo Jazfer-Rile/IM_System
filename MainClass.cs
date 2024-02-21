@@ -182,13 +182,10 @@ namespace IM_System
         }
         public static bool Validation(Form F)
         {
-            bool isValid = false;
-
-            int count = 0;
+            bool isValid = true;  
 
             foreach (Control c in F.Controls)
             {
-                //using tag of control to check if we want to validate it or not
                 if (Convert.ToString(c.Tag) != "" && Convert.ToString(c.Tag) != null)
                 {
                     if (c is Guna.UI2.WinForms.Guna2TextBox)
@@ -199,7 +196,7 @@ namespace IM_System
                             t.BorderColor = Color.Red;
                             t.FocusedState.BorderColor = Color.Red;
                             t.HoverState.BorderColor = Color.Red;
-                            count++;
+                            isValid = false;  // Set form validation to false if any textbox is empty
                         }
                         else
                         {
@@ -208,21 +205,28 @@ namespace IM_System
                             t.HoverState.BorderColor = Color.FromArgb(0, 122, 204);
                         }
                     }
+                    else if (c is Guna.UI2.WinForms.Guna2ComboBox)
+                    {
+                        Guna.UI2.WinForms.Guna2ComboBox cmb = (Guna.UI2.WinForms.Guna2ComboBox)c;
+                        if (cmb.Text.Trim() == "")
+                        {
+                            cmb.BorderColor = Color.Red;
+                            cmb.FocusedState.BorderColor = Color.Red;
+                            cmb.HoverState.BorderColor = Color.Red;
+                            isValid = false;  // Set form validation to false if the combo box is empty
+                        }
+                        else
+                        {
+                            cmb.BorderColor = Color.FromArgb(213, 218, 223);
+                            cmb.FocusedState.BorderColor = Color.FromArgb(0, 122, 204);
+                            cmb.HoverState.BorderColor = Color.FromArgb(0, 122, 204);
+                        }
+                    }
                 }
-                if (count == 0)
-                {
-                    isValid = true;
-                }
-                else
-                {
-                    isValid = false;
-
-                }
-
             }
 
             return isValid;
-
         }
+
     }
 }

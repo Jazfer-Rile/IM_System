@@ -42,14 +42,15 @@ namespace IM_System.Model
                 string qry = "";
                 if (id == 0)//Insert
                 {
-                    qry = @"Insert into users values(@name,@username,@pass,@phone,@image)";
+                    qry = @"Insert into Users values(@name,@username,@pass,@phone,@role,@image)";
                 }
                 else //update
                 {
-                    qry = @"UPDATE users SET uName = @name,
+                    qry = @"UPDATE Users SET uName = @name,
                           Uusername = @username,
                           uPass = @pass,
                           uPhone = @phone,
+                          uRole = @role,
                           uImage = @image
                           WHERE userID = @id";
 
@@ -66,6 +67,7 @@ namespace IM_System.Model
                 ht.Add("@username", txtUser.Text);
                 ht.Add("@pass", txtPass.Text);
                 ht.Add("@phone", txtPhone.Text);
+                ht.Add("@role", cmbRole.Text);
                 ht.Add("@image", imageByteArray);
 
                 if (MainClass.SQl(qry, ht) > 0)
@@ -78,6 +80,7 @@ namespace IM_System.Model
                     txtUser.Text = "";
                     txtPass.Text = "";
                     txtPhone.Text = "";
+                    cmbRole.Text = "";
                     txtPic.Image = IM_System.Properties.Resources.userPic;
                     txtName.Focus();
 
@@ -103,7 +106,7 @@ namespace IM_System.Model
 
         private void LoadImage()
         {
-            string qry = @"Select uImage from users where userID = " + id + "";
+            string qry = @"Select uImage from Users where userID = " + id + "";
             SqlCommand cmd = new SqlCommand(qry, MainClass.con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

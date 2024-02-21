@@ -39,6 +39,7 @@ namespace IM_System
 
             lblUser.Text = MainClass.USER;
             guna2CirclePictureBox1.Image = MainClass.img;
+            
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -54,6 +55,16 @@ namespace IM_System
         private void btnCategory_Click(object sender, EventArgs e)
         {
             Addcontrols(new frmCategoryView());
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmSupplierView());
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmCustomerView());
         }
     }
 }

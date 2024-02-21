@@ -40,8 +40,9 @@ namespace IM_System.View
             lb.Items.Add(dgvuserName);
             lb.Items.Add(dgvpass);
             lb.Items.Add(dgvphon);
+            lb.Items.Add(dgvrole);
 
-            string qry = @"Select userID, uName, uUsername, uPass, uPhone from users
+            string qry = @"Select userID, uName, uUsername, uPass, uPhone, uRole from Users
                 where uName like '%" + txtSearch.Text + "%' order by userID desc";
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
@@ -49,39 +50,42 @@ namespace IM_System.View
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            //Update
-            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
+            // Check if the clicked cell is not in the header row
+            if (e.RowIndex >= 0)
             {
-                frmUserAdd frm = new frmUserAdd();
-                frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvname"].Value);
-                frm.txtUser.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvuserName"].Value);
-                frm.txtPass.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvpass"].Value);
-                frm.txtPhone.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvphon"].Value);
-
-                MainClass.BlurBackground(frm);
-                LoadData();
-            }
-            //Delete
-            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
-            {
-
-                //Confirm Before delete
-                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-
-                if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
+                //Update
+                if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
                 {
-                    int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                    string qry = "Delete from users where userID = " + id + "";
-                    Hashtable ht = new Hashtable();
-                    if (MainClass.SQl(qry, ht) > 0)
+                    frmUserAdd frm = new frmUserAdd();
+                    frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                    frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvname"].Value);
+                    frm.txtUser.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvuserName"].Value);
+                    frm.txtPass.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvpass"].Value);
+                    frm.txtPhone.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvphon"].Value);
+
+                    MainClass.BlurBackground(frm);
+                    LoadData();
+                }
+                //Delete
+                if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
+                {
+
+                    //Confirm Before delete
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+
+                    if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
                     {
-                        guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-                        guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-                        guna2MessageDialog1.Show("Delled successfuly..");
-                        LoadData();
+                        int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                        string qry = "Delete from users where userID = " + id + "";
+                        Hashtable ht = new Hashtable();
+                        if (MainClass.SQl(qry, ht) > 0)
+                        {
+                            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                            guna2MessageDialog1.Show("Deleted successfuly..");
+                            LoadData();
+                        }
                     }
                 }
             }
