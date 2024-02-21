@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><h1>Attendance Management System</h1></a></p>
+<p align="center"><a href="#" target="_blank"><h1>Inventory Monitoring System</h1></a></p>
 
 ## About IM_System
 
