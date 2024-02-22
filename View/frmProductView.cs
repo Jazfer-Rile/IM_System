@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IM_System.Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,44 +9,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IM_System;
-using IM_System.Model;
 
 namespace IM_System.View
 {
-    public partial class frmUserView : Form
+    public partial class frmProductView : Form
     {
-        public frmUserView()
+        public frmProductView()
         {
             InitializeComponent();
             guna2MessageDialog1.Parent = frmMain.Instance;
         }
 
-        public virtual void btnAdd_Click(object sender, EventArgs e)
-        {
-            MainClass.BlurBackground(new frmUserAdd());
-            LoadData();
-        }
-
-        public virtual void txtSearch_TextChanged(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData();
         }
-
         private void LoadData()
         {
             ListBox lb = new ListBox();
             lb.Items.Add(dgvid);
             lb.Items.Add(dgvname);
-            lb.Items.Add(dgvuserName);
-            lb.Items.Add(dgvpass);
-            lb.Items.Add(dgvphon);
-            lb.Items.Add(dgvrole);
+            lb.Items.Add(dgvcatID);
+            lb.Items.Add(dgvCategory);
+            lb.Items.Add(dgvbarcode);
+            lb.Items.Add(dgvCost);
+            lb.Items.Add(dgvSale);
 
-            string qry = @"Select userID, uName, uUsername, uPass, uPhone, uRole from Users
-                where uName like '%" + txtSearch.Text + "%' order by userID desc";
+            string qry = @"Select proID ,pName ,pCatID, catName,pBarcode, pCost, pPrice from Product 
+                            inner join Category on catID = pCatID
+                            where pName like '%" + txtSearch.Text + "%' order by proID desc";
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            MainClass.BlurBackground(new frmProductAdd());
+            LoadData();
+        }
+
+        private void frmProductView_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -55,14 +59,14 @@ namespace IM_System.View
             {
                 //Update
                 if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
-                {
-                    frmUserAdd frm = new frmUserAdd();
+                {   
+                    frmProductAdd frm = new frmProductAdd();
                     frm.id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
+                    frm.catID = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvcatID"].Value);
                     frm.txtName.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvname"].Value);
-                    frm.txtUser.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvuserName"].Value);
-                    frm.txtPass.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvpass"].Value);
-                    frm.txtPhone.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvphon"].Value);
-                    frm.cbRole.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvRole"].Value);
+                    frm.txtBarcode.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvbarcode"].Value);
+                    frm.txtCost.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvCost"].Value);
+                    frm.txtPrice.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvsale"].Value);
 
                     MainClass.BlurBackground(frm);
                     LoadData();
@@ -78,7 +82,7 @@ namespace IM_System.View
                     if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
                     {
                         int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                        string qry = "Delete from users where userID = " + id + "";
+                        string qry = "Delete from Product where proID = " + id + "";
                         Hashtable ht = new Hashtable();
                         if (MainClass.SQl(qry, ht) > 0)
                         {
@@ -90,11 +94,6 @@ namespace IM_System.View
                     }
                 }
             }
-        }
-
-        private void frmUserView_Load(object sender, EventArgs e)
-        {
-            LoadData();
         }
     }
 }

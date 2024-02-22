@@ -11,24 +11,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
-namespace IM_System.Model
+namespace IM_System
 {
-    public partial class frmUserAdd : Form
+    public partial class frmProductAdd : Form
     {
-        public frmUserAdd()
+        public frmProductAdd()
         {
             InitializeComponent();
-            txtPhone.KeyPress += new KeyPressEventHandler(txtPhone_KeyPress);
-
-        }
-
-        public virtual void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         public int id = 0;
+        public int catID = 0;
+        private void frmProductAdd_Load(object sender, EventArgs e)
+        {
+            string qry = "Select catID 'id' , catName 'name' from Category";
+            MainClass.CBFill(qry, cbCategory);
+            if (id > 0) 
+            {
+                cbCategory.SelectedValue = catID;
+                LoadImage();
+            }
+           
+        }
         public virtual void btnSave_Click(object sender, EventArgs e)
         {
             if (MainClass.Validation(this) == false)
@@ -43,17 +46,17 @@ namespace IM_System.Model
                 string qry = "";
                 if (id == 0)//Insert
                 {
-                    qry = @"Insert into Users values(@name,@username,@pass,@phone,@role,@image)";
+                    qry = @"Insert into Product values(@name,@pCatID,@barcode,@cost,@saleprice,@image)";
                 }
                 else //update
                 {
-                    qry = @"UPDATE Users SET uName = @name,
-                          Uusername = @username,
-                          uPass = @pass,
-                          uPhone = @phone,
-                          uRole = @role,
-                          uImage = @image
-                          WHERE userID = @id";
+                    qry = @"UPDATE Product SET pName = @name,
+                          pCatID = @pCatID,
+                          pBarcode = @barcode,
+                          pCost = @cost,
+                          pPrice = @saleprice,
+                          pImage = @image
+                          WHERE proID = @id";
 
 
                 }
@@ -65,10 +68,10 @@ namespace IM_System.Model
                 Hashtable ht = new Hashtable();
                 ht.Add("@id", id);
                 ht.Add("@name", txtName.Text);
-                ht.Add("@username", txtUser.Text);
-                ht.Add("@pass", txtPass.Text);
-                ht.Add("@phone", txtPhone.Text);
-                ht.Add("@role", cbRole.Text);
+                ht.Add("@pCatID", Convert.ToInt32(cbCategory.SelectedValue));
+                ht.Add("@barcode", txtBarcode.Text);
+                ht.Add("@cost", Convert.ToDouble(txtCost.Text));
+                ht.Add("@saleprice", Convert.ToInt32(txtPrice.Text));
                 ht.Add("@image", imageByteArray);
 
                 if (MainClass.SQl(qry, ht) > 0)
@@ -78,10 +81,11 @@ namespace IM_System.Model
                     guna2MessageDialog1.Show("Data Save succesfully");
                     id = 0;
                     txtName.Text = "";
-                    txtUser.Text = "";
-                    txtPass.Text = "";
-                    txtPhone.Text = "";
-                    cbRole.Text = "";
+                    txtBarcode.Text = "";
+                    cbCategory.SelectedIndex = 0;
+                    cbCategory.SelectedIndex = -1;
+                    txtCost.Text = "";
+                    txtPrice.Text = "";
                     txtPic.Image = IM_System.Properties.Resources.userPic;
                     txtName.Focus();
 
@@ -91,9 +95,14 @@ namespace IM_System.Model
 
             }
         }
-
         public string filePath = "";
         Byte[] imageByteArray;
+
+        public virtual void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public virtual void btnBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -104,56 +113,21 @@ namespace IM_System.Model
                 txtPic.Image = new Bitmap(filePath);
             }
         }
-
         private void LoadImage()
         {
-            string qry = @"Select uImage from Users where userID = " + id + "";
+            string qry = @"Select pImage from Product where proID = " + id + "";
             SqlCommand cmd = new SqlCommand(qry, MainClass.con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                Byte[] imageArray = (byte[])dt.Rows[0]["uImage"];
+                Byte[] imageArray = (byte[])dt.Rows[0]["pImage"];
                 byte[] imageByteArry = imageArray;
                 txtPic.Image = Image.FromStream(new MemoryStream(imageArray));
             }
         }
 
-        private void frmUserAdd_Load(object sender, EventArgs e)
-        {
-            if (id > 0)
-            {
-                LoadImage();
-            }
-        }
-
-        public virtual void guna2Button2_Click(object sender, EventArgs e)
-        {
-            if (txtPass.PasswordChar == '●')
-            {
-                guna2Button3.BringToFront();
-                txtPass.PasswordChar = '\0';
-            }
-        }
-        public virtual void guna2Button3_Click(object sender, EventArgs e)
-        {
-            if (txtPass.PasswordChar == '\0')
-            {
-                guna2Button2.BringToFront();
-                txtPass.PasswordChar = '●';
-            }
-        }
-
-        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            // Check if the pressed key is a digit or the backspace key
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
-            {
-                // If not a digit or backspace, suppress the keypress
-                e.Handled = true;
-            }
-        }
+        
     }
 }

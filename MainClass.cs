@@ -207,19 +207,19 @@ namespace IM_System
                     }
                     else if (c is Guna.UI2.WinForms.Guna2ComboBox)
                     {
-                        Guna.UI2.WinForms.Guna2ComboBox cmb = (Guna.UI2.WinForms.Guna2ComboBox)c;
-                        if (cmb.Text.Trim() == "")
+                        Guna.UI2.WinForms.Guna2ComboBox cb = (Guna.UI2.WinForms.Guna2ComboBox)c;
+                        if (cb.Text.Trim() == "")
                         {
-                            cmb.BorderColor = Color.Red;
-                            cmb.FocusedState.BorderColor = Color.Red;
-                            cmb.HoverState.BorderColor = Color.Red;
+                            cb.BorderColor = Color.Red;
+                            cb.FocusedState.BorderColor = Color.Red;
+                            cb.HoverState.BorderColor = Color.Red;
                             isValid = false;  // Set form validation to false if the combo box is empty
                         }
                         else
                         {
-                            cmb.BorderColor = Color.FromArgb(213, 218, 223);
-                            cmb.FocusedState.BorderColor = Color.FromArgb(0, 122, 204);
-                            cmb.HoverState.BorderColor = Color.FromArgb(0, 122, 204);
+                            cb.BorderColor = Color.FromArgb(213, 218, 223);
+                            cb.FocusedState.BorderColor = Color.FromArgb(0, 122, 204);
+                            cb.HoverState.BorderColor = Color.FromArgb(0, 122, 204);
                         }
                     }
                 }
