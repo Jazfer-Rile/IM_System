@@ -16,6 +16,7 @@ namespace IM_System.Model
         public frmSupplierAdd()
         {
             InitializeComponent();
+            txtPhone.KeyPress += new KeyPressEventHandler(txtPhone_KeyPress);
         }
         public int id = 0;
 
@@ -78,6 +79,17 @@ namespace IM_System.Model
         public virtual void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            // Check if the pressed key is a digit or the backspace key
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                // If not a digit or backspace, suppress the keypress
+                e.Handled = true;
+            }
         }
     }
 }
