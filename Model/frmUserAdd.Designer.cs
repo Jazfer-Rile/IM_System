@@ -381,8 +381,7 @@
             this.cbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.cbRole.ItemHeight = 33;
             this.cbRole.Items.AddRange(new object[] {
-            "Admin",
-            "Staff"});
+            "Admin"});
             this.cbRole.Location = new System.Drawing.Point(76, 252);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(227, 39);

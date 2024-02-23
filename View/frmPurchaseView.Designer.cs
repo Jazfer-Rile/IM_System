@@ -1,6 +1,6 @@
 ﻿namespace IM_System.View
 {
-    partial class frmCustomerView
+    partial class frmPurchaseView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPurchaseView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,17 +38,15 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvemail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +67,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(900, 129);
-            this.guna2Panel1.TabIndex = 6;
+            this.guna2Panel1.TabIndex = 8;
             // 
             // label2
             // 
@@ -144,9 +142,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.Location = new System.Drawing.Point(24, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 32);
+            this.label1.Size = new System.Drawing.Size(161, 32);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Customer List";
+            this.label1.Text = "Purchases List";
             // 
             // guna2DataGridView1
             // 
@@ -170,16 +168,16 @@
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvSr,
             this.dgvid,
-            this.dgvname,
-            this.dgvPhone,
-            this.dgvemail,
-            this.dgvAddress,
+            this.dgvdate,
+            this.dgvSupID,
+            this.dgvSupplier,
+            this.dgvAmount,
             this.dgvEdit,
             this.dgvDel});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -192,7 +190,7 @@
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 35;
             this.guna2DataGridView1.Size = new System.Drawing.Size(842, 343);
-            this.guna2DataGridView1.TabIndex = 7;
+            this.guna2DataGridView1.TabIndex = 9;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
@@ -216,6 +214,15 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = "IMS";
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = null;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.guna2MessageDialog1.Text = null;
+            // 
             // dgvSr
             // 
             this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -234,33 +241,34 @@
             this.dgvid.ReadOnly = true;
             this.dgvid.Visible = false;
             // 
-            // dgvname
+            // dgvdate
             // 
-            this.dgvname.HeaderText = "Name";
-            this.dgvname.MinimumWidth = 6;
-            this.dgvname.Name = "dgvname";
-            this.dgvname.ReadOnly = true;
+            this.dgvdate.HeaderText = "Date";
+            this.dgvdate.MinimumWidth = 100;
+            this.dgvdate.Name = "dgvdate";
+            this.dgvdate.ReadOnly = true;
             // 
-            // dgvPhone
+            // dgvSupID
             // 
-            this.dgvPhone.HeaderText = "Phone";
-            this.dgvPhone.MinimumWidth = 6;
-            this.dgvPhone.Name = "dgvPhone";
-            this.dgvPhone.ReadOnly = true;
+            this.dgvSupID.HeaderText = "supid";
+            this.dgvSupID.MinimumWidth = 6;
+            this.dgvSupID.Name = "dgvSupID";
+            this.dgvSupID.ReadOnly = true;
+            this.dgvSupID.Visible = false;
             // 
-            // dgvemail
+            // dgvSupplier
             // 
-            this.dgvemail.HeaderText = "Email";
-            this.dgvemail.MinimumWidth = 6;
-            this.dgvemail.Name = "dgvemail";
-            this.dgvemail.ReadOnly = true;
+            this.dgvSupplier.HeaderText = "Supplier";
+            this.dgvSupplier.MinimumWidth = 100;
+            this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.ReadOnly = true;
             // 
-            // dgvAddress
+            // dgvAmount
             // 
-            this.dgvAddress.HeaderText = "Address";
-            this.dgvAddress.MinimumWidth = 6;
-            this.dgvAddress.Name = "dgvAddress";
-            this.dgvAddress.ReadOnly = true;
+            this.dgvAmount.HeaderText = "Amount";
+            this.dgvAmount.MinimumWidth = 100;
+            this.dgvAmount.Name = "dgvAmount";
+            this.dgvAmount.ReadOnly = true;
             // 
             // dgvEdit
             // 
@@ -286,40 +294,7 @@
             this.dgvDel.ReadOnly = true;
             this.dgvDel.Width = 50;
             // 
-            // guna2MessageDialog1
-            // 
-            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.guna2MessageDialog1.Caption = "IMS";
-            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.guna2MessageDialog1.Parent = null;
-            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.guna2MessageDialog1.Text = null;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 50;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.FillWeight = 50F;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 50;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // frmCustomerView
+            // frmPurchaseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -328,12 +303,13 @@
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmCustomerView";
+            this.Name = "frmPurchaseView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCustomerView";
-            this.Load += new System.EventHandler(this.frmCustomerView_Load);
+            this.Text = "frmPurchaseView";
+            this.Load += new System.EventHandler(this.frmPurchaseView_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
@@ -349,15 +325,13 @@
         public Guna.UI2.WinForms.Guna2Button btnAdd;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        public Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSr;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvemail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSupID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
     }

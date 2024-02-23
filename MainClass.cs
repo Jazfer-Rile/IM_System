@@ -188,6 +188,7 @@ namespace IM_System
             {
                 if (Convert.ToString(c.Tag) != "" && Convert.ToString(c.Tag) != null)
                 {
+                    // For Text Box
                     if (c is Guna.UI2.WinForms.Guna2TextBox)
                     {
                         Guna.UI2.WinForms.Guna2TextBox t = (Guna.UI2.WinForms.Guna2TextBox)c;

@@ -34,7 +34,6 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBrowse = new Guna.UI2.WinForms.Guna2Button();
-            this.txtPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.txtCost = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,10 +47,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBarcode
@@ -128,27 +128,12 @@
             this.btnBrowse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(669, 365);
+            this.btnBrowse.Location = new System.Drawing.Point(683, 365);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(88, 48);
             this.btnBrowse.TabIndex = 35;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // txtPic
-            // 
-            this.txtPic.BackColor = System.Drawing.Color.Transparent;
-            this.txtPic.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.txtPic.Image = ((System.Drawing.Image)(resources.GetObject("txtPic.Image")));
-            this.txtPic.ImageRotate = 0F;
-            this.txtPic.Location = new System.Drawing.Point(638, 140);
-            this.txtPic.Name = "txtPic";
-            this.txtPic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.txtPic.Size = new System.Drawing.Size(160, 160);
-            this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.txtPic.TabIndex = 44;
-            this.txtPic.TabStop = false;
-            this.txtPic.UseTransparentBackground = true;
             // 
             // label5
             // 
@@ -357,19 +342,32 @@
             this.txtPrice.Tag = "v";
             this.txtPrice.TextOffset = new System.Drawing.Point(10, 0);
             // 
+            // txtPic
+            // 
+            this.txtPic.BackColor = System.Drawing.Color.Transparent;
+            this.txtPic.Image = ((System.Drawing.Image)(resources.GetObject("txtPic.Image")));
+            this.txtPic.ImageRotate = 0F;
+            this.txtPic.Location = new System.Drawing.Point(631, 177);
+            this.txtPic.Name = "txtPic";
+            this.txtPic.Size = new System.Drawing.Size(192, 184);
+            this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.txtPic.TabIndex = 46;
+            this.txtPic.TabStop = false;
+            this.txtPic.UseTransparentBackground = true;
+            // 
             // frmProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(900, 544);
+            this.Controls.Add(this.txtPic);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.txtPic);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -388,8 +386,8 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,7 +400,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         public System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnBrowse;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox txtPic;
         public System.Windows.Forms.Label label5;
         public Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         public Guna.UI2.WinForms.Guna2TextBox txtCost;
@@ -416,5 +413,6 @@
         public System.Windows.Forms.Label label6;
         public Guna.UI2.WinForms.Guna2TextBox txtPrice;
         public Guna.UI2.WinForms.Guna2ComboBox cbCategory;
+        private Guna.UI2.WinForms.Guna2PictureBox txtPic;
     }
 }

@@ -71,5 +71,10 @@ namespace IM_System
         {
             Addcontrols(new frmProductView());
         }
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmPurchaseView());
+        }
     }
 }
