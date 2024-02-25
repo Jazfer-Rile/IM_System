@@ -49,7 +49,7 @@ namespace IM_System
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
@@ -80,6 +80,22 @@ namespace IM_System
         private void btnSales_Click(object sender, EventArgs e)
         {
             Addcontrols(new frmSaleView());
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+
+            if (guna2MessageDialog1.Show("Are you sure you want to exit apllication?") == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -206,6 +206,7 @@ namespace IM_System
                             t.HoverState.BorderColor = Color.FromArgb(0, 122, 204);
                         }
                     }
+                    // For ComboBox
                     else if (c is Guna.UI2.WinForms.Guna2ComboBox)
                     {
                         Guna.UI2.WinForms.Guna2ComboBox cb = (Guna.UI2.WinForms.Guna2ComboBox)c;

@@ -45,7 +45,7 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(14, 53);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(126, 140);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(126, 154);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // lblPrice
@@ -71,6 +71,7 @@
             // txtPic
             // 
             this.txtPic.BackColor = System.Drawing.Color.Transparent;
+            this.txtPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPic.Image = global::IM_System.Properties.Resources.itemPic;
             this.txtPic.ImageRotate = 0F;
             this.txtPic.Location = new System.Drawing.Point(32, 8);
@@ -89,7 +90,7 @@
             this.Controls.Add(this.txtPic);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Name = "ucProduct";
-            this.Size = new System.Drawing.Size(153, 198);
+            this.Size = new System.Drawing.Size(153, 210);
             this.guna2ShadowPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
             this.ResumeLayout(false);
