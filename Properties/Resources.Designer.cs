@@ -63,6 +63,16 @@ namespace IM_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap itemPic {
+            get {
+                object obj = ResourceManager.GetObject("itemPic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap userPic {
             get {
                 object obj = ResourceManager.GetObject("userPic", resourceCulture);

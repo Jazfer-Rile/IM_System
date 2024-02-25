@@ -345,11 +345,11 @@
             // txtPic
             // 
             this.txtPic.BackColor = System.Drawing.Color.Transparent;
-            this.txtPic.Image = ((System.Drawing.Image)(resources.GetObject("txtPic.Image")));
+            this.txtPic.Image = global::IM_System.Properties.Resources.itemPic;
             this.txtPic.ImageRotate = 0F;
-            this.txtPic.Location = new System.Drawing.Point(631, 177);
+            this.txtPic.Location = new System.Drawing.Point(632, 164);
             this.txtPic.Name = "txtPic";
-            this.txtPic.Size = new System.Drawing.Size(192, 184);
+            this.txtPic.Size = new System.Drawing.Size(192, 182);
             this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.txtPic.TabIndex = 46;
             this.txtPic.TabStop = false;

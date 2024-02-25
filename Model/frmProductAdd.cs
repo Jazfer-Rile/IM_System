@@ -86,7 +86,7 @@ namespace IM_System
                     cbCategory.SelectedIndex = -1;
                     txtCost.Text = "";
                     txtPrice.Text = "";
-                    txtPic.Image = IM_System.Properties.Resources.userPic;
+                    txtPic.Image = IM_System.Properties.Resources.itemPic;
                     txtName.Focus();
 
 

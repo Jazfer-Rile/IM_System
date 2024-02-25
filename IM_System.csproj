@@ -89,6 +89,12 @@
     <Compile Include="Model\frmPurchaseAdd.Designer.cs">
       <DependentUpon>frmPurchaseAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\frmSaleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\frmSaleAdd.Designer.cs">
+      <DependentUpon>frmSaleAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\frmSupplierAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,12 @@
     </Compile>
     <Compile Include="Model\frmUserAdd.Designer.cs">
       <DependentUpon>frmUserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ucProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\ucProduct.Designer.cs">
+      <DependentUpon>ucProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,6 +138,12 @@
     </Compile>
     <Compile Include="View\frmPurchaseView.Designer.cs">
       <DependentUpon>frmPurchaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmSaleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSaleView.Designer.cs">
+      <DependentUpon>frmSaleView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmSupplierView.cs">
       <SubType>Form</SubType>
@@ -157,11 +175,17 @@
     <EmbeddedResource Include="Model\frmPurchaseAdd.resx">
       <DependentUpon>frmPurchaseAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model\frmSaleAdd.resx">
+      <DependentUpon>frmSaleAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model\frmSupplierAdd.resx">
       <DependentUpon>frmSupplierAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\frmUserAdd.resx">
       <DependentUpon>frmUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\ucProduct.resx">
+      <DependentUpon>ucProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,6 +209,9 @@
     <EmbeddedResource Include="View\frmPurchaseView.resx">
       <DependentUpon>frmPurchaseView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSaleView.resx">
+      <DependentUpon>frmSaleView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmSupplierView.resx">
       <DependentUpon>frmSupplierView.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\userPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\itemPic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

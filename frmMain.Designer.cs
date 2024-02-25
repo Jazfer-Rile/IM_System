@@ -42,7 +42,7 @@
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSales = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -124,7 +124,7 @@
             this.guna2Panel3.Controls.Add(this.guna2Button10);
             this.guna2Panel3.Controls.Add(this.guna2Button13);
             this.guna2Panel3.Controls.Add(this.btnUser);
-            this.guna2Panel3.Controls.Add(this.guna2Button11);
+            this.guna2Panel3.Controls.Add(this.btnSales);
             this.guna2Panel3.Controls.Add(this.btnCustomer);
             this.guna2Panel3.Controls.Add(this.btnProduct);
             this.guna2Panel3.Controls.Add(this.guna2CirclePictureBox1);
@@ -315,32 +315,33 @@
             this.btnUser.TextOffset = new System.Drawing.Point(20, 0);
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
-            // guna2Button11
+            // btnSales
             // 
-            this.guna2Button11.Animated = true;
-            this.guna2Button11.AutoRoundedCorners = true;
-            this.guna2Button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.guna2Button11.BorderRadius = 31;
-            this.guna2Button11.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button11.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button11.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button11.ForeColor = System.Drawing.Color.White;
-            this.guna2Button11.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button11.Image")));
-            this.guna2Button11.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button11.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button11.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2Button11.Location = new System.Drawing.Point(3, 622);
-            this.guna2Button11.Name = "guna2Button11";
-            this.guna2Button11.Size = new System.Drawing.Size(214, 65);
-            this.guna2Button11.TabIndex = 0;
-            this.guna2Button11.Text = "Sales";
-            this.guna2Button11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button11.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnSales.Animated = true;
+            this.btnSales.AutoRoundedCorners = true;
+            this.btnSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSales.BorderRadius = 31;
+            this.btnSales.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSales.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSales.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSales.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSales.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSales.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSales.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSales.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSales.ForeColor = System.Drawing.Color.White;
+            this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
+            this.btnSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSales.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnSales.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnSales.Location = new System.Drawing.Point(3, 622);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(214, 65);
+            this.btnSales.TabIndex = 0;
+            this.btnSales.Text = "Sales";
+            this.btnSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSales.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnCustomer
             // 
@@ -460,7 +461,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2Button guna2Button13;
         private Guna.UI2.WinForms.Guna2Button btnUser;
-        private Guna.UI2.WinForms.Guna2Button guna2Button11;
+        private Guna.UI2.WinForms.Guna2Button btnSales;
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
         private Guna.UI2.WinForms.Guna2Button btnPurchase;
         private Guna.UI2.WinForms.Guna2Button btnProduct;
