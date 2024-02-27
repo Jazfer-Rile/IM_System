@@ -21,6 +21,7 @@ namespace IM_System
         public frmMain()
         {
             InitializeComponent();
+            guna2MessageDialog1.Parent = this;
         }
         
         public void Addcontrols(Form F)
@@ -39,6 +40,8 @@ namespace IM_System
 
             lblUser.Text = MainClass.USER;
             guna2CirclePictureBox1.Image = MainClass.img;
+
+            btnDashBoard.PerformClick();
             
         }
 
@@ -96,6 +99,11 @@ namespace IM_System
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmDashBoard());
         }
     }
 }

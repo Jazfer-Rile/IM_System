@@ -17,6 +17,7 @@ namespace IM_System.Model
         public frmPurchaseAdd()
         {
             InitializeComponent();
+            txtDate.Value = DateTime.Now;
         }
         public int mainID = 0;
         public int supID = 0;

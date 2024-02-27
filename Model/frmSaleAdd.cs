@@ -274,22 +274,24 @@ namespace IM_System.Model
             // Check if the clicked cell is not in the header row
             if (e.RowIndex >= 0)
             {
-                //Delete
+                // Delete
                 if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
-
-                    //Confirm Before delete
+                    // Confirm Before delete
                     guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
                     guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
 
                     if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
                     {
                         int rowindex = guna2DataGridView1.CurrentCell.RowIndex;
+                        DataGridViewRow selectedRow = guna2DataGridView1.Rows[rowindex];
+
+                        int id = Convert.ToInt32(selectedRow.Cells["dgvid"].Value);
+
                         guna2DataGridView1.Rows.RemoveAt(rowindex);
 
-                        int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                        string qry = "Delete from tblMain where MainID = " + id + "";
-                        string qry2 = "Delete from tblDetails where dMainID = " + id + "";
+                        string qry = "DELETE FROM tblMain WHERE MainID = " + id + "";
+                        string qry2 = "DELETE FROM tblDetails WHERE dMainID = " + id + "";
                         Hashtable ht = new Hashtable();
                         MainClass.SQl(qry, ht);
 
@@ -299,6 +301,7 @@ namespace IM_System.Model
                             //guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                             //guna2MessageDialog1.Show("Deleted successfuly..");
                         }
+
                         GrandTotal();
                     }
                 }
