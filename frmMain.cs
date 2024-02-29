@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
+
 
 namespace IM_System
 {
     public partial class frmMain : Form
     {
         static frmMain _obj;
+        private bool allowLogout = true;
         public static frmMain Instance
         {
             get { if (_obj == null) { _obj = new frmMain(); } return _obj; }
@@ -104,6 +107,26 @@ namespace IM_System
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             Addcontrols(new frmDashBoard());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+
+            DialogResult result = guna2MessageDialog1.Show("Logout Application?");
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                frmLogin login = new frmLogin();
+                login.ShowDialog();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

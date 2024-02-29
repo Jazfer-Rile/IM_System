@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
+
 
 namespace IM_System
 {
@@ -54,7 +56,20 @@ namespace IM_System
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            try
+                {
+                    // Close any open forms explicitly
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        form.Close();
+                    }
+
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
     }
 }

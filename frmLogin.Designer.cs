@@ -130,7 +130,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(526, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 32);
+            this.label1.Size = new System.Drawing.Size(199, 32);
             this.label1.TabIndex = 22;
             this.label1.Text = "Please Login First";
             // 
@@ -138,9 +138,9 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(70, 35);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(455, 520);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(335, 445);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 21;
             this.guna2PictureBox1.TabStop = false;
