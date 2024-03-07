@@ -126,7 +126,7 @@ namespace IM_System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            lblTimer.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
     }
 }

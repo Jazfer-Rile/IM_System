@@ -462,7 +462,7 @@
             // 
             // lblTimer
             // 
-            this.lblTimer.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lblTimer.BackColor = System.Drawing.Color.Transparent;
             this.lblTimer.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblTimer.Font = new System.Drawing.Font("Consolas", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.White;
