@@ -15,6 +15,7 @@ namespace IM_System
 {
     public partial class frmProductAdd : Form
     {
+       
         public frmProductAdd()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace IM_System
             }
            
         }
+
         public virtual void btnSave_Click(object sender, EventArgs e)
         {
             if (MainClass.Validation(this) == false)
@@ -46,7 +48,8 @@ namespace IM_System
                 string qry = "";
                 if (id == 0)//Insert
                 {
-                    qry = @"Insert into Product values(@name,@pCatID,@barcode,@cost,@saleprice,@image)";
+                    qry = @"INSERT INTO Product (pName, pCatID, pBarcode, pCost, pPrice, reorder, pImage) VALUES (@name, @pCatID, @barcode, @cost, @saleprice, @reorder, @image)";
+
                 }
                 else //update
                 {
@@ -55,6 +58,7 @@ namespace IM_System
                           pBarcode = @barcode,
                           pCost = @cost,
                           pPrice = @saleprice,
+                          reorder = @reorder,
                           pImage = @image
                           WHERE proID = @id";
 
@@ -72,6 +76,7 @@ namespace IM_System
                 ht.Add("@barcode", txtBarcode.Text);
                 ht.Add("@cost", Convert.ToDouble(txtCost.Text));
                 ht.Add("@saleprice", Convert.ToInt32(txtPrice.Text));
+                ht.Add("@reorder", UDReOrder.Value);
                 ht.Add("@image", imageByteArray);
 
                 if (MainClass.SQl(qry, ht) > 0)
@@ -86,6 +91,7 @@ namespace IM_System
                     cbCategory.SelectedIndex = -1;
                     txtCost.Text = "";
                     txtPrice.Text = "";
+                    UDReOrder.Value = 0;
                     txtPic.Image = IM_System.Properties.Resources.itemPic;
                     txtName.Focus();
 

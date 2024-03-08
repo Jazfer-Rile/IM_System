@@ -48,10 +48,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.UDReOrder = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UDReOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBarcode
@@ -112,7 +114,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(97, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 32);
+            this.label1.Size = new System.Drawing.Size(176, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Details";
             // 
@@ -128,7 +130,7 @@
             this.btnBrowse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(683, 365);
+            this.btnBrowse.Location = new System.Drawing.Point(699, 300);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(88, 48);
             this.btnBrowse.TabIndex = 35;
@@ -347,7 +349,7 @@
             this.txtPic.BackColor = System.Drawing.Color.Transparent;
             this.txtPic.Image = global::IM_System.Properties.Resources.itemPic;
             this.txtPic.ImageRotate = 0F;
-            this.txtPic.Location = new System.Drawing.Point(632, 164);
+            this.txtPic.Location = new System.Drawing.Point(648, 112);
             this.txtPic.Name = "txtPic";
             this.txtPic.Size = new System.Drawing.Size(192, 182);
             this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -355,12 +357,27 @@
             this.txtPic.TabStop = false;
             this.txtPic.UseTransparentBackground = true;
             // 
+            // UDReOrder
+            // 
+            this.UDReOrder.AutoRoundedCorners = true;
+            this.UDReOrder.BackColor = System.Drawing.Color.Transparent;
+            this.UDReOrder.BorderRadius = 23;
+            this.UDReOrder.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.UDReOrder.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UDReOrder.Location = new System.Drawing.Point(689, 365);
+            this.UDReOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UDReOrder.Name = "UDReOrder";
+            this.UDReOrder.Size = new System.Drawing.Size(114, 48);
+            this.UDReOrder.TabIndex = 47;
+            this.UDReOrder.TextOffset = new System.Drawing.Point(15, 0);
+            // 
             // frmProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(900, 544);
+            this.Controls.Add(this.UDReOrder);
             this.Controls.Add(this.txtPic);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.txtPrice);
@@ -388,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UDReOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,5 +432,6 @@
         public Guna.UI2.WinForms.Guna2TextBox txtPrice;
         public Guna.UI2.WinForms.Guna2ComboBox cbCategory;
         private Guna.UI2.WinForms.Guna2PictureBox txtPic;
+        public Guna.UI2.WinForms.Guna2NumericUpDown UDReOrder;
     }
 }

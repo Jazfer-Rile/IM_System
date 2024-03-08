@@ -47,6 +47,7 @@
             this.dgvbarcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvReorder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel1.SuspendLayout();
@@ -144,7 +145,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.Location = new System.Drawing.Point(24, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 32);
+            this.label1.Size = new System.Drawing.Size(139, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Product List";
             // 
@@ -185,6 +186,7 @@
             this.dgvbarcode,
             this.dgvCost,
             this.dgvSale,
+            this.dgvReorder,
             this.dgvEdit,
             this.dgvDel});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -288,6 +290,13 @@
             this.dgvSale.Name = "dgvSale";
             this.dgvSale.ReadOnly = true;
             // 
+            // dgvReorder
+            // 
+            this.dgvReorder.HeaderText = "Re-Order";
+            this.dgvReorder.MinimumWidth = 6;
+            this.dgvReorder.Name = "dgvReorder";
+            this.dgvReorder.ReadOnly = true;
+            // 
             // dgvEdit
             // 
             this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -352,6 +361,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvbarcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvReorder;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
     }

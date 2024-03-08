@@ -14,6 +14,7 @@ namespace IM_System.View
 {
     public partial class frmProductView : Form
     {
+
         public frmProductView()
         {
             InitializeComponent();
@@ -34,8 +35,9 @@ namespace IM_System.View
             lb.Items.Add(dgvbarcode);
             lb.Items.Add(dgvCost);
             lb.Items.Add(dgvSale);
+            lb.Items.Add(dgvReorder);
 
-            string qry = @"Select proID ,pName ,pCatID, catName,pBarcode, pCost, pPrice from Product 
+            string qry = @"Select proID ,pName ,pCatID, catName,pBarcode, pCost, pPrice, reorder from Product 
                             inner join Category on catID = pCatID
                             where pName like '%" + txtSearch.Text + "%' order by proID desc";
 
@@ -67,6 +69,7 @@ namespace IM_System.View
                     frm.txtBarcode.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvbarcode"].Value);
                     frm.txtCost.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvCost"].Value);
                     frm.txtPrice.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvsale"].Value);
+                    frm.UDReOrder.Value = Convert.ToDecimal(guna2DataGridView1.CurrentRow.Cells["dgvReorder"].Value);
 
                     MainClass.BlurBackground(frm);
                     LoadData();
