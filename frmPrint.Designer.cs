@@ -142,6 +142,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnExit;
         private Guna.UI2.WinForms.Guna2ControlBox btnMax;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

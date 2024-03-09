@@ -128,5 +128,10 @@ namespace IM_System
         {
             lblTimer.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmReports());
+        }
     }
 }

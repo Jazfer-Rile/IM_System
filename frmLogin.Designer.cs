@@ -89,7 +89,8 @@
             this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(190)))), ((int)(((byte)(0)))));
+            this.btnLogin.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnLogin.HoverState.ForeColor = System.Drawing.Color.Black;
             this.btnLogin.Location = new System.Drawing.Point(532, 330);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(267, 45);

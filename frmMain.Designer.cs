@@ -43,7 +43,7 @@
             this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.btnDashBoard = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnSales = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
@@ -51,6 +51,7 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.CenterPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -134,6 +135,7 @@
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.AutoScroll = true;
             this.guna2Panel3.BorderRadius = 60;
             this.guna2Panel3.Controls.Add(this.btnLogout);
             this.guna2Panel3.Controls.Add(this.btnSupplier);
@@ -141,7 +143,7 @@
             this.guna2Panel3.Controls.Add(this.btnCategory);
             this.guna2Panel3.Controls.Add(this.lblUser);
             this.guna2Panel3.Controls.Add(this.btnDashBoard);
-            this.guna2Panel3.Controls.Add(this.guna2Button13);
+            this.guna2Panel3.Controls.Add(this.btnReport);
             this.guna2Panel3.Controls.Add(this.btnUser);
             this.guna2Panel3.Controls.Add(this.btnSales);
             this.guna2Panel3.Controls.Add(this.btnCustomer);
@@ -308,32 +310,33 @@
             this.btnDashBoard.TextOffset = new System.Drawing.Point(20, 0);
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
-            // guna2Button13
+            // btnReport
             // 
-            this.guna2Button13.Animated = true;
-            this.guna2Button13.AutoRoundedCorners = true;
-            this.guna2Button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.guna2Button13.BorderRadius = 31;
-            this.guna2Button13.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button13.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button13.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button13.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.guna2Button13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button13.ForeColor = System.Drawing.Color.White;
-            this.guna2Button13.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button13.Image")));
-            this.guna2Button13.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button13.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button13.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2Button13.Location = new System.Drawing.Point(3, 764);
-            this.guna2Button13.Name = "guna2Button13";
-            this.guna2Button13.Size = new System.Drawing.Size(214, 65);
-            this.guna2Button13.TabIndex = 0;
-            this.guna2Button13.Text = "Report";
-            this.guna2Button13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button13.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnReport.Animated = true;
+            this.btnReport.AutoRoundedCorners = true;
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnReport.BorderRadius = 31;
+            this.btnReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnReport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReport.ForeColor = System.Drawing.Color.White;
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReport.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnReport.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnReport.Location = new System.Drawing.Point(3, 764);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(214, 65);
+            this.btnReport.TabIndex = 0;
+            this.btnReport.Text = "Report";
+            this.btnReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReport.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnUser
             // 
@@ -479,12 +482,27 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.AutoRoundedCorners = true;
+            this.guna2VScrollBar1.BindingContainer = this.guna2Panel3;
+            this.guna2VScrollBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.guna2VScrollBar1.BorderRadius = 4;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(210, 52);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 10;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 904);
+            this.guna2VScrollBar1.TabIndex = 5;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(1233, 956);
+            this.Controls.Add(this.guna2VScrollBar1);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
@@ -515,7 +533,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCategory;
         private System.Windows.Forms.Label lblUser;
         private Guna.UI2.WinForms.Guna2Button btnDashBoard;
-        private Guna.UI2.WinForms.Guna2Button guna2Button13;
+        private Guna.UI2.WinForms.Guna2Button btnReport;
         private Guna.UI2.WinForms.Guna2Button btnUser;
         private Guna.UI2.WinForms.Guna2Button btnSales;
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
@@ -527,5 +545,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }
