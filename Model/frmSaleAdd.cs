@@ -26,6 +26,7 @@ namespace IM_System.Model
 
         private void frmSaleAdd_Load(object sender, EventArgs e)
         {
+
             string qry = @"Select cusID 'id' , cusName 'name' from Customer";
             MainClass.CBFill(qry, cbCustomer);
 

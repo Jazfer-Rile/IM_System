@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblPName = new System.Windows.Forms.Label();
             this.txtPic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblStock = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label2);
             this.guna2ShadowPanel1.Controls.Add(this.lblStock);
             this.guna2ShadowPanel1.Controls.Add(this.label1);
             this.guna2ShadowPanel1.Controls.Add(this.lblPrice);
@@ -52,6 +54,28 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(147, 184);
             this.guna2ShadowPanel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 32);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Stocks :";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblStock
+            // 
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.ForeColor = System.Drawing.Color.White;
+            this.lblStock.Location = new System.Drawing.Point(84, 100);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(60, 32);
+            this.lblStock.TabIndex = 4;
+            this.lblStock.Text = "000.0";
+            this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -79,9 +103,9 @@
             // 
             this.lblPName.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPName.ForeColor = System.Drawing.Color.White;
-            this.lblPName.Location = new System.Drawing.Point(3, 48);
+            this.lblPName.Location = new System.Drawing.Point(8, 48);
             this.lblPName.Name = "lblPName";
-            this.lblPName.Size = new System.Drawing.Size(141, 52);
+            this.lblPName.Size = new System.Drawing.Size(136, 52);
             this.lblPName.TabIndex = 1;
             this.lblPName.Text = "Product Name";
             this.lblPName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,17 +124,6 @@
             this.txtPic.TabStop = false;
             this.txtPic.UseTransparentBackground = true;
             this.txtPic.Click += new System.EventHandler(this.txtPic_Click);
-            // 
-            // lblStock
-            // 
-            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.ForeColor = System.Drawing.Color.White;
-            this.lblStock.Location = new System.Drawing.Point(8, 100);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(129, 32);
-            this.lblStock.TabIndex = 4;
-            this.lblStock.Text = "Stocks";
-            this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ucProduct
             // 
@@ -135,5 +148,6 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.Label label2;
     }
 }

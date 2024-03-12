@@ -16,7 +16,7 @@ namespace IM_System
     public partial class frmMain : Form
     {
         static frmMain _obj;
-        private bool allowLogout = true;
+       
         public static frmMain Instance
         {
             get { if (_obj == null) { _obj = new frmMain(); } return _obj; }
@@ -53,10 +53,7 @@ namespace IM_System
             Addcontrols(new frmUserView());
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
@@ -101,7 +98,7 @@ namespace IM_System
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
@@ -132,6 +129,11 @@ namespace IM_System
         private void btnReport_Click(object sender, EventArgs e)
         {
             Addcontrols(new frmReports());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
