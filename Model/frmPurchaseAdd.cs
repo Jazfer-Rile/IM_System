@@ -190,6 +190,7 @@ namespace IM_System.Model
                 if (did == 0) // insert
                 {
                     qry2 = @"INSERT INTO tblDetails VALUES (@mID, @proID, @qty, @price, @amount, @cost)";
+
                 }
                 else
                 {
@@ -206,6 +207,8 @@ namespace IM_System.Model
                 cmd2.Parameters.AddWithValue("@amount", Convert.ToInt32(row.Cells["dgvAmount"].Value));
                 cmd2.Parameters.AddWithValue("@cost", Convert.ToInt32(row.Cells["dgvCost"].Value));
                 record += cmd2.ExecuteNonQuery();
+
+                
 
             }
             if (record > 0)

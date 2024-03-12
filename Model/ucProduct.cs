@@ -40,5 +40,11 @@ namespace IM_System.Model
             get { return txtPic.Image; }
             set { txtPic.Image = value; }
         }
+        public int Stock
+        {
+            get { return int.Parse(lblStock.Text); }
+            set { lblStock.Text = value.ToString(); }
+        }
+        
     }
 }

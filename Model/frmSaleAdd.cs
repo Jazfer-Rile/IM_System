@@ -37,7 +37,8 @@ namespace IM_System.Model
             }
             loadProductsFromDatabase();
         }
-        public void AddItems(string id, string name, string price, Image pimage, string cost)
+        
+        public void AddItems(string id, string name, string price, Image pimage, string cost, int stock)
         {
             var w = new ucProduct()
             {
@@ -45,7 +46,8 @@ namespace IM_System.Model
                 Price = price,
                 PImage = pimage,
                 PCost = cost,
-                id = Convert.ToInt32(id)
+                id = Convert.ToInt32(id),
+                Stock = stock,
             };
             flowLayoutPanel1.Controls.Add(w);
 
@@ -73,32 +75,65 @@ namespace IM_System.Model
         {
             double tot = 0;
             lblTotal.Text = "";
-            foreach (DataGridViewRow item in  guna2DataGridView1.Rows) 
-            {
-                tot += double.Parse(item.Cells["dgvAmount"].Value.ToString());
-            }
-            lblTotal.Text = tot.ToString("N2");
-        }
-        private void loadProductsFromDatabase()
-        {
-            string qry = "Select * From Product";
-            SqlCommand cmd = new SqlCommand(qry,MainClass.con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
 
-            if (dt.Rows.Count > 0)
+            foreach (DataGridViewRow item in guna2DataGridView1.Rows)
             {
-                foreach (DataRow row in dt.Rows)
+                // Check if the cell and its value are not null
+                if (item.Cells["dgvAmount"].Value != null)
                 {
-                    Byte[] imageArray = (byte[])row["PImage"];
-                    byte[] imageByteArray = imageArray;
-
-                    AddItems(row["proID"].ToString(), row["pName"].ToString(), row["pPrice"].ToString(),
-                            Image.FromStream(new MemoryStream(imageArray)), row["pCost"].ToString());
+                    tot += double.Parse(item.Cells["dgvAmount"].Value.ToString());
                 }
             }
+
+            lblTotal.Text = tot.ToString("N2");
         }
+        private void RefreshProductPanel()
+        {
+            flowLayoutPanel1.Controls.Clear(); // Clear existing controls
+            loadProductsFromDatabase(); // Reload products
+        }
+
+        private void loadProductsFromDatabase()
+        {
+            try
+            {
+                string qry = "SELECT p.proID, p.pName, p.pPrice, p.pCost, p.PImage, " +
+               "(SELECT ISNULL(SUM(d.qty), 0) FROM tblDetails d " +
+               "INNER JOIN tblMain m ON m.MainID = d.dMainID " +
+               "WHERE m.mType = 'PUR' AND d.productID = p.proID) - " +
+               "(SELECT ISNULL(SUM(d.qty), 0) FROM tblDetails d " +
+               "INNER JOIN tblMain m ON m.MainID = d.dMainID " +
+               "WHERE m.mType = 'SAL' AND d.productID = p.proID) AS Stock " +
+               "FROM Product p";
+
+
+
+                SqlCommand cmd = new SqlCommand(qry, MainClass.con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Byte[] imageArray = (byte[])row["PImage"];
+                        byte[] imageByteArray = imageArray;
+
+                        AddItems(row["proID"].ToString(), row["pName"].ToString(), row["pPrice"].ToString(),
+                                Image.FromStream(new MemoryStream(imageArray)), row["pCost"].ToString(),
+                                Convert.ToInt32(row["Stock"]));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception (e.g., log it, show an error message, etc.)
+                MessageBox.Show($"Error loading products: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -230,6 +265,7 @@ namespace IM_System.Model
                 guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
                 guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
                 guna2MessageDialog1.Show("Saved Successfully");
+                RefreshProductPanel();
 
                 id = 0;
                 cusID = 0;
@@ -269,43 +305,80 @@ namespace IM_System.Model
                 guna2DataGridView1.Rows.Add(did, pid, pname, qty, cost, amt, cost);
             }
         }
+
+
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Check if the clicked cell is not in the header row
             if (e.RowIndex >= 0)
             {
-                // Delete
-                if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
+                if (guna2DataGridView1.Columns.Contains("colAdd") && guna2DataGridView1.Columns.Contains("colReduce"))
                 {
-                    // Confirm Before delete
-                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                    DataGridViewColumn colAdd = guna2DataGridView1.Columns["colAdd"];
+                    DataGridViewColumn colReduce = guna2DataGridView1.Columns["colReduce"];
 
-                    if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
+                    // Delete
+                    if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
                     {
-                        int rowindex = guna2DataGridView1.CurrentCell.RowIndex;
-                        DataGridViewRow selectedRow = guna2DataGridView1.Rows[rowindex];
+                        // Confirm Before delete
+                        guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+                        guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
 
-                        int id = Convert.ToInt32(selectedRow.Cells["dgvid"].Value);
-
-                        guna2DataGridView1.Rows.RemoveAt(rowindex);
-
-                        string qry = "DELETE FROM tblMain WHERE MainID = " + id + "";
-                        string qry2 = "DELETE FROM tblDetails WHERE dMainID = " + id + "";
-                        Hashtable ht = new Hashtable();
-                        MainClass.SQl(qry, ht);
-
-                        if (MainClass.SQl(qry2, ht) > 0)
+                        if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
                         {
-                            //guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-                            //guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-                            //guna2MessageDialog1.Show("Deleted successfuly..");
+                            int rowindex = guna2DataGridView1.CurrentCell.RowIndex;
+                            DataGridViewRow selectedRow = guna2DataGridView1.Rows[rowindex];
+
+                            int id = Convert.ToInt32(selectedRow.Cells["dgvid"].Value);
+
+                            guna2DataGridView1.Rows.RemoveAt(rowindex);
+
+                            string qry = "DELETE FROM tblMain WHERE MainID = " + id + "";
+                            string qry2 = "DELETE FROM tblDetails WHERE dMainID = " + id + "";
+                            Hashtable ht = new Hashtable();
+                            MainClass.SQl(qry, ht);
+
+                            if (MainClass.SQl(qry2, ht) > 0)
+                            {
+                                // Success message if needed
+                            }
+
+                            GrandTotal();
                         }
+                    }
+                    else if (guna2DataGridView1.CurrentCell.OwningColumn == colAdd)
+                    {
+                        // Increment quantity
+                        int currentQuantity = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value);
+                        guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value = currentQuantity + 1;
+
+                        // Recalculate amount and update GrandTotal
+                        guna2DataGridView1.Rows[e.RowIndex].Cells["dgvAmount"].Value =
+                            Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value) *
+                            Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvPrice"].Value);
 
                         GrandTotal();
+                    }
+                    else if (guna2DataGridView1.CurrentCell.OwningColumn == colReduce)
+                    {
+                        // Decrement quantity (ensure it doesn't go below zero)
+                        int currentQuantity = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value);
+                        if (currentQuantity > 0)
+                        {
+                            guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value = currentQuantity - 1;
+
+                            // Recalculate amount and update GrandTotal
+                            guna2DataGridView1.Rows[e.RowIndex].Cells["dgvAmount"].Value =
+                                Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value) *
+                                Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvPrice"].Value);
+
+                            GrandTotal();
+                        }
                     }
                 }
             }
         }
+
+
     }
 }
