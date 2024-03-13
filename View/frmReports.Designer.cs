@@ -33,7 +33,7 @@ namespace IM_System.View
             this.btnProductList = new Guna.UI2.WinForms.Guna2Button();
             this.btnStock = new Guna.UI2.WinForms.Guna2Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSales = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -121,25 +121,27 @@ namespace IM_System.View
             this.crystalReportViewer1.TabIndex = 3;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // guna2Button1
+            // btnSales
             // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderColor = System.Drawing.Color.White;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(400, 61);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(124, 45);
-            this.guna2Button1.TabIndex = 2;
+            this.btnSales.Animated = true;
+            this.btnSales.BackColor = System.Drawing.Color.Transparent;
+            this.btnSales.BorderColor = System.Drawing.Color.White;
+            this.btnSales.BorderThickness = 1;
+            this.btnSales.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSales.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSales.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSales.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSales.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSales.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSales.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnSales.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSales.ForeColor = System.Drawing.Color.White;
+            this.btnSales.Location = new System.Drawing.Point(400, 61);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(124, 45);
+            this.btnSales.TabIndex = 2;
+            this.btnSales.Text = "Sales Report";
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // guna2Button3
             // 
@@ -189,7 +191,7 @@ namespace IM_System.View
             this.guna2Panel1.Controls.Add(this.btnStock);
             this.guna2Panel1.Controls.Add(this.btnProductList);
             this.guna2Panel1.Controls.Add(this.guna2Button4);
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.btnSales);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
             this.guna2Panel1.CustomizableEdges.BottomRight = false;
             this.guna2Panel1.CustomizableEdges.TopLeft = false;
@@ -252,7 +254,7 @@ namespace IM_System.View
         private Guna.UI2.WinForms.Guna2Button btnProductList;
         private Guna.UI2.WinForms.Guna2Button btnStock;
         public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnSales;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel1;

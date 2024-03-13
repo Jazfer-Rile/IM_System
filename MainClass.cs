@@ -183,12 +183,21 @@ namespace IM_System
         }
         public static bool Validation(Form F)
         {
-            bool isValid = true;  
+            bool isValid = true;
+
+            // Remove any existing "Required" label from the form
+            RemoveRequiredLabel(F);
 
             foreach (Control c in F.Controls)
             {
                 if (Convert.ToString(c.Tag) != "" && Convert.ToString(c.Tag) != null)
                 {
+                    Label requiredLabel = new Label();
+                    requiredLabel.Text = "Required";
+                    requiredLabel.ForeColor = Color.Red;
+                    requiredLabel.AutoSize = true;
+                    requiredLabel.Location = new Point(c.Right - 65, c.Top - 20);
+
                     // For Text Box
                     if (c is Guna.UI2.WinForms.Guna2TextBox)
                     {
@@ -198,6 +207,7 @@ namespace IM_System
                             t.BorderColor = Color.Red;
                             t.FocusedState.BorderColor = Color.Red;
                             t.HoverState.BorderColor = Color.Red;
+                            F.Controls.Add(requiredLabel);
                             isValid = false;  // Set form validation to false if any textbox is empty
                         }
                         else
@@ -206,6 +216,7 @@ namespace IM_System
                             t.FocusedState.BorderColor = Color.FromArgb(0, 122, 204);
                             t.HoverState.BorderColor = Color.FromArgb(0, 122, 204);
                         }
+
                     }
                     // For ComboBox
                     else if (c is Guna.UI2.WinForms.Guna2ComboBox)
@@ -216,6 +227,7 @@ namespace IM_System
                             cb.BorderColor = Color.Red;
                             cb.FocusedState.BorderColor = Color.Red;
                             cb.HoverState.BorderColor = Color.Red;
+                            F.Controls.Add(requiredLabel);
                             isValid = false;  // Set form validation to false if the combo box is empty
                         }
                         else
@@ -230,6 +242,20 @@ namespace IM_System
 
             return isValid;
         }
+
+        // Method to remove the "Required" label from the form
+        private static void RemoveRequiredLabel(Form form)
+        {
+            foreach (Control c in form.Controls)
+            {
+                if (c is Label && c.Text == "Required")
+                {
+                    form.Controls.Remove(c);
+                    break; // Exit the loop once the label is removed
+                }
+            }
+        }
+
 
     }
 }

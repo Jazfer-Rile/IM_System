@@ -107,6 +107,17 @@ namespace IM_System.Model
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // Check if any required field is empty
+            if (string.IsNullOrWhiteSpace(cbProduct.Text) ||
+                string.IsNullOrWhiteSpace(txtQty.Text))
+            {
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                guna2MessageDialog1.Show("Please fill in all required fields.");
+       
+                return; // Exit the method without adding the item
+            }
+
             string pid;
             string pname;
             string qty;

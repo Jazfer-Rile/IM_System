@@ -55,5 +55,9 @@ namespace IM_System.View
             crystalReportViewer1.Refresh();
         }
 
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
