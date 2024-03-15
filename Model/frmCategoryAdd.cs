@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace IM_System.Model
 {
@@ -37,6 +38,15 @@ namespace IM_System.Model
             }
             else
             {
+                // Check for duplicate category name
+                if (IsCategoryDuplicate(txtName.Text.Trim(), id))
+                {
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                    guna2MessageDialog1.Show("Category name already exists");
+                    return;
+                }
+
                 string qry = "";
                 if (id == 0)//Insert
                 {
@@ -73,6 +83,24 @@ namespace IM_System.Model
         {
             // Convert the pressed key to uppercase
             e.KeyChar = char.ToUpper(e.KeyChar);
+        }
+        // Method to check if the category name already exists in the database
+        private bool IsCategoryDuplicate(string categoryName, int categoryId)
+        {
+            string qry = "SELECT COUNT(*) FROM Category WHERE catName = @categoryName AND catID != @categoryId";
+            int count = 0;
+
+            using (SqlCommand cmd = new SqlCommand(qry, MainClass.con))
+            {
+                cmd.Parameters.AddWithValue("@categoryName", categoryName);
+                cmd.Parameters.AddWithValue("@categoryId", categoryId);
+
+                MainClass.con.Open();
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+                MainClass.con.Close();
+            }
+
+            return count > 0;
         }
     }
 }

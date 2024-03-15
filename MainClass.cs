@@ -185,7 +185,7 @@ namespace IM_System
         {
             bool isValid = true;
 
-            // Remove any existing "Required" label from the form
+            // Remove the "Required" label if any text or information is entered into the form fields
             RemoveRequiredLabel(F);
 
             foreach (Control c in F.Controls)
@@ -197,6 +197,7 @@ namespace IM_System
                     requiredLabel.ForeColor = Color.Red;
                     requiredLabel.AutoSize = true;
                     requiredLabel.Location = new Point(c.Right - 65, c.Top - 20);
+                    requiredLabel.Name = "requiredLabel"; // Assign a unique name to the label
 
                     // For Text Box
                     if (c is Guna.UI2.WinForms.Guna2TextBox)
@@ -240,21 +241,29 @@ namespace IM_System
                 }
             }
 
+
             return isValid;
         }
 
-        // Method to remove the "Required" label from the form
+        // Method to remove all instances of the "Required" label from the form
         private static void RemoveRequiredLabel(Form form)
         {
+            List<Control> labelsToRemove = new List<Control>();
+
             foreach (Control c in form.Controls)
             {
                 if (c is Label && c.Text == "Required")
                 {
-                    form.Controls.Remove(c);
-                    break; // Exit the loop once the label is removed
+                    labelsToRemove.Add(c);
                 }
             }
+
+            foreach (Control c in labelsToRemove)
+            {
+                form.Controls.Remove(c);
+            }
         }
+
 
 
     }

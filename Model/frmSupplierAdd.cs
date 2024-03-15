@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace IM_System.Model
 {
@@ -31,6 +32,15 @@ namespace IM_System.Model
             }
             else
             {
+                // Check for duplicate supplier name
+                if (IsSupplierNameDuplicate(txtName.Text.Trim(), id))
+                {
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                    guna2MessageDialog1.Show("Supplier name already exists");
+                    return;
+                }
+
                 string qry = "";
                 if (id == 0)//Insert
                 {
@@ -76,6 +86,24 @@ namespace IM_System.Model
             }
         }
 
+        // Method to check if the supplier name already exists in the database
+        private bool IsSupplierNameDuplicate(string supplierName, int supplierId)
+        {
+            string qry = "SELECT COUNT(*) FROM Supplier WHERE supName = @supplierName AND supID != @supplierId";
+            int count = 0;
+
+            using (SqlCommand cmd = new SqlCommand(qry, MainClass.con))
+            {
+                cmd.Parameters.AddWithValue("@supplierName", supplierName);
+                cmd.Parameters.AddWithValue("@supplierId", supplierId);
+
+                MainClass.con.Open();
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+                MainClass.con.Close();
+            }
+
+            return count > 0;
+        }
         public virtual void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

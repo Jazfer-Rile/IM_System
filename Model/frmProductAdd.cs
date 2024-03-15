@@ -45,24 +45,31 @@ namespace IM_System
             }
             else
             {
+                // Check for product duplication
+                if (IsProductDuplicate(txtName.Text.Trim(), id))
+                {
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                    guna2MessageDialog1.Show("Product name already exists");
+                    return;
+                }
+
+                // Continue with saving data if no duplication
                 string qry = "";
                 if (id == 0)//Insert
                 {
                     qry = @"INSERT INTO Product (pName, pCatID, pBarcode, pCost, pPrice, reorder, pImage) VALUES (@name, @pCatID, @barcode, @cost, @saleprice, @reorder, @image)";
-
                 }
                 else //update
                 {
                     qry = @"UPDATE Product SET pName = @name,
-                          pCatID = @pCatID,
-                          pBarcode = @barcode,
-                          pCost = @cost,
-                          pPrice = @saleprice,
-                          reorder = @reorder,
-                          pImage = @image
-                          WHERE proID = @id";
-
-
+                      pCatID = @pCatID,
+                      pBarcode = @barcode,
+                      pCost = @cost,
+                      pPrice = @saleprice,
+                      reorder = @reorder,
+                      pImage = @image
+                      WHERE proID = @id";
                 }
                 Image temp = new Bitmap(txtPic.Image);
                 MemoryStream ms = new MemoryStream();
@@ -101,6 +108,25 @@ namespace IM_System
 
             }
         }
+        // Method to check if the product name already exists in the database
+        private bool IsProductDuplicate(string productName, int productId)
+        {
+            string qry = "SELECT COUNT(*) FROM Product WHERE pName = @productName AND proID != @productId";
+            int count = 0;
+
+            using (SqlCommand cmd = new SqlCommand(qry, MainClass.con))
+            {
+                cmd.Parameters.AddWithValue("@productName", productName);
+                cmd.Parameters.AddWithValue("@productId", productId);
+
+                MainClass.con.Open();
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+                MainClass.con.Close();
+            }
+
+            return count > 0;
+        }
+
         public string filePath = "";
         Byte[] imageByteArray;
 

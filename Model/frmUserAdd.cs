@@ -40,6 +40,15 @@ namespace IM_System.Model
             }
             else
             {
+                // Check for duplicate username
+                if (IsUsernameDuplicate(txtUser.Text.Trim(), id))
+                {
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                    guna2MessageDialog1.Show("Username already exists");
+                    return;
+                }
+
                 string qry = "";
                 if (id == 0)//Insert
                 {
@@ -90,6 +99,24 @@ namespace IM_System.Model
 
 
             }
+        }
+        // Method to check if the username already exists in the database
+        private bool IsUsernameDuplicate(string username, int userId)
+        {
+            string qry = "SELECT COUNT(*) FROM Users WHERE Uusername = @username AND userID != @userId";
+            int count = 0;
+
+            using (SqlCommand cmd = new SqlCommand(qry, MainClass.con))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@userId", userId);
+
+                MainClass.con.Open();
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+                MainClass.con.Close();
+            }
+
+            return count > 0;
         }
 
         public string filePath = "";
