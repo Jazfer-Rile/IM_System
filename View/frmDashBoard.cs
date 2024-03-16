@@ -22,6 +22,7 @@ namespace IM_System.View
         
             lblTotalProduct.Text = GetTotalProductCount().ToString("#,##0");
             lblStockOnHand.Text = GetTotalStockOnHand().ToString("#,##0");
+            lblCriticalItems.Text = GetTotalCriticalItemsCount().ToString("#,##0");
 
         }
         private int GetTotalProductCount()
@@ -43,9 +44,12 @@ namespace IM_System.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                guna2MessageDialog1.Show("An error occurred: " + ex.Message);
                 return 0; // Return 0 in case of an error
             }
+
 
         }
         private int GetTotalStockOnHand()
@@ -86,10 +90,41 @@ namespace IM_System.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                guna2MessageDialog1.Show("An error occurred: " + ex.Message);
+                return 0; // Return 0 in case of an error
+            }
+
+        }
+        private int GetTotalCriticalItemsCount()
+        {
+            try
+            {
+                // Open a connection using the connection string from MainClass
+                using (SqlConnection con = new SqlConnection(MainClass.con_string))
+                {
+                    con.Open();
+
+                    // Create a SqlCommand to execute the SQL query
+                    using (SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM vwCriticalItems", con))
+                    {
+                        // Execute the query and return the result
+                        return Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Display error message using Guna2MessageDialog
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                guna2MessageDialog1.Show("An error occurred: " + ex.Message);
                 return 0; // Return 0 in case of an error
             }
         }
+
+
 
 
 
