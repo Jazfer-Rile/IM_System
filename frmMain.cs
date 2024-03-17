@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
-
+using System.Data.SqlClient;
 
 namespace IM_System
 {
     public partial class frmMain : Form
     {
         static frmMain _obj;
+        
        
         public static frmMain Instance
         {
@@ -45,7 +46,8 @@ namespace IM_System
             guna2CirclePictureBox1.Image = MainClass.img;
 
             btnDashBoard.PerformClick();
-            
+            Noti();
+
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -135,5 +137,43 @@ namespace IM_System
         {
             this.Close();
         }
+        // Noti Alert for critical items
+        public void Noti()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(MainClass.con_string))
+                {
+                    con.Open();
+                    int i = 0;
+                    using (SqlCommand cm = new SqlCommand("SELECT * FROM vwCriticalItems", con))
+                    {
+                        using (SqlDataReader dr = cm.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                i++;
+                                Alert alert = new Alert(this);
+                                alert.lblproID.Text = dr["proID"].ToString();
+
+                                // Set stock value to the new label
+                                alert.lblStock.Text = dr["Stock"].ToString();
+
+                                alert.btnReorder.Enabled = true;
+                                alert.showAlert(i + ". " + dr["pName"].ToString()); // Only pass product name as parameter
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                guna2MessageDialog1.Show("An error occurred: " + ex.Message);
+            }
+        }
+
     }
 }
