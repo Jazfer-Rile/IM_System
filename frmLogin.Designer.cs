@@ -58,9 +58,9 @@
             // 
             // guna2VSeparator1
             // 
-            this.guna2VSeparator1.Location = new System.Drawing.Point(473, 87);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(472, 42);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 357);
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 442);
             this.guna2VSeparator1.TabIndex = 23;
             // 
             // guna2Button2
@@ -74,7 +74,7 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(758, 281);
+            this.guna2Button2.Location = new System.Drawing.Point(757, 295);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(30, 30);
             this.guna2Button2.TabIndex = 19;
@@ -91,7 +91,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.FillColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(532, 330);
+            this.btnLogin.Location = new System.Drawing.Point(531, 346);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(267, 45);
             this.btnLogin.TabIndex = 18;
@@ -111,10 +111,11 @@
             this.txtUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtUser.ForeColor = System.Drawing.Color.DimGray;
             this.txtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUser.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtUser.IconLeft")));
             this.txtUser.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.txtUser.Location = new System.Drawing.Point(532, 213);
+            this.txtUser.Location = new System.Drawing.Point(531, 229);
             this.txtUser.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
@@ -129,7 +130,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(526, 163);
+            this.label1.Location = new System.Drawing.Point(525, 179);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 32);
             this.label1.TabIndex = 22;
@@ -139,7 +140,7 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(70, 35);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(69, 51);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(335, 445);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,7 +158,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(758, 281);
+            this.guna2Button3.Location = new System.Drawing.Point(757, 295);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(30, 30);
             this.guna2Button3.TabIndex = 20;
@@ -177,10 +178,11 @@
             this.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.txtPass.ForeColor = System.Drawing.Color.DimGray;
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPass.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPass.IconLeft")));
             this.txtPass.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.txtPass.Location = new System.Drawing.Point(532, 273);
+            this.txtPass.Location = new System.Drawing.Point(531, 289);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 9, 4, 9);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '●';

@@ -304,7 +304,7 @@
             this.btnDashBoard.Name = "btnDashBoard";
             this.btnDashBoard.Size = new System.Drawing.Size(214, 65);
             this.btnDashBoard.TabIndex = 0;
-            this.btnDashBoard.Text = "Dash Board";
+            this.btnDashBoard.Text = "Dashboard";
             this.btnDashBoard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashBoard.TextOffset = new System.Drawing.Point(20, 0);
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);

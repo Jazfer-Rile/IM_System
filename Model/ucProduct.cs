@@ -16,11 +16,27 @@ namespace IM_System.Model
         public ucProduct()
         {
             InitializeComponent();
+            // MouseEnter and MouseLeave events for the PictureBox
+            txtPic.MouseEnter += txtPic_MouseEnter;
+            txtPic.MouseLeave += txtPic_MouseLeave;
         }
 
         private void txtPic_Click(object sender, EventArgs e)
         {
             onSelect?.Invoke(this, e);
+        }
+        private void txtPic_MouseEnter(object sender, EventArgs e)
+        {
+            // Change the border color when mouse enters
+            txtPic.BorderStyle = BorderStyle.FixedSingle;
+            txtPic.BackColor = Color.LightGray;
+        }
+
+        private void txtPic_MouseLeave(object sender, EventArgs e)
+        {
+            // Change the border color when mouse leaves
+            txtPic.BorderStyle = BorderStyle.None;
+            txtPic.BackColor = Color.Transparent;
         }
 
         public int id { get; set; }
