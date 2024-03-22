@@ -441,6 +441,7 @@
             this.dgvPrice.MinimumWidth = 70;
             this.dgvPrice.Name = "dgvPrice";
             this.dgvPrice.ReadOnly = true;
+            this.dgvPrice.Visible = false;
             this.dgvPrice.Width = 70;
             // 
             // dgvAmount
@@ -451,6 +452,7 @@
             this.dgvAmount.MinimumWidth = 70;
             this.dgvAmount.Name = "dgvAmount";
             this.dgvAmount.ReadOnly = true;
+            this.dgvAmount.Visible = false;
             this.dgvAmount.Width = 70;
             // 
             // dgvCost
