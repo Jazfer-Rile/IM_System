@@ -141,6 +141,7 @@ namespace IM_System.View
             this.btnStock.Size = new System.Drawing.Size(124, 45);
             this.btnStock.TabIndex = 6;
             this.btnStock.Text = "Stock Balance";
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnProductList
             // 
@@ -166,6 +167,7 @@ namespace IM_System.View
             this.btnProductList.Size = new System.Drawing.Size(124, 45);
             this.btnProductList.TabIndex = 4;
             this.btnProductList.Text = "Product List";
+            this.btnProductList.Click += new System.EventHandler(this.btnProductList_Click);
             // 
             // guna2Button4
             // 
