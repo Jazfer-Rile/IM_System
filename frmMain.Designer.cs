@@ -46,7 +46,6 @@
             this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnSales = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.CenterPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -145,7 +144,6 @@
             this.guna2Panel3.Controls.Add(this.btnReport);
             this.guna2Panel3.Controls.Add(this.btnUser);
             this.guna2Panel3.Controls.Add(this.btnSales);
-            this.guna2Panel3.Controls.Add(this.btnCustomer);
             this.guna2Panel3.Controls.Add(this.btnProduct);
             this.guna2Panel3.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel3.CustomizableEdges.BottomLeft = false;
@@ -177,7 +175,7 @@
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnLogout.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogout.Location = new System.Drawing.Point(3, 835);
+            this.btnLogout.Location = new System.Drawing.Point(3, 764);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(214, 65);
             this.btnLogout.TabIndex = 1;
@@ -328,7 +326,7 @@
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReport.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnReport.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnReport.Location = new System.Drawing.Point(3, 764);
+            this.btnReport.Location = new System.Drawing.Point(3, 693);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(214, 65);
             this.btnReport.TabIndex = 0;
@@ -356,7 +354,7 @@
             this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUser.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnUser.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnUser.Location = new System.Drawing.Point(3, 693);
+            this.btnUser.Location = new System.Drawing.Point(3, 622);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(214, 65);
             this.btnUser.TabIndex = 0;
@@ -384,7 +382,7 @@
             this.btnSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSales.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSales.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSales.Location = new System.Drawing.Point(3, 622);
+            this.btnSales.Location = new System.Drawing.Point(3, 551);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(214, 65);
             this.btnSales.TabIndex = 0;
@@ -392,34 +390,6 @@
             this.btnSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSales.TextOffset = new System.Drawing.Point(20, 0);
             this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
-            // 
-            // btnCustomer
-            // 
-            this.btnCustomer.Animated = true;
-            this.btnCustomer.AutoRoundedCorners = true;
-            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnCustomer.BorderRadius = 31;
-            this.btnCustomer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
-            this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnCustomer.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnCustomer.Location = new System.Drawing.Point(3, 551);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(214, 65);
-            this.btnCustomer.TabIndex = 0;
-            this.btnCustomer.Text = "Customers";
-            this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomer.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnProduct
             // 
@@ -521,7 +491,6 @@
         private Guna.UI2.WinForms.Guna2Button btnReport;
         private Guna.UI2.WinForms.Guna2Button btnUser;
         private Guna.UI2.WinForms.Guna2Button btnSales;
-        private Guna.UI2.WinForms.Guna2Button btnCustomer;
         private Guna.UI2.WinForms.Guna2Button btnPurchase;
         private Guna.UI2.WinForms.Guna2Button btnProduct;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
