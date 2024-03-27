@@ -38,11 +38,13 @@ namespace IM_System.View
             lb.Items.Add(dgvCustomer);
             lb.Items.Add(dgvAmount);
 
-            string qry = @"select dMainID , mDate , m.mSupCusID,c.cusName, SUM(d.amount) from tblMain m
-                            inner join tblDetails d on d.dMainID = m.MainID
-                            inner join Customer c on c.cusID = m.mSupCusID
-                            where m.mType = 'SAL' and cusName like '%" + txtSearch.Text + "%'" +
-                            " group by dMainID , mDate , m.mSupCusID,c.cusName";
+            string qry = @"SELECT m.MainID, m.mDate, m.mSupCusID, c.cusName, COALESCE(SUM(d.amount), 0) AS totalAmount
+                            FROM tblMain m
+                            LEFT JOIN tblDetails d ON d.dMainID = m.MainID
+                            LEFT JOIN Customer c ON c.cusID = m.mSupCusID
+                            WHERE m.mType = 'SAL'
+                            GROUP BY m.MainID, m.mDate, m.mSupCusID, c.cusName
+                            ";
 
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);

@@ -386,7 +386,7 @@
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(214, 65);
             this.btnSales.TabIndex = 0;
-            this.btnSales.Text = "Sales";
+            this.btnSales.Text = "Stocks";
             this.btnSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSales.TextOffset = new System.Drawing.Point(20, 0);
             this.btnSales.Click += new System.EventHandler(this.btnSales_Click);

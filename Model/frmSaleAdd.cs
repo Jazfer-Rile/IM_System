@@ -26,19 +26,24 @@ namespace IM_System.Model
 
         private void frmSaleAdd_Load(object sender, EventArgs e)
         {
-
             string qry = @"Select cusID 'id' , cusName 'name' from Customer";
             MainClass.CBFill(qry, cbCustomer);
 
-            if (cusID >0)
+            if (cusID > 0)
             {
                 cbCustomer.SelectedValue = cusID;
                 LoadForEdit();
                 GrandTotal();
             }
+            else
+            {
+                // Handle case where cusID is 0 or not set
+                LoadForEditWithoutCustomer();
+                GrandTotal();
+            }
             loadProductsFromDatabase();
         }
-        
+
         public void AddItems(string id, string name, string price, Image pimage, string cost, int stock)
         {
             var w = new ucProduct()
@@ -147,12 +152,16 @@ namespace IM_System.Model
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            foreach(var item in flowLayoutPanel1.Controls)
+            foreach (Control ctrl in flowLayoutPanel1.Controls)
             {
-                var pro =(ucProduct)item;
-                pro.Visible = pro.PName.ToLower().Contains(txtSearch.Text.ToLower());
+                if (ctrl is ucProduct)
+                {
+                    ucProduct pro = (ucProduct)ctrl;
+                    pro.Visible = pro.PName.ToLower().Contains(txtSearch.Text.ToLower());
+                }
             }
         }
+
         private void txtBarcode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -279,7 +288,7 @@ namespace IM_System.Model
         }
         private void LoadForEdit()
         {
-            string qry = "Select * from tblDetails inner join product on proID= productID where dMainID = " + id + " ";
+            string qry = "SELECT * FROM tblDetails INNER JOIN Product ON proID = productID WHERE dMainID = " + id;
             SqlCommand cmd = new SqlCommand(qry, MainClass.con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -306,6 +315,41 @@ namespace IM_System.Model
                 guna2DataGridView1.Rows.Add(did, pid, pname, qty, cost, amt, cost);
             }
         }
+
+        private void LoadForEditWithoutCustomer()
+        {
+            string qry = @"SELECT d.detailID, d.productID AS proID, p.pName, d.qty, d.price, d.amount, d.cost
+                   FROM tblDetails d
+                   INNER JOIN Product p ON d.productID = p.proID
+                   WHERE d.dMainID = " + id;
+
+            SqlCommand cmd = new SqlCommand(qry, MainClass.con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string did;
+                string pid;
+                string pname;
+                string qty;
+                string cost;
+                string amt;
+
+                did = row["detailID"].ToString();
+                pname = row["pName"].ToString();
+                pid = row["proID"].ToString();
+                qty = row["qty"].ToString();
+                cost = row["price"].ToString();
+                amt = row["amount"].ToString();
+                cost = row["cost"].ToString();
+
+                // Add data to DataGridView
+                guna2DataGridView1.Rows.Add(did, pid, pname, qty, cost, amt, cost);
+            }
+        }
+
 
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
