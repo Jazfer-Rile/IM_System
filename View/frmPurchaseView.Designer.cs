@@ -47,6 +47,7 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -297,12 +298,34 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Purchases List";
             // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2VScrollBar1.AutoRoundedCorners = true;
+            this.guna2VScrollBar1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.BindingContainer = this.guna2DataGridView1;
+            this.guna2VScrollBar1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.BorderRadius = 4;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 110;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(862, 148);
+            this.guna2VScrollBar1.Minimum = 1;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 10;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 284);
+            this.guna2VScrollBar1.TabIndex = 12;
+            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            this.guna2VScrollBar1.Value = 1;
+            // 
             // frmPurchaseView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(900, 516);
+            this.Controls.Add(this.guna2VScrollBar1);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
@@ -336,5 +359,6 @@
         public Guna.UI2.WinForms.Guna2TextBox txtSearch;
         public Guna.UI2.WinForms.Guna2Button btnAdd;
         public System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }
