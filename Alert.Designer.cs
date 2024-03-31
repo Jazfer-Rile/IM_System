@@ -34,11 +34,11 @@ namespace IM_System
             this.lblproID = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblStock = new System.Windows.Forms.Label();
             this.lblMsg = new System.Windows.Forms.Label();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReorder = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClearAll = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lblStock = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,26 +58,38 @@ namespace IM_System
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.btnClearAll);
             this.guna2Panel1.Controls.Add(this.lblStock);
             this.guna2Panel1.Controls.Add(this.lblMsg);
             this.guna2Panel1.Controls.Add(this.btnClose);
-            this.guna2Panel1.Controls.Add(this.btnReorder);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(370, 75);
             this.guna2Panel1.TabIndex = 9;
             // 
+            // lblStock
+            // 
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.ForeColor = System.Drawing.Color.White;
+            this.lblStock.Location = new System.Drawing.Point(258, 8);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(67, 57);
+            this.lblStock.TabIndex = 11;
+            this.lblStock.Text = "0000";
+            this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblMsg
             // 
+            this.lblMsg.BackColor = System.Drawing.Color.Transparent;
             this.lblMsg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMsg.ForeColor = System.Drawing.Color.White;
-            this.lblMsg.Location = new System.Drawing.Point(46, 8);
+            this.lblMsg.Location = new System.Drawing.Point(12, 6);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(206, 57);
+            this.lblMsg.Size = new System.Drawing.Size(240, 60);
             this.lblMsg.TabIndex = 10;
             this.lblMsg.Text = "Message Text";
-            this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnClose
             // 
@@ -97,38 +109,32 @@ namespace IM_System
             this.btnClose.TabIndex = 9;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnReorder
+            // btnClearAll
             // 
-            this.btnReorder.Animated = true;
-            this.btnReorder.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReorder.BackgroundImage")));
-            this.btnReorder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReorder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReorder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReorder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReorder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReorder.FillColor = System.Drawing.Color.Transparent;
-            this.btnReorder.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReorder.ForeColor = System.Drawing.Color.White;
-            this.btnReorder.Location = new System.Drawing.Point(3, 7);
-            this.btnReorder.Name = "btnReorder";
-            this.btnReorder.Size = new System.Drawing.Size(37, 58);
-            this.btnReorder.TabIndex = 8;
+            this.btnClearAll.Animated = true;
+            this.btnClearAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearAll.BorderColor = System.Drawing.Color.White;
+            this.btnClearAll.BorderRadius = 7;
+            this.btnClearAll.BorderThickness = 1;
+            this.btnClearAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearAll.FillColor = System.Drawing.Color.Transparent;
+            this.btnClearAll.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearAll.ForeColor = System.Drawing.Color.White;
+            this.btnClearAll.Location = new System.Drawing.Point(245, 0);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(89, 23);
+            this.btnClearAll.TabIndex = 8;
+            this.btnClearAll.Text = "Clear All";
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // lblStock
-            // 
-            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.ForeColor = System.Drawing.Color.White;
-            this.lblStock.Location = new System.Drawing.Point(258, 7);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(67, 57);
-            this.lblStock.TabIndex = 11;
-            this.lblStock.Text = "0000";
-            this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Alert
             // 
@@ -157,7 +163,7 @@ namespace IM_System
         public System.Windows.Forms.Label lblMsg;
         private Guna.UI2.WinForms.Guna2Button btnClose;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        public Guna.UI2.WinForms.Guna2Button btnReorder;
+        public Guna.UI2.WinForms.Guna2Button btnClearAll;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         public System.Windows.Forms.Label lblStock;
     }

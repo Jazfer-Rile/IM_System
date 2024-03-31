@@ -107,7 +107,7 @@
             this.guna2CustomGradientPanel1.CustomizableEdges.BottomRight = false;
             this.guna2CustomGradientPanel1.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.MediumSeaGreen;
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.MediumSeaGreen;
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Black;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(3, 3);
@@ -126,7 +126,7 @@
             this.guna2CustomGradientPanel3.CustomizableEdges.BottomRight = false;
             this.guna2CustomGradientPanel3.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.Crimson;
-            this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.Crimson;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.Crimson;
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.Black;
             this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(569, 3);
@@ -197,7 +197,7 @@
             this.guna2CustomGradientPanel2.CustomizableEdges.BottomRight = false;
             this.guna2CustomGradientPanel2.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.DarkTurquoise;
-            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.DarkTurquoise;
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.DarkTurquoise;
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.Black;
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(286, 3);

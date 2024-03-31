@@ -44,8 +44,6 @@
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Controls.Add(this.label2);
             this.guna2ShadowPanel1.Controls.Add(this.lblStock);
-            this.guna2ShadowPanel1.Controls.Add(this.label1);
-            this.guna2ShadowPanel1.Controls.Add(this.lblPrice);
             this.guna2ShadowPanel1.Controls.Add(this.lblPName);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(44)))), ((int)(((byte)(54)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(3, 53);
@@ -59,45 +57,47 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 100);
+            this.label2.Location = new System.Drawing.Point(13, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 32);
+            this.label2.Size = new System.Drawing.Size(120, 32);
             this.label2.TabIndex = 5;
             this.label2.Text = "Stocks :";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblStock
             // 
-            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.ForeColor = System.Drawing.Color.White;
-            this.lblStock.Location = new System.Drawing.Point(84, 100);
+            this.lblStock.Location = new System.Drawing.Point(24, 143);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(60, 32);
+            this.lblStock.Size = new System.Drawing.Size(101, 32);
             this.lblStock.TabIndex = 4;
             this.lblStock.Text = "000.0";
-            this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 139);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(5, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "₱";
+            this.label1.Visible = false;
             // 
             // lblPrice
             // 
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(44, 135);
+            this.lblPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblPrice.Location = new System.Drawing.Point(26, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(75, 40);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "0000";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrice.Visible = false;
             // 
             // lblPName
             // 
@@ -131,12 +131,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.txtPic);
             this.Controls.Add(this.guna2ShadowPanel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPrice);
             this.Name = "ucProduct";
             this.Size = new System.Drawing.Size(153, 240);
             this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

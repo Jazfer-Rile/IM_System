@@ -106,6 +106,18 @@ namespace IM_System
             action = enmAction.close;
         }
 
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            // Create a copy of the list of open forms
+            List<Form> formsToClose = new List<Form>(Application.OpenForms.OfType<Alert>());
+
+            // Close all instances of the Alert form
+            foreach (Form form in formsToClose)
+            {
+                form.Close();
+            }
+        }
+
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);

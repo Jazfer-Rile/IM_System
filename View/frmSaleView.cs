@@ -36,16 +36,25 @@ namespace IM_System.View
             lb.Items.Add(dgvdate);
             lb.Items.Add(dgvCusID);
             lb.Items.Add(dgvCustomer);
-            lb.Items.Add(dgvAmount);
+            //lb.Items.Add(dgvAmount);
+            lb.Items.Add(dgvQuantity);
 
-            string qry = @"SELECT m.MainID, m.mDate, m.mSupCusID, c.cusName, COALESCE(SUM(d.amount), 0) AS totalAmount
+            string qry = @"SELECT m.MainID, m.mDate, m.mSupCusID, c.cusName, 
+                           COALESCE(SUM(d.qty), 0) AS totalQuantity
                             FROM tblMain m
                             LEFT JOIN tblDetails d ON d.dMainID = m.MainID
                             LEFT JOIN Customer c ON c.cusID = m.mSupCusID
                             WHERE m.mType = 'SAL'
                             GROUP BY m.MainID, m.mDate, m.mSupCusID, c.cusName
                             ";
-
+            //string qry = @"SELECT m.MainID, m.mDate, m.mSupCusID, c.cusName, 
+            //               COALESCE(SUM(d.amount), 0) AS totalAmount
+            //                FROM tblMain m
+            //                LEFT JOIN tblDetails d ON d.dMainID = m.MainID
+            //                LEFT JOIN Customer c ON c.cusID = m.mSupCusID
+            //                WHERE m.mType = 'SAL'
+            //                GROUP BY m.MainID, m.mDate, m.mSupCusID, c.cusName
+            //                ";
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
         }

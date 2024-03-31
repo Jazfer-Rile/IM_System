@@ -200,23 +200,26 @@ namespace IM_System.Model
 
                 if (did == 0) // insert
                 {
-                    qry2 = @"INSERT INTO tblDetails VALUES (@mID, @proID, @qty, @price, @amount, @cost)";
-
+                    qry2 = @"INSERT INTO tblDetails (dMainID, productID, qty) VALUES (@mID, @proID, @qty)";
+                    //qry2 = @"INSERT INTO tblDetails VALUES (@mID, @proID, @qty, @price, @amount, @cost)";
                 }
                 else
                 {
                     qry2 = @"UPDATE tblDetails SET dMainID = @mID, productID = @proID,
-                     qty = @qty, price = @price, amount = @amount, cost = @cost
-                     WHERE detailID = @id";
+                             qty = @qty
+                             WHERE detailID = @id";
+                    //qry2 = @"UPDATE tblDetails SET dMainID = @mID, productID = @proID,
+                    // qty = @qty, price = @price, amount = @amount, cost = @cost
+                    // WHERE detailID = @id";
                 }
                 SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
                 cmd2.Parameters.AddWithValue("@id", did);
                 cmd2.Parameters.AddWithValue("@mID", mainID);
                 cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproid"].Value));
                 cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvqty"].Value));
-                cmd2.Parameters.AddWithValue("@price", Convert.ToInt32(row.Cells["dgvCost"].Value));
-                cmd2.Parameters.AddWithValue("@amount", Convert.ToInt32(row.Cells["dgvAmount"].Value));
-                cmd2.Parameters.AddWithValue("@cost", Convert.ToInt32(row.Cells["dgvCost"].Value));
+                //cmd2.Parameters.AddWithValue("@price", Convert.ToInt32(row.Cells["dgvCost"].Value));
+                //cmd2.Parameters.AddWithValue("@amount", Convert.ToInt32(row.Cells["dgvAmount"].Value));
+                //cmd2.Parameters.AddWithValue("@cost", Convert.ToInt32(row.Cells["dgvCost"].Value));
                 record += cmd2.ExecuteNonQuery();
 
                 

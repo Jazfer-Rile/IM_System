@@ -235,7 +235,7 @@
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(214, 65);
             this.btnPurchase.TabIndex = 0;
-            this.btnPurchase.Text = "Purchases";
+            this.btnPurchase.Text = "Stock In";
             this.btnPurchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPurchase.TextOffset = new System.Drawing.Point(20, 0);
             this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);

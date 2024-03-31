@@ -159,7 +159,7 @@ namespace IM_System
                                 // Set stock value to the new label
                                 alert.lblStock.Text = dr["Stock"].ToString();
 
-                                alert.btnReorder.Enabled = true;
+                                alert.btnClearAll.Enabled = true;
                                 alert.showAlert(i + ". " + dr["pName"].ToString()); // Only pass product name as parameter
                             }
                         }

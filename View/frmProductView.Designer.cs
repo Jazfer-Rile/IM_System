@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductView));
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,12 +51,6 @@
             this.dgvReorder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,19 +68,19 @@
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
             this.guna2DataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeight = 35;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -95,14 +95,14 @@
             this.dgvReorder,
             this.dgvEdit,
             this.dgvDel});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(30, 148);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -134,98 +134,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
-            // 
-            // dgvSr
-            // 
-            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSr.FillWeight = 70F;
-            this.dgvSr.HeaderText = "Sr #";
-            this.dgvSr.MinimumWidth = 70;
-            this.dgvSr.Name = "dgvSr";
-            this.dgvSr.ReadOnly = true;
-            this.dgvSr.Width = 70;
-            // 
-            // dgvid
-            // 
-            this.dgvid.HeaderText = "id";
-            this.dgvid.MinimumWidth = 6;
-            this.dgvid.Name = "dgvid";
-            this.dgvid.ReadOnly = true;
-            this.dgvid.Visible = false;
-            // 
-            // dgvname
-            // 
-            this.dgvname.HeaderText = "Name";
-            this.dgvname.MinimumWidth = 6;
-            this.dgvname.Name = "dgvname";
-            this.dgvname.ReadOnly = true;
-            // 
-            // dgvcatID
-            // 
-            this.dgvcatID.HeaderText = "catid";
-            this.dgvcatID.MinimumWidth = 6;
-            this.dgvcatID.Name = "dgvcatID";
-            this.dgvcatID.ReadOnly = true;
-            this.dgvcatID.Visible = false;
-            // 
-            // dgvCategory
-            // 
-            this.dgvCategory.HeaderText = "Category";
-            this.dgvCategory.MinimumWidth = 6;
-            this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.ReadOnly = true;
-            // 
-            // dgvbarcode
-            // 
-            this.dgvbarcode.HeaderText = "Barcode";
-            this.dgvbarcode.MinimumWidth = 6;
-            this.dgvbarcode.Name = "dgvbarcode";
-            this.dgvbarcode.ReadOnly = true;
-            // 
-            // dgvCost
-            // 
-            this.dgvCost.HeaderText = "Cost";
-            this.dgvCost.MinimumWidth = 6;
-            this.dgvCost.Name = "dgvCost";
-            this.dgvCost.ReadOnly = true;
-            // 
-            // dgvSale
-            // 
-            this.dgvSale.HeaderText = "Sale Price";
-            this.dgvSale.MinimumWidth = 6;
-            this.dgvSale.Name = "dgvSale";
-            this.dgvSale.ReadOnly = true;
-            // 
-            // dgvReorder
-            // 
-            this.dgvReorder.HeaderText = "Re-Order";
-            this.dgvReorder.MinimumWidth = 6;
-            this.dgvReorder.Name = "dgvReorder";
-            this.dgvReorder.ReadOnly = true;
-            // 
-            // dgvEdit
-            // 
-            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvEdit.FillWeight = 50F;
-            this.dgvEdit.HeaderText = "";
-            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
-            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvEdit.MinimumWidth = 50;
-            this.dgvEdit.Name = "dgvEdit";
-            this.dgvEdit.ReadOnly = true;
-            this.dgvEdit.Width = 50;
-            // 
-            // dgvDel
-            // 
-            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDel.FillWeight = 50F;
-            this.dgvDel.HeaderText = "";
-            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
-            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvDel.MinimumWidth = 50;
-            this.dgvDel.Name = "dgvDel";
-            this.dgvDel.ReadOnly = true;
-            this.dgvDel.Width = 50;
             // 
             // guna2VScrollBar1
             // 
@@ -346,6 +254,101 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Product List";
             // 
+            // dgvSr
+            // 
+            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSr.FillWeight = 70F;
+            this.dgvSr.HeaderText = "Sr #";
+            this.dgvSr.MinimumWidth = 70;
+            this.dgvSr.Name = "dgvSr";
+            this.dgvSr.ReadOnly = true;
+            this.dgvSr.Width = 70;
+            // 
+            // dgvid
+            // 
+            this.dgvid.HeaderText = "id";
+            this.dgvid.MinimumWidth = 6;
+            this.dgvid.Name = "dgvid";
+            this.dgvid.ReadOnly = true;
+            this.dgvid.Visible = false;
+            // 
+            // dgvname
+            // 
+            this.dgvname.HeaderText = "Name";
+            this.dgvname.MinimumWidth = 6;
+            this.dgvname.Name = "dgvname";
+            this.dgvname.ReadOnly = true;
+            // 
+            // dgvcatID
+            // 
+            this.dgvcatID.HeaderText = "catid";
+            this.dgvcatID.MinimumWidth = 6;
+            this.dgvcatID.Name = "dgvcatID";
+            this.dgvcatID.ReadOnly = true;
+            this.dgvcatID.Visible = false;
+            // 
+            // dgvCategory
+            // 
+            this.dgvCategory.HeaderText = "Category";
+            this.dgvCategory.MinimumWidth = 6;
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.ReadOnly = true;
+            // 
+            // dgvbarcode
+            // 
+            this.dgvbarcode.HeaderText = "Barcode";
+            this.dgvbarcode.MinimumWidth = 6;
+            this.dgvbarcode.Name = "dgvbarcode";
+            this.dgvbarcode.ReadOnly = true;
+            // 
+            // dgvCost
+            // 
+            this.dgvCost.HeaderText = "Cost";
+            this.dgvCost.MinimumWidth = 6;
+            this.dgvCost.Name = "dgvCost";
+            this.dgvCost.ReadOnly = true;
+            this.dgvCost.Visible = false;
+            // 
+            // dgvSale
+            // 
+            this.dgvSale.HeaderText = "Sale Price";
+            this.dgvSale.MinimumWidth = 6;
+            this.dgvSale.Name = "dgvSale";
+            this.dgvSale.ReadOnly = true;
+            this.dgvSale.Visible = false;
+            // 
+            // dgvReorder
+            // 
+            this.dgvReorder.FillWeight = 50F;
+            this.dgvReorder.HeaderText = "Re-Order";
+            this.dgvReorder.MinimumWidth = 50;
+            this.dgvReorder.Name = "dgvReorder";
+            this.dgvReorder.ReadOnly = true;
+            // 
+            // dgvEdit
+            // 
+            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvEdit.FillWeight = 50F;
+            this.dgvEdit.HeaderText = "";
+            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
+            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvEdit.MinimumWidth = 50;
+            this.dgvEdit.Name = "dgvEdit";
+            this.dgvEdit.ReadOnly = true;
+            this.dgvEdit.Width = 50;
+            // 
+            // dgvDel
+            // 
+            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDel.FillWeight = 50F;
+            this.dgvDel.HeaderText = "";
+            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
+            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvDel.MinimumWidth = 50;
+            this.dgvDel.Name = "dgvDel";
+            this.dgvDel.ReadOnly = true;
+            this.dgvDel.Width = 50;
+            // 
             // frmProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -373,6 +376,12 @@
         #endregion
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         public Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
+        public Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        public System.Windows.Forms.Label label2;
+        public Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        public Guna.UI2.WinForms.Guna2Button btnAdd;
+        public System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSr;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvname;
@@ -384,11 +393,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvReorder;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
-        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
-        public Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        public System.Windows.Forms.Label label2;
-        public Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        public Guna.UI2.WinForms.Guna2Button btnAdd;
-        public System.Windows.Forms.Label label1;
     }
 }

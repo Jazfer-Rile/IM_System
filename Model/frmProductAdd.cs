@@ -53,23 +53,38 @@ namespace IM_System
                     guna2MessageDialog1.Show("Product name already exists");
                     return;
                 }
+                // Check for barcode duplication
+                if (IsBarcodeDuplicate(txtBarcode.Text.Trim(), id))
+                {
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                    guna2MessageDialog1.Show("Barcode already exists");
+                    return;
+                }
 
                 // Continue with saving data if no duplication
                 string qry = "";
                 if (id == 0)//Insert
                 {
-                    qry = @"INSERT INTO Product (pName, pCatID, pBarcode, pCost, pPrice, reorder, pImage) VALUES (@name, @pCatID, @barcode, @cost, @saleprice, @reorder, @image)";
+                    qry = @"INSERT INTO Product (pName, pCatID, pBarcode, reorder, pImage) VALUES (@name, @pCatID, @barcode, @reorder, @image)";
+                    //qry = @"INSERT INTO Product (pName, pCatID, pBarcode, pCost, pPrice, reorder, pImage) VALUES (@name, @pCatID, @barcode, @cost, @saleprice, @reorder, @image)";
                 }
                 else //update
                 {
                     qry = @"UPDATE Product SET pName = @name,
                       pCatID = @pCatID,
                       pBarcode = @barcode,
-                      pCost = @cost,
-                      pPrice = @saleprice,
                       reorder = @reorder,
                       pImage = @image
                       WHERE proID = @id";
+                    //qry = @"UPDATE Product SET pName = @name,
+                    //  pCatID = @pCatID,
+                    //  pBarcode = @barcode,
+                    //  pCost = @cost,
+                    //  pPrice = @saleprice,
+                    //  reorder = @reorder,
+                    //  pImage = @image
+                    //  WHERE proID = @id";
                 }
                 Image temp = new Bitmap(txtPic.Image);
                 MemoryStream ms = new MemoryStream();
@@ -81,8 +96,8 @@ namespace IM_System
                 ht.Add("@name", txtName.Text);
                 ht.Add("@pCatID", Convert.ToInt32(cbCategory.SelectedValue));
                 ht.Add("@barcode", txtBarcode.Text);
-                ht.Add("@cost", Convert.ToDouble(txtCost.Text));
-                ht.Add("@saleprice", Convert.ToInt32(txtPrice.Text));
+                //ht.Add("@cost", Convert.ToDouble(txtCost.Text));
+                //ht.Add("@saleprice", Convert.ToInt32(txtPrice.Text));
                 ht.Add("@reorder", UDReOrder.Value);
                 ht.Add("@image", imageByteArray);
 
@@ -117,6 +132,24 @@ namespace IM_System
             using (SqlCommand cmd = new SqlCommand(qry, MainClass.con))
             {
                 cmd.Parameters.AddWithValue("@productName", productName);
+                cmd.Parameters.AddWithValue("@productId", productId);
+
+                MainClass.con.Open();
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+                MainClass.con.Close();
+            }
+
+            return count > 0;
+        }
+        // Method to check if the barcode already exists in the database
+        private bool IsBarcodeDuplicate(string barcode, int productId)
+        {
+            string qry = "SELECT COUNT(*) FROM Product WHERE pBarcode = @barcode AND proID != @productId";
+            int count = 0;
+
+            using (SqlCommand cmd = new SqlCommand(qry, MainClass.con))
+            {
+                cmd.Parameters.AddWithValue("@barcode", barcode);
                 cmd.Parameters.AddWithValue("@productId", productId);
 
                 MainClass.con.Open();
