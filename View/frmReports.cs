@@ -55,6 +55,21 @@ namespace IM_System.View
             crystalReportViewer1.Refresh();
         }
 
-        
+        private void btnCriticalItem_Click(object sender, EventArgs e)
+        {
+            string qry = @"SELECT 
+                            [pName],
+                            [Stock],
+                            [reorder]
+                        FROM 
+                            [IMS].[dbo].[vwCriticalItems]
+                        ";
+
+            crystalReportViewer1.ReportSource = null;
+            rptCriticalItem cr = new rptCriticalItem();
+            cr.SetDataSource(dTable(qry));
+            crystalReportViewer1.ReportSource = cr;
+            crystalReportViewer1.Refresh();
+        }
     }
 }

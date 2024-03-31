@@ -36,7 +36,7 @@ namespace IM_System.View
             this.btnStock = new Guna.UI2.WinForms.Guna2Button();
             this.btnProductList = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.btn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCriticalItem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +70,7 @@ namespace IM_System.View
             this.guna2GradientPanel1.Controls.Add(this.btnStock);
             this.guna2GradientPanel1.Controls.Add(this.btnProductList);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button4);
-            this.guna2GradientPanel1.Controls.Add(this.btn);
+            this.guna2GradientPanel1.Controls.Add(this.btnCriticalItem);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button3);
             this.guna2GradientPanel1.CustomizableEdges.BottomRight = false;
             this.guna2GradientPanel1.CustomizableEdges.TopLeft = false;
@@ -189,25 +189,27 @@ namespace IM_System.View
             this.guna2Button4.Size = new System.Drawing.Size(124, 45);
             this.guna2Button4.TabIndex = 7;
             // 
-            // btn
+            // btnCriticalItem
             // 
-            this.btn.Animated = true;
-            this.btn.BackColor = System.Drawing.Color.Transparent;
-            this.btn.BorderColor = System.Drawing.Color.White;
-            this.btn.BorderThickness = 1;
-            this.btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn.ForeColor = System.Drawing.Color.White;
-            this.btn.Location = new System.Drawing.Point(395, 52);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(124, 45);
-            this.btn.TabIndex = 8;
+            this.btnCriticalItem.Animated = true;
+            this.btnCriticalItem.BackColor = System.Drawing.Color.Transparent;
+            this.btnCriticalItem.BorderColor = System.Drawing.Color.White;
+            this.btnCriticalItem.BorderThickness = 1;
+            this.btnCriticalItem.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCriticalItem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCriticalItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCriticalItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCriticalItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCriticalItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCriticalItem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnCriticalItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCriticalItem.ForeColor = System.Drawing.Color.White;
+            this.btnCriticalItem.Location = new System.Drawing.Point(395, 52);
+            this.btnCriticalItem.Name = "btnCriticalItem";
+            this.btnCriticalItem.Size = new System.Drawing.Size(124, 45);
+            this.btnCriticalItem.TabIndex = 8;
+            this.btnCriticalItem.Text = "Critical Item";
+            this.btnCriticalItem.Click += new System.EventHandler(this.btnCriticalItem_Click);
             // 
             // guna2Button3
             // 
@@ -257,7 +259,7 @@ namespace IM_System.View
         private Guna.UI2.WinForms.Guna2Button btnStock;
         private Guna.UI2.WinForms.Guna2Button btnProductList;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button btn;
+        private Guna.UI2.WinForms.Guna2Button btnCriticalItem;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
     }
 }
