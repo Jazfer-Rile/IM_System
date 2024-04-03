@@ -67,28 +67,56 @@ namespace IM_System.Model
                 id = Convert.ToInt32(id),
                 Stock = stock,
             };
+
+            // Add the product to the flowLayoutPanel regardless of stock status
             flowLayoutPanel1.Controls.Add(w);
 
             w.onSelect += (ss, ee) =>
             {
                 var wdg = (ucProduct)ss;
-                foreach (DataGridViewRow item in guna2DataGridView1.Rows)
-                {
-                    if (Convert.ToInt32(item.Cells["dgvproid"].Value) == wdg.id)
-                    {
-                        item.Cells["dgvqty"].Value = int.Parse(item.Cells["dgvqty"].Value.ToString()) + 1;
-                        item.Cells["dgvAmount"].Value = int.Parse(item.Cells["dgvqty"].Value.ToString()) * int.Parse(item.Cells["dgvPrice"].Value.ToString());
-                        GrandTotal();
-                        return;
-                        
-                    }
-                }
 
-                //if not find product in data gv
-                guna2DataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.PName, 1, wdg.Price, wdg.Price, wdg.PCost });
-                GrandTotal();
+                // Check if the stock is sufficient for adding the product
+                if (stock > 0)
+                {
+                    foreach (DataGridViewRow item in guna2DataGridView1.Rows)
+                    {
+                        if (Convert.ToInt32(item.Cells["dgvproid"].Value) == wdg.id)
+                        {
+                            int currentQty = int.Parse(item.Cells["dgvqty"].Value.ToString());
+                            // Check if adding one more item would exceed the stock
+                            if (currentQty + 1 > stock)
+                            {
+                                // Display a warning message
+                                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+                                guna2MessageDialog1.Show($"Remaining quantity on hand for {wdg.PName} is {stock}. Cannot add more.");
+                                return;
+                            }
+
+                            // Increase the quantity by one and update the amount
+                            item.Cells["dgvqty"].Value = currentQty + 1;
+                            item.Cells["dgvAmount"].Value = (currentQty + 1) * int.Parse(item.Cells["dgvPrice"].Value.ToString());
+                            GrandTotal();
+                            return;
+                        }
+                    }
+
+                    //if not find product in data gv
+                    guna2DataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.PName, 1, wdg.Price, wdg.Price, wdg.PCost });
+                    GrandTotal();
+                }
+                else
+                {
+                    // Product is out of stock, display a message using Guna2MessageDialog
+                    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+                    guna2MessageDialog1.Show("This product is out of stock.");
+                }
             };
         }
+
+
+
         private void GrandTotal()
         {
             double tot = 0;
@@ -405,8 +433,20 @@ namespace IM_System.Model
                     }
                     else if (guna2DataGridView1.CurrentCell.OwningColumn == colAdd)
                     {
-                        // Increment quantity
                         int currentQuantity = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value);
+                        int stock = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvStock"].Value);
+
+                        // Check if adding one more item would exceed the stock
+                        if (currentQuantity + 1 > stock)
+                        {
+                            // Display a warning message
+                            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+                            guna2MessageDialog1.Show($"Maximum limit of quantity reached. Cannot add more.");
+                            return;
+                        }
+
+                        // Increment quantity
                         guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value = currentQuantity + 1;
 
                         // Recalculate amount and update GrandTotal
@@ -418,10 +458,12 @@ namespace IM_System.Model
                     }
                     else if (guna2DataGridView1.CurrentCell.OwningColumn == colReduce)
                     {
-                        // Decrement quantity (ensure it doesn't go below zero)
                         int currentQuantity = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value);
+
+                        // Ensure quantity doesn't go below zero
                         if (currentQuantity > 0)
                         {
+                            // Decrement quantity
                             guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value = currentQuantity - 1;
 
                             // Recalculate amount and update GrandTotal
