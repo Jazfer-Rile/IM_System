@@ -14,14 +14,27 @@ namespace IM_System
 {
     public partial class frmLogin : Form
     {
+        private int maxLoginAttempts = 3; // Maximum number of login attempts allowed
+        private int remainingLoginAttempts; // Remaining login attempts
+        private int[] cooldownDurations = { 10, 60, 180, 300 }; // Cooldown durations in seconds for each attempt
+        private int currentCooldownIndex = 0; // Index to track the current cooldown duration
+        private DateTime cooldownEndTime; // Time when cooldown ends
         public frmLogin()
         {
             InitializeComponent();
+            remainingLoginAttempts = maxLoginAttempts;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            if (MainClass.IsValidUser(txtUser.Text, txtPass.Text) == true)
+            if (remainingLoginAttempts <= 0)
+            {
+                TimeSpan remainingCooldown = cooldownEndTime - DateTime.Now;
+                ShowCooldownMessage($"Please wait {remainingCooldown.TotalSeconds:F0} seconds before trying again.", "Cooldown");
+                return;
+            }
+
+            if (MainClass.IsValidUser(txtUser.Text, txtPass.Text))
             {
                 this.Hide();
                 frmMain frm = new frmMain();
@@ -29,12 +42,30 @@ namespace IM_System
             }
             else
             {
-                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-                guna2MessageDialog1.Show("Invalid username or password");
+                remainingLoginAttempts--;
 
+                if (remainingLoginAttempts > 0)
+                {
+                    ShowErrorMessage($"Invalid username or password. {remainingLoginAttempts} attempts remaining.");
+                }
+                else
+                {
+                    currentCooldownIndex++; // Increase cooldown index after every set of 3 failed attempts
+                    if (currentCooldownIndex >= cooldownDurations.Length)
+                    {
+                        currentCooldownIndex = cooldownDurations.Length - 1; 
+                    }
+                    cooldownEndTime = DateTime.Now.AddSeconds(cooldownDurations[currentCooldownIndex]); // Update cooldown duration
+                    ShowCooldownMessage($"Maximum login attempts reached. Please try again later. Cooldown: {cooldownDurations[currentCooldownIndex]} seconds", "Cooldown");
+
+                    // Start cooldown countdown asynchronously
+                    await Task.Delay(cooldownDurations[currentCooldownIndex] * 1000); 
+                    remainingLoginAttempts = maxLoginAttempts;
+                }
             }
         }
+
+
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
@@ -57,19 +88,32 @@ namespace IM_System
         private void btnExit_Click(object sender, EventArgs e)
         {
             try
+            {
+                // Close any open forms explicitly
+                foreach (Form form in Application.OpenForms)
                 {
-                    // Close any open forms explicitly
-                    foreach (Form form in Application.OpenForms)
-                    {
-                        form.Close();
-                    }
+                    form.Close();
+                }
 
-                    Application.Exit();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ShowErrorMessage(string message)
+        {
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            guna2MessageDialog1.Show(message, "Error");
+        }
+
+        private void ShowCooldownMessage(string message, string caption)
+        {
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            guna2MessageDialog1.Show(message, caption);
         }
     }
 }
