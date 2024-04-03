@@ -36,7 +36,7 @@ namespace IM_System
         }
 
 
-        private void guna2barcodetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        public void guna2barcodetextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the input is not a digit or control (like backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))

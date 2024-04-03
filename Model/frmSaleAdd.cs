@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static IM_System.frmProductAdd;
 
 namespace IM_System.Model
 {
@@ -19,10 +20,21 @@ namespace IM_System.Model
         public frmSaleAdd()
         {
             InitializeComponent();
+            IM_System.frmProductAdd instance = new IM_System.frmProductAdd();
+            txtBarcode.KeyPress += instance.guna2barcodetextbox_KeyPress;
             txtDate.Value = DateTime.Now;
         }
         public int id = 0;
         public int cusID = 0;
+
+        private void guna2barcodetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the input is not a digit or control (like backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ignore the character
+            }
+        }
 
         private void frmSaleAdd_Load(object sender, EventArgs e)
         {

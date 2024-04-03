@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static IM_System.frmProductAdd;
+
 
 namespace IM_System.Model
 {
@@ -18,6 +20,8 @@ namespace IM_System.Model
         {
             InitializeComponent();
             txtDate.Value = DateTime.Now;
+            IM_System.frmProductAdd instance = new IM_System.frmProductAdd();
+            txtBarcode.KeyPress += instance.guna2barcodetextbox_KeyPress;
         }
         public int mainID = 0;
         public int supID = 0;
