@@ -33,11 +33,13 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtCost = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnBrowse = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.txtCost = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
@@ -45,10 +47,9 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.UDReOrder = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -122,6 +123,82 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Details";
             // 
+            // txtCost
+            // 
+            this.txtCost.Animated = true;
+            this.txtCost.AutoRoundedCorners = true;
+            this.txtCost.BorderRadius = 23;
+            this.txtCost.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCost.DefaultText = "";
+            this.txtCost.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCost.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCost.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCost.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCost.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.txtCost.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.txtCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.txtCost.Location = new System.Drawing.Point(376, 36);
+            this.txtCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCost.Name = "txtCost";
+            this.txtCost.PasswordChar = '\0';
+            this.txtCost.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtCost.PlaceholderText = "Enter purchase price";
+            this.txtCost.SelectedText = "";
+            this.txtCost.Size = new System.Drawing.Size(227, 48);
+            this.txtCost.TabIndex = 32;
+            this.txtCost.Tag = "";
+            this.txtCost.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtCost.Visible = false;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Animated = true;
+            this.txtPrice.AutoRoundedCorners = true;
+            this.txtPrice.BorderRadius = 23;
+            this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPrice.DefaultText = "";
+            this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.txtPrice.Location = new System.Drawing.Point(643, 36);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PasswordChar = '\0';
+            this.txtPrice.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtPrice.PlaceholderText = "Enter sale price";
+            this.txtPrice.SelectedText = "";
+            this.txtPrice.Size = new System.Drawing.Size(227, 48);
+            this.txtPrice.TabIndex = 34;
+            this.txtPrice.Tag = "";
+            this.txtPrice.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtPrice.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(396, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 23);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Cost";
+            this.label3.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(661, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 23);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Sale Price";
+            this.label6.Visible = false;
+            // 
             // btnBrowse
             // 
             this.btnBrowse.Animated = true;
@@ -158,44 +235,6 @@
             this.guna2MessageDialog1.Parent = this;
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.guna2MessageDialog1.Text = null;
-            // 
-            // txtCost
-            // 
-            this.txtCost.Animated = true;
-            this.txtCost.AutoRoundedCorners = true;
-            this.txtCost.BorderRadius = 23;
-            this.txtCost.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCost.DefaultText = "";
-            this.txtCost.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCost.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCost.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCost.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCost.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtCost.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
-            this.txtCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtCost.Location = new System.Drawing.Point(376, 36);
-            this.txtCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCost.Name = "txtCost";
-            this.txtCost.PasswordChar = '\0';
-            this.txtCost.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtCost.PlaceholderText = "Enter purchase price";
-            this.txtCost.SelectedText = "";
-            this.txtCost.Size = new System.Drawing.Size(227, 48);
-            this.txtCost.TabIndex = 32;
-            this.txtCost.Tag = "";
-            this.txtCost.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtCost.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(396, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 23);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Cost";
-            this.label3.Visible = false;
             // 
             // txtName
             // 
@@ -314,44 +353,6 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "Category";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(661, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 23);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Sale Price";
-            this.label6.Visible = false;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Animated = true;
-            this.txtPrice.AutoRoundedCorners = true;
-            this.txtPrice.BorderRadius = 23;
-            this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPrice.DefaultText = "";
-            this.txtPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
-            this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtPrice.Location = new System.Drawing.Point(643, 36);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.PasswordChar = '\0';
-            this.txtPrice.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtPrice.PlaceholderText = "Enter sale price";
-            this.txtPrice.SelectedText = "";
-            this.txtPrice.Size = new System.Drawing.Size(227, 48);
-            this.txtPrice.TabIndex = 34;
-            this.txtPrice.Tag = "";
-            this.txtPrice.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtPrice.Visible = false;
-            // 
             // txtPic
             // 
             this.txtPic.BackColor = System.Drawing.Color.Transparent;
@@ -372,12 +373,21 @@
             this.UDReOrder.BorderRadius = 23;
             this.UDReOrder.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.UDReOrder.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UDReOrder.Location = new System.Drawing.Point(689, 365);
+            this.UDReOrder.Location = new System.Drawing.Point(689, 391);
             this.UDReOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UDReOrder.Name = "UDReOrder";
             this.UDReOrder.Size = new System.Drawing.Size(114, 48);
             this.UDReOrder.TabIndex = 47;
             this.UDReOrder.TextOffset = new System.Drawing.Point(15, 0);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(708, 364);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 23);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Re-Order";
             // 
             // frmProductAdd
             // 
@@ -385,6 +395,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(900, 544);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.UDReOrder);
             this.Controls.Add(this.txtPic);
             this.Controls.Add(this.cbCategory);
@@ -437,5 +448,6 @@
         public Guna.UI2.WinForms.Guna2ComboBox cbCategory;
         private Guna.UI2.WinForms.Guna2PictureBox txtPic;
         public Guna.UI2.WinForms.Guna2NumericUpDown UDReOrder;
+        public System.Windows.Forms.Label label7;
     }
 }

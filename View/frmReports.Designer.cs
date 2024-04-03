@@ -120,6 +120,7 @@ namespace IM_System.View
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(124, 45);
             this.guna2Button6.TabIndex = 5;
+            this.guna2Button6.Visible = false;
             // 
             // btnStock
             // 
@@ -188,15 +189,19 @@ namespace IM_System.View
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(124, 45);
             this.guna2Button4.TabIndex = 7;
+            this.guna2Button4.Visible = false;
             // 
             // btnCriticalItem
             // 
             this.btnCriticalItem.Animated = true;
             this.btnCriticalItem.BackColor = System.Drawing.Color.Transparent;
             this.btnCriticalItem.BorderColor = System.Drawing.Color.White;
+            this.btnCriticalItem.BorderRadius = 21;
             this.btnCriticalItem.BorderThickness = 1;
             this.btnCriticalItem.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCriticalItem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCriticalItem.CustomizableEdges.BottomLeft = false;
+            this.btnCriticalItem.CustomizableEdges.TopLeft = false;
             this.btnCriticalItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCriticalItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCriticalItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -230,6 +235,7 @@ namespace IM_System.View
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(124, 45);
             this.guna2Button3.TabIndex = 9;
+            this.guna2Button3.Visible = false;
             // 
             // frmReports
             // 
