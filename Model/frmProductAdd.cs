@@ -19,6 +19,7 @@ namespace IM_System
         public frmProductAdd()
         {
             InitializeComponent();
+            txtBarcode.KeyPress += new KeyPressEventHandler(guna2barcodetextbox_KeyPress);
         }
         public int id = 0;
         public int catID = 0;
@@ -33,6 +34,17 @@ namespace IM_System
             }
            
         }
+
+
+        private void guna2barcodetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the input is not a digit or control (like backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ignore the character
+            }
+        }
+
 
         public virtual void btnSave_Click(object sender, EventArgs e)
         {
