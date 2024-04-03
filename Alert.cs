@@ -15,6 +15,7 @@ namespace IM_System
 {
     public partial class Alert : Form
     {
+        public static List<Alert> activeAlerts = new List<Alert>();
         private Random random;
         private int tempIndex;
         public Alert(frmMain frmMain)
@@ -72,6 +73,7 @@ namespace IM_System
         }
         public void showAlert(string msg)
         {
+            activeAlerts.Add(this);
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
             string fname;

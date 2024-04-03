@@ -117,11 +117,18 @@ namespace IM_System
 
             if (result == DialogResult.Yes)
             {
+                // Close all active Alert forms
+                foreach (Alert alert in Alert.activeAlerts)
+                {
+                    alert.Close();
+                }
+
                 this.Hide();
                 frmLogin login = new frmLogin();
                 login.ShowDialog();
             }
         }
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
