@@ -22,6 +22,7 @@ namespace IM_System.Model
             txtDate.Value = DateTime.Now;
             IM_System.frmProductAdd instance = new IM_System.frmProductAdd();
             txtBarcode.KeyPress += instance.guna2barcodetextbox_KeyPress;
+            txtQty.KeyPress += new KeyPressEventHandler(txtQty_KeyPress);
         }
         public int mainID = 0;
         public int supID = 0;
@@ -271,6 +272,15 @@ namespace IM_System.Model
 
                 // 0 For Serial and Id
                 guna2DataGridView1.Rows.Add(0, did, pid, pname, qty, cost, amt);
+            }
+        }
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the pressed key is a digit or the backspace key
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                // If not a digit or backspace, suppress the keypress
+                e.Handled = true;
             }
         }
     }
