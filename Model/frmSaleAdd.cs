@@ -436,13 +436,15 @@ namespace IM_System.Model
                         int currentQuantity = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value);
                         int stock = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvStock"].Value);
 
+                        //int qry = 
+
                         // Check if adding one more item would exceed the stock
                         if (currentQuantity + 1 > stock)
                         {
                             // Display a warning message
                             guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
                             guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-                            guna2MessageDialog1.Show($"Maximum limit of quantity reached. Cannot add more.");
+                            guna2MessageDialog1.Show($"Maximum limit of quantity reached.{stock} Cannot add more.");
                             return;
                         }
 

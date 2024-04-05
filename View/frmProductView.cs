@@ -33,15 +33,25 @@ namespace IM_System.View
             lb.Items.Add(dgvcatID);
             lb.Items.Add(dgvCategory);
             lb.Items.Add(dgvbarcode);
-            lb.Items.Add(dgvCost);
-            lb.Items.Add(dgvSale);
+            //lb.Items.Add(dgvCost);
+            //lb.Items.Add(dgvSale);
+            lb.Items.Add(dgvStockBalance);
             lb.Items.Add(dgvReorder);
+            string qry = @"SELECT p.proID, p.pName, p.pCatID, c.catName, p.pBarcode, 
+                          ISNULL((SELECT SUM(d.qty) FROM tblDetails d INNER JOIN tblMain m ON m.MainID = d.dMainID WHERE m.mType = 'PUR' AND d.productID = p.proID), 0) -
+                          ISNULL((SELECT SUM(d.qty) FROM tblDetails d INNER JOIN tblMain m ON m.MainID = d.dMainID WHERE m.mType = 'SAL' AND d.productID = p.proID), 0) AS StockBalance, p.reorder
+                   FROM Product p
+                   INNER JOIN Category c ON p.pCatID = c.catID
+                   WHERE p.pName LIKE '%" + txtSearch.Text + "%' ORDER BY p.pName ASC";
 
-            string qry = @"Select proID ,pName ,pCatID, catName,pBarcode, pCost, pPrice, reorder from Product 
-                            inner join Category on catID = pCatID
-                            where pName like '%" + txtSearch.Text + "%' order by proID desc";
+            //string qty_qry = @"SELECT
+            //            ISNULL((SELECT SUM(qty) FROM tblDetails d INNER JOIN tblMain m ON m.MainID = d.dMainID WHERE m.mType = 'PUR' AND d.productID = proID), 0) -
+            //            ISNULL((SELECT SUM(qty) FROM tblDetails d INNER JOIN tblMain m ON m.MainID = d.dMainID WHERE m.mType = 'SAL' AND d.productID = proID), 0) AS StockBalance
+            //       FROM Product";
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
+            //MainClass.LoadData(qty_qry, guna2DataGridView1, lb);
+
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -70,6 +80,7 @@ namespace IM_System.View
                     frm.txtCost.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvCost"].Value);
                     frm.txtPrice.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvsale"].Value);
                     frm.UDReOrder.Value = Convert.ToDecimal(guna2DataGridView1.CurrentRow.Cells["dgvReorder"].Value);
+                   // frm.qty.Value = Convert.ToDecimal(guna2DataGridView1.CurrentRow.Cells["dvgQuantity"].Value);
 
                     MainClass.BlurBackground(frm);
                     LoadData();

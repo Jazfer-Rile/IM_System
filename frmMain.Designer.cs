@@ -235,7 +235,7 @@
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(214, 65);
             this.btnPurchase.TabIndex = 0;
-            this.btnPurchase.Text = "Stock In";
+            this.btnPurchase.Text = "Incoming";
             this.btnPurchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPurchase.TextOffset = new System.Drawing.Point(20, 0);
             this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
@@ -386,7 +386,7 @@
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(214, 65);
             this.btnSales.TabIndex = 0;
-            this.btnSales.Text = "Stocks";
+            this.btnSales.Text = "Outgoing";
             this.btnSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSales.TextOffset = new System.Drawing.Point(20, 0);
             this.btnSales.Click += new System.EventHandler(this.btnSales_Click);

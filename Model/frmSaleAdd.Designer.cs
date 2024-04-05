@@ -509,6 +509,7 @@
             this.colAdd.MinimumWidth = 30;
             this.colAdd.Name = "colAdd";
             this.colAdd.ReadOnly = true;
+            this.colAdd.Visible = false;
             this.colAdd.Width = 30;
             // 
             // colReduce

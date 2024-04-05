@@ -48,6 +48,7 @@
             this.dgvbarcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvStockBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvReorder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
@@ -92,6 +93,7 @@
             this.dgvbarcode,
             this.dgvCost,
             this.dgvSale,
+            this.dgvStockBalance,
             this.dgvReorder,
             this.dgvEdit,
             this.dgvDel});
@@ -262,6 +264,7 @@
             this.dgvSr.MinimumWidth = 70;
             this.dgvSr.Name = "dgvSr";
             this.dgvSr.ReadOnly = true;
+            this.dgvSr.Visible = false;
             this.dgvSr.Width = 70;
             // 
             // dgvid
@@ -316,6 +319,13 @@
             this.dgvSale.Name = "dgvSale";
             this.dgvSale.ReadOnly = true;
             this.dgvSale.Visible = false;
+            // 
+            // dgvStockBalance
+            // 
+            this.dgvStockBalance.HeaderText = "Quantity";
+            this.dgvStockBalance.MinimumWidth = 6;
+            this.dgvStockBalance.Name = "dgvStockBalance";
+            this.dgvStockBalance.ReadOnly = true;
             // 
             // dgvReorder
             // 
@@ -390,6 +400,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvbarcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvStockBalance;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvReorder;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
