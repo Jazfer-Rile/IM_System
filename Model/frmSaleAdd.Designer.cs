@@ -45,13 +45,6 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvproid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,9 +56,15 @@
             this.colAdd = new System.Windows.Forms.DataGridViewImageColumn();
             this.colReduce = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2MessageDialog1
@@ -89,24 +88,22 @@
             this.cbCustomer.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbCustomer.ItemHeight = 42;
-            this.cbCustomer.Location = new System.Drawing.Point(3, 3);
+            this.cbCustomer.Location = new System.Drawing.Point(507, 64);
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(227, 48);
             this.cbCustomer.TabIndex = 1;
             this.cbCustomer.Tag = "";
             this.cbCustomer.TextOffset = new System.Drawing.Point(10, 0);
-            this.cbCustomer.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(236, 0);
+            this.label4.Location = new System.Drawing.Point(522, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 23);
             this.label4.TabIndex = 48;
             this.label4.Text = "Customer";
-            this.label4.Visible = false;
             // 
             // txtBarcode
             // 
@@ -183,11 +180,10 @@
             this.guna2Panel1.Controls.Add(this.lblTotal);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(326, 3);
+            this.guna2Panel1.Location = new System.Drawing.Point(831, 64);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(424, 55);
             this.guna2Panel1.TabIndex = 6;
-            this.guna2Panel1.Visible = false;
             // 
             // label6
             // 
@@ -267,13 +263,13 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(831, 64);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(831, 152);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 35;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(424, 631);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(424, 543);
             this.guna2DataGridView1.TabIndex = 5;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -297,132 +293,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.cbCustomer);
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.guna2Panel1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 228);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 467);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(48, 125);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 23);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Search";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Animated = true;
-            this.txtSearch.AutoRoundedCorners = true;
-            this.txtSearch.BorderRadius = 23;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtSearch.Location = new System.Drawing.Point(30, 152);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtSearch.PlaceholderText = "Search Product Here";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(776, 48);
-            this.txtSearch.TabIndex = 3;
-            this.txtSearch.Tag = "";
-            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.FillColor = System.Drawing.Color.Transparent;
-            this.btnExit.HoverState.FillColor = System.Drawing.Color.Crimson;
-            this.btnExit.IconColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(1220, 1);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(57, 41);
-            this.btnExit.TabIndex = 52;
-            this.btnExit.UseTransparentBackground = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Animated = true;
-            this.btnClear.AutoRoundedCorners = true;
-            this.btnClear.BackColor = System.Drawing.Color.Transparent;
-            this.btnClear.BorderRadius = 23;
-            this.btnClear.CustomizableEdges.TopRight = false;
-            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClear.FillColor = System.Drawing.Color.Crimson;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(666, 64);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(140, 48);
-            this.btnClear.TabIndex = 54;
-            this.btnClear.Text = "Clear";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Animated = true;
-            this.btnSave.AutoRoundedCorners = true;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BorderRadius = 23;
-            this.btnSave.CustomizableEdges.TopRight = false;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(507, 64);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(153, 48);
-            this.btnSave.TabIndex = 53;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2VScrollBar1.AutoRoundedCorners = true;
-            this.guna2VScrollBar1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2VScrollBar1.BindingContainer = this.flowLayoutPanel1;
-            this.guna2VScrollBar1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2VScrollBar1.BorderRadius = 9;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(785, 228);
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 21;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(21, 467);
-            this.guna2VScrollBar1.TabIndex = 49;
-            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
             // 
             // dgvid
             // 
@@ -536,6 +406,129 @@
             this.dgvDel.ReadOnly = true;
             this.dgvDel.Width = 30;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 228);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 467);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(48, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 23);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Search";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Animated = true;
+            this.txtSearch.AutoRoundedCorners = true;
+            this.txtSearch.BorderRadius = 23;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.txtSearch.Location = new System.Drawing.Point(30, 152);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtSearch.PlaceholderText = "Search Product Here";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(471, 48);
+            this.txtSearch.TabIndex = 3;
+            this.txtSearch.Tag = "";
+            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FillColor = System.Drawing.Color.Transparent;
+            this.btnExit.HoverState.FillColor = System.Drawing.Color.Crimson;
+            this.btnExit.IconColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(1220, 1);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(57, 41);
+            this.btnExit.TabIndex = 52;
+            this.btnExit.UseTransparentBackground = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Animated = true;
+            this.btnClear.AutoRoundedCorners = true;
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BorderRadius = 23;
+            this.btnClear.CustomizableEdges.TopRight = false;
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.FillColor = System.Drawing.Color.Crimson;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(666, 152);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(140, 48);
+            this.btnClear.TabIndex = 54;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Animated = true;
+            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 23;
+            this.btnSave.CustomizableEdges.TopRight = false;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(507, 152);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(153, 48);
+            this.btnSave.TabIndex = 53;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2VScrollBar1.AutoRoundedCorners = true;
+            this.guna2VScrollBar1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.BindingContainer = this.flowLayoutPanel1;
+            this.guna2VScrollBar1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.BorderRadius = 9;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(785, 228);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 21;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(21, 467);
+            this.guna2VScrollBar1.TabIndex = 49;
+            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
             // frmSaleAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -543,7 +536,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1278, 728);
             this.Controls.Add(this.guna2VScrollBar1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbCustomer);
             this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -565,8 +561,6 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
