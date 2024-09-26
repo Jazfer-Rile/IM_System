@@ -33,11 +33,11 @@ namespace IM_System.View
             lb.Items.Add(dgvcatID);
             lb.Items.Add(dgvCategory);
             lb.Items.Add(dgvbarcode);
-            //lb.Items.Add(dgvCost);
-            //lb.Items.Add(dgvSale);
+            lb.Items.Add(dgvCost);
+            lb.Items.Add(dgvSale);
             lb.Items.Add(dgvStockBalance);
             lb.Items.Add(dgvReorder);
-            string qry = @"SELECT p.proID, p.pName, p.pCatID, c.catName, p.pBarcode, 
+            string qry = @"SELECT p.proID, p.pName, p.pCatID, c.catName, p.pBarcode, p.pCost, p.pPrice, 
                           ISNULL((SELECT SUM(d.qty) FROM tblDetails d INNER JOIN tblMain m ON m.MainID = d.dMainID WHERE m.mType = 'PUR' AND d.productID = p.proID), 0) -
                           ISNULL((SELECT SUM(d.qty) FROM tblDetails d INNER JOIN tblMain m ON m.MainID = d.dMainID WHERE m.mType = 'SAL' AND d.productID = p.proID), 0) AS StockBalance, p.reorder
                    FROM Product p
@@ -80,7 +80,7 @@ namespace IM_System.View
                     frm.txtCost.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvCost"].Value);
                     frm.txtPrice.Text = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvsale"].Value);
                     frm.UDReOrder.Value = Convert.ToDecimal(guna2DataGridView1.CurrentRow.Cells["dgvReorder"].Value);
-                   // frm.qty.Value = Convert.ToDecimal(guna2DataGridView1.CurrentRow.Cells["dvgQuantity"].Value);
+                    //frm.qty.Value = Convert.ToDecimal(guna2DataGridView1.CurrentRow.Cells["dvgQuantity"].Value);
 
                     MainClass.BlurBackground(frm);
                     LoadData();
