@@ -56,7 +56,7 @@ namespace IM_System.Model
             loadProductsFromDatabase();
         }
 
-        public void AddItems(string id, string name, string price, Image pimage, string cost, int stock)
+        public void AddItems(string id, string name, string price, Image pimage, string cost, int stock, int reorder)
         {
             var w = new ucProduct()
             {
@@ -66,6 +66,7 @@ namespace IM_System.Model
                 PCost = cost,
                 id = Convert.ToInt32(id),
                 Stock = stock,
+                Reorder = reorder,
             };
 
             // Add the product to the flowLayoutPanel regardless of stock status
@@ -143,14 +144,14 @@ namespace IM_System.Model
         {
             try
             {
-                string qry = "SELECT p.proID, p.pName, p.pPrice, p.pCost, p.PImage, " +
-               "(SELECT ISNULL(SUM(d.qty), 0) FROM tblDetails d " +
-               "INNER JOIN tblMain m ON m.MainID = d.dMainID " +
-               "WHERE m.mType = 'PUR' AND d.productID = p.proID) - " +
-               "(SELECT ISNULL(SUM(d.qty), 0) FROM tblDetails d " +
-               "INNER JOIN tblMain m ON m.MainID = d.dMainID " +
-               "WHERE m.mType = 'SAL' AND d.productID = p.proID) AS Stock " +
-               "FROM Product p";
+                string qry = "SELECT p.proID, p.pName, p.pPrice, p.pCost, p.PImage, p.reorder, " +
+        "(SELECT ISNULL(SUM(d.qty), 0) FROM tblDetails d " +
+        "INNER JOIN tblMain m ON m.MainID = d.dMainID " +
+        "WHERE m.mType = 'PUR' AND d.productID = p.proID) - " +
+        "(SELECT ISNULL(SUM(d.qty), 0) FROM tblDetails d " +
+        "INNER JOIN tblMain m ON m.MainID = d.dMainID " +
+        "WHERE m.mType = 'SAL' AND d.productID = p.proID) AS Stock " +
+        "FROM Product p";
 
 
 
@@ -168,7 +169,7 @@ namespace IM_System.Model
 
                         AddItems(row["proID"].ToString(), row["pName"].ToString(), row["pPrice"].ToString(),
                                 Image.FromStream(new MemoryStream(imageArray)), row["pCost"].ToString(),
-                                Convert.ToInt32(row["Stock"]));
+                                Convert.ToInt32(row["Stock"]), Convert.ToInt32(row["reorder"]));
                     }
                 }
             }

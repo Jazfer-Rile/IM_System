@@ -31,10 +31,11 @@
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
-            this.lblPName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.lblPName = new System.Windows.Forms.Label();
             this.txtPic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblReorder = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 145);
+            this.label2.Location = new System.Drawing.Point(13, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 32);
             this.label2.TabIndex = 5;
@@ -68,25 +69,14 @@
             // 
             // lblStock
             // 
-            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.ForeColor = System.Drawing.Color.White;
-            this.lblStock.Location = new System.Drawing.Point(24, 177);
+            this.lblStock.Location = new System.Drawing.Point(3, 170);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(101, 32);
+            this.lblStock.Size = new System.Drawing.Size(141, 32);
             this.lblStock.TabIndex = 4;
             this.lblStock.Text = "000.0";
             this.lblStock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPName
-            // 
-            this.lblPName.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPName.ForeColor = System.Drawing.Color.White;
-            this.lblPName.Location = new System.Drawing.Point(8, 48);
-            this.lblPName.Name = "lblPName";
-            this.lblPName.Size = new System.Drawing.Size(136, 52);
-            this.lblPName.TabIndex = 1;
-            this.lblPName.Text = "Product Name";
-            this.lblPName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -110,6 +100,17 @@
             this.lblPrice.Text = "0000";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblPName
+            // 
+            this.lblPName.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPName.ForeColor = System.Drawing.Color.White;
+            this.lblPName.Location = new System.Drawing.Point(8, 48);
+            this.lblPName.Name = "lblPName";
+            this.lblPName.Size = new System.Drawing.Size(136, 52);
+            this.lblPName.TabIndex = 1;
+            this.lblPName.Text = "Product Name";
+            this.lblPName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // txtPic
             // 
             this.txtPic.BackColor = System.Drawing.Color.Transparent;
@@ -125,14 +126,27 @@
             this.txtPic.UseTransparentBackground = true;
             this.txtPic.Click += new System.EventHandler(this.txtPic_Click);
             // 
+            // lblReorder
+            // 
+            this.lblReorder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReorder.ForeColor = System.Drawing.Color.Black;
+            this.lblReorder.Location = new System.Drawing.Point(-2, 0);
+            this.lblReorder.Name = "lblReorder";
+            this.lblReorder.Size = new System.Drawing.Size(101, 32);
+            this.lblReorder.TabIndex = 4;
+            this.lblReorder.Text = "000.0";
+            this.lblReorder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReorder.Visible = false;
+            // 
             // ucProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.txtPic);
+            this.Controls.Add(this.lblReorder);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Name = "ucProduct";
-            this.Size = new System.Drawing.Size(153, 274);
+            this.Size = new System.Drawing.Size(153, 270);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
@@ -149,5 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblReorder;
     }
 }
