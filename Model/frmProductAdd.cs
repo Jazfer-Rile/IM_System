@@ -78,25 +78,19 @@ namespace IM_System
                 string qry = "";
                 if (id == 0)//Insert
                 {
-                    qry = @"INSERT INTO Product (pName, pCatID, pBarcode, reorder, pImage) VALUES (@name, @pCatID, @barcode, @reorder, @image)";
-                    //qry = @"INSERT INTO Product (pName, pCatID, pBarcode, pCost, pPrice, reorder, pImage) VALUES (@name, @pCatID, @barcode, @cost, @saleprice, @reorder, @image)";
+
+                    qry = @"INSERT INTO Product (pName, pCatID, pBarcode, pCost, pPrice, reorder, pImage) VALUES (@name, @pCatID, @barcode, @cost, @saleprice, @reorder, @image)";
                 }
                 else //update
                 {
                     qry = @"UPDATE Product SET pName = @name,
                       pCatID = @pCatID,
                       pBarcode = @barcode,
+                      pCost = @cost,
+                      pPrice = @saleprice,
                       reorder = @reorder,
                       pImage = @image
                       WHERE proID = @id";
-                    //qry = @"UPDATE Product SET pName = @name,
-                    //  pCatID = @pCatID,
-                    //  pBarcode = @barcode,
-                    //  pCost = @cost,
-                    //  pPrice = @saleprice,
-                    //  reorder = @reorder,
-                    //  pImage = @image
-                    //  WHERE proID = @id";
                 }
                 Image temp = new Bitmap(txtPic.Image);
                 MemoryStream ms = new MemoryStream();
@@ -108,8 +102,8 @@ namespace IM_System
                 ht.Add("@name", txtName.Text);
                 ht.Add("@pCatID", Convert.ToInt32(cbCategory.SelectedValue));
                 ht.Add("@barcode", txtBarcode.Text);
-                //ht.Add("@cost", Convert.ToDouble(txtCost.Text));
-                //ht.Add("@saleprice", Convert.ToInt32(txtPrice.Text));
+                ht.Add("@cost", Convert.ToDouble(txtCost.Text));
+                ht.Add("@saleprice", Convert.ToInt32(txtPrice.Text));
                 ht.Add("@reorder", UDReOrder.Value);
                 ht.Add("@image", imageByteArray);
 

@@ -238,12 +238,25 @@ namespace IM_System
                             cb.HoverState.BorderColor = Color.FromArgb(0, 122, 204);
                         }
                     }
+
                 }
             }
 
 
             return isValid;
         }
+        public static bool ValidateDataGridView(Guna.UI2.WinForms.Guna2DataGridView dgv)
+        {
+            bool isValid = true;
+
+            if (dgv.Rows.Count == 0 || dgv.Rows[0].IsNewRow)
+            {
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
 
         // Method to remove all instances of the "Required" label from the form
         private static void RemoveRequiredLabel(Form form)

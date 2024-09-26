@@ -373,6 +373,7 @@ namespace IM_System.Model
                 string did;
                 string pid;
                 string pname;
+                string price;
                 string qty;
                 string cost;
                 string amt;
@@ -381,12 +382,12 @@ namespace IM_System.Model
                 pname = row["pName"].ToString();
                 pid = row["proID"].ToString();
                 qty = row["qty"].ToString();
-                cost = row["price"].ToString();
+                price = row["price"].ToString();
                 amt = row["amount"].ToString();
                 cost = row["cost"].ToString();
 
                 // Add data to DataGridView
-                guna2DataGridView1.Rows.Add(did, pid, pname, qty, cost, amt, cost);
+                guna2DataGridView1.Rows.Add(did, pid, pname, qty, price, amt, cost);
             }
         }
 

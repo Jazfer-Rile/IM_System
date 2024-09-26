@@ -72,7 +72,7 @@
             this.txtBarcode.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.txtBarcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtBarcode.Location = new System.Drawing.Point(348, 300);
+            this.txtBarcode.Location = new System.Drawing.Point(348, 259);
             this.txtBarcode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.PasswordChar = '\0';
@@ -87,10 +87,6 @@
             // 
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.txtCost);
-            this.guna2Panel1.Controls.Add(this.txtPrice);
-            this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -138,7 +134,7 @@
             this.txtCost.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.txtCost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtCost.Location = new System.Drawing.Point(376, 36);
+            this.txtCost.Location = new System.Drawing.Point(81, 365);
             this.txtCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCost.Name = "txtCost";
             this.txtCost.PasswordChar = '\0';
@@ -147,9 +143,8 @@
             this.txtCost.SelectedText = "";
             this.txtCost.Size = new System.Drawing.Size(227, 48);
             this.txtCost.TabIndex = 32;
-            this.txtCost.Tag = "";
+            this.txtCost.Tag = "v";
             this.txtCost.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtCost.Visible = false;
             // 
             // txtPrice
             // 
@@ -166,7 +161,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtPrice.Location = new System.Drawing.Point(643, 36);
+            this.txtPrice.Location = new System.Drawing.Point(348, 365);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
@@ -175,29 +170,26 @@
             this.txtPrice.SelectedText = "";
             this.txtPrice.Size = new System.Drawing.Size(227, 48);
             this.txtPrice.TabIndex = 34;
-            this.txtPrice.Tag = "";
+            this.txtPrice.Tag = "v";
             this.txtPrice.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtPrice.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(396, 9);
+            this.label3.Location = new System.Drawing.Point(101, 338);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 23);
             this.label3.TabIndex = 38;
             this.label3.Text = "Cost";
-            this.label3.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(661, 9);
+            this.label6.Location = new System.Drawing.Point(366, 338);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 23);
             this.label6.TabIndex = 40;
             this.label6.Text = "Sale Price";
-            this.label6.Visible = false;
             // 
             // btnBrowse
             // 
@@ -221,7 +213,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(366, 273);
+            this.label5.Location = new System.Drawing.Point(366, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 23);
             this.label5.TabIndex = 40;
@@ -251,7 +243,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.txtName.Location = new System.Drawing.Point(81, 189);
+            this.txtName.Location = new System.Drawing.Point(81, 148);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
@@ -266,7 +258,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 162);
+            this.label2.Location = new System.Drawing.Point(99, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 23);
             this.label2.TabIndex = 37;
@@ -337,7 +329,7 @@
             this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbCategory.ItemHeight = 33;
-            this.cbCategory.Location = new System.Drawing.Point(81, 300);
+            this.cbCategory.Location = new System.Drawing.Point(81, 259);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(227, 39);
             this.cbCategory.TabIndex = 45;
@@ -347,7 +339,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 273);
+            this.label4.Location = new System.Drawing.Point(99, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 23);
             this.label4.TabIndex = 40;
@@ -397,8 +389,12 @@
             this.ClientSize = new System.Drawing.Size(900, 544);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.UDReOrder);
+            this.Controls.Add(this.txtCost);
             this.Controls.Add(this.txtPic);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);

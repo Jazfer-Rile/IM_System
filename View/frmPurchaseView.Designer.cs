@@ -294,7 +294,6 @@
             this.dgvAmount.MinimumWidth = 100;
             this.dgvAmount.Name = "dgvAmount";
             this.dgvAmount.ReadOnly = true;
-            this.dgvAmount.Visible = false;
             // 
             // dgvEdit
             // 
