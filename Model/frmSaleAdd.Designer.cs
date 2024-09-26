@@ -489,6 +489,7 @@
             this.dgvStock.MinimumWidth = 6;
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.ReadOnly = true;
+            this.dgvStock.Visible = false;
             // 
             // colAdd
             // 
@@ -500,7 +501,6 @@
             this.colAdd.MinimumWidth = 30;
             this.colAdd.Name = "colAdd";
             this.colAdd.ReadOnly = true;
-            this.colAdd.Visible = false;
             this.colAdd.Width = 30;
             // 
             // colReduce

@@ -102,7 +102,7 @@ namespace IM_System.Model
                     }
 
                     //if not find product in data gv
-                    guna2DataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.PName, 1, wdg.Price, wdg.Price, wdg.PCost });
+                    guna2DataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.PName, 1, wdg.Price, wdg.Price, wdg.PCost, wdg.Stock });
                     GrandTotal();
                 }
                 else
@@ -464,7 +464,7 @@ namespace IM_System.Model
                         int currentQuantity = Convert.ToInt32(guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value);
 
                         // Ensure quantity doesn't go below zero
-                        if (currentQuantity > 0)
+                        if (currentQuantity > 1)
                         {
                             // Decrement quantity
                             guna2DataGridView1.Rows[e.RowIndex].Cells["dgvqty"].Value = currentQuantity - 1;
