@@ -45,8 +45,8 @@
             this.dgvdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -87,8 +87,8 @@
             this.dgvdate,
             this.dgvCusID,
             this.dgvCustomer,
-            this.dgvAmount,
             this.dgvQuantity,
+            this.dgvAmount,
             this.dgvEdit,
             this.dgvDel});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -271,7 +271,7 @@
             // 
             // dgvdate
             // 
-            this.dgvdate.HeaderText = "Date";
+            this.dgvdate.HeaderText = "Date and Time";
             this.dgvdate.MinimumWidth = 100;
             this.dgvdate.Name = "dgvdate";
             this.dgvdate.ReadOnly = true;
@@ -292,20 +292,19 @@
             this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.Visible = false;
             // 
-            // dgvAmount
-            // 
-            this.dgvAmount.HeaderText = "Amount";
-            this.dgvAmount.MinimumWidth = 100;
-            this.dgvAmount.Name = "dgvAmount";
-            this.dgvAmount.ReadOnly = true;
-            this.dgvAmount.Visible = false;
-            // 
             // dgvQuantity
             // 
             this.dgvQuantity.HeaderText = "Quantity";
             this.dgvQuantity.MinimumWidth = 6;
             this.dgvQuantity.Name = "dgvQuantity";
             this.dgvQuantity.ReadOnly = true;
+            // 
+            // dgvAmount
+            // 
+            this.dgvAmount.HeaderText = "Amount";
+            this.dgvAmount.MinimumWidth = 100;
+            this.dgvAmount.Name = "dgvAmount";
+            this.dgvAmount.ReadOnly = true;
             // 
             // dgvEdit
             // 
@@ -369,8 +368,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCusID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCustomer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvAmount;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
     }

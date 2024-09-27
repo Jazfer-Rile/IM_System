@@ -18,6 +18,8 @@ namespace IM_System.View
         {
             InitializeComponent();
             guna2MessageDialog1.Parent = frmMain.Instance;
+            guna2DataGridView1.CellMouseEnter += guna2DataGridView1_CellMouseEnter;
+            guna2DataGridView1.CellMouseLeave += guna2DataGridView1_CellMouseLeave;
         }
 
         public virtual void frmSaleView_Load(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace IM_System.View
         {
             LoadData();
         }
+
         private void LoadData()
         {
             ListBox lb = new ListBox();
@@ -36,34 +39,47 @@ namespace IM_System.View
             lb.Items.Add(dgvdate);
             lb.Items.Add(dgvCusID);
             lb.Items.Add(dgvCustomer);
-            //lb.Items.Add(dgvAmount);
-            lb.Items.Add(dgvQuantity);
+            lb.Items.Add(dgvQuantity); 
+            lb.Items.Add(dgvAmount);   
+           
 
             string qry = @"SELECT m.MainID, m.mDate, m.mSupCusID, c.cusName, 
-                           COALESCE(SUM(d.qty), 0) AS totalQuantity
-                            FROM tblMain m
-                            LEFT JOIN tblDetails d ON d.dMainID = m.MainID
-                            LEFT JOIN Customer c ON c.cusID = m.mSupCusID
-                            WHERE m.mType = 'SAL'
-                            GROUP BY m.MainID, m.mDate, m.mSupCusID, c.cusName
-                            ";
-            //string qry = @"SELECT m.MainID, m.mDate, m.mSupCusID, c.cusName, 
-            //               COALESCE(SUM(d.amount), 0) AS totalAmount
-            //                FROM tblMain m
-            //                LEFT JOIN tblDetails d ON d.dMainID = m.MainID
-            //                LEFT JOIN Customer c ON c.cusID = m.mSupCusID
-            //                WHERE m.mType = 'SAL'
-            //                GROUP BY m.MainID, m.mDate, m.mSupCusID, c.cusName
-            //                ";
+                   COALESCE(SUM(d.qty), 0) AS totalQuantity, 
+                   COALESCE(SUM(d.amount), 0) AS totalAmount
+                   FROM tblMain m
+                   LEFT JOIN tblDetails d ON d.dMainID = m.MainID
+                   LEFT JOIN Customer c ON c.cusID = m.mSupCusID
+                   WHERE m.mType = 'SAL'
+                   GROUP BY m.MainID, m.mDate, m.mSupCusID, c.cusName
+                   ORDER BY m.mDate DESC";
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
         }
+
         public virtual void btnAdd_Click(object sender, EventArgs e)
         {
             MainClass.BlurBackground(new frmSaleAdd());
             LoadData();
         }
-
+        private void guna2DataGridView1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the mouse is over a valid row (not the header)
+            if (e.RowIndex >= 0)
+            {
+                // Check if the mouse is over the Edit or Delete button column
+                if (guna2DataGridView1.Columns[e.ColumnIndex].Name == "dgvEdit" ||
+                    guna2DataGridView1.Columns[e.ColumnIndex].Name == "dgvDel")
+                {
+                    // Change cursor to hand
+                    guna2DataGridView1.Cursor = Cursors.Hand;
+                }
+            }
+        }
+        private void guna2DataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            // Reset the cursor to default when leaving the cell
+            guna2DataGridView1.Cursor = Cursors.Default;
+        }
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Check if the clicked cell is not in the header row

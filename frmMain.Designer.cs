@@ -50,6 +50,7 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.CenterPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -136,6 +137,7 @@
             this.guna2Panel3.AutoScroll = true;
             this.guna2Panel3.BorderRadius = 60;
             this.guna2Panel3.Controls.Add(this.btnLogout);
+            this.guna2Panel3.Controls.Add(this.btnCustomer);
             this.guna2Panel3.Controls.Add(this.btnSupplier);
             this.guna2Panel3.Controls.Add(this.btnPurchase);
             this.guna2Panel3.Controls.Add(this.btnCategory);
@@ -175,7 +177,7 @@
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnLogout.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogout.Location = new System.Drawing.Point(3, 764);
+            this.btnLogout.Location = new System.Drawing.Point(3, 836);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(214, 65);
             this.btnLogout.TabIndex = 1;
@@ -231,7 +233,7 @@
             this.btnPurchase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPurchase.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnPurchase.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnPurchase.Location = new System.Drawing.Point(3, 480);
+            this.btnPurchase.Location = new System.Drawing.Point(3, 552);
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(214, 65);
             this.btnPurchase.TabIndex = 0;
@@ -326,7 +328,7 @@
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReport.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnReport.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnReport.Location = new System.Drawing.Point(3, 693);
+            this.btnReport.Location = new System.Drawing.Point(3, 765);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(214, 65);
             this.btnReport.TabIndex = 0;
@@ -354,7 +356,7 @@
             this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUser.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnUser.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnUser.Location = new System.Drawing.Point(3, 622);
+            this.btnUser.Location = new System.Drawing.Point(3, 694);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(214, 65);
             this.btnUser.TabIndex = 0;
@@ -382,7 +384,7 @@
             this.btnSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSales.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSales.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSales.Location = new System.Drawing.Point(3, 551);
+            this.btnSales.Location = new System.Drawing.Point(3, 623);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(214, 65);
             this.btnSales.TabIndex = 0;
@@ -452,6 +454,34 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Animated = true;
+            this.btnCustomer.AutoRoundedCorners = true;
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnCustomer.BorderRadius = 31;
+            this.btnCustomer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
+            this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnCustomer.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnCustomer.Location = new System.Drawing.Point(3, 480);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(214, 65);
+            this.btnCustomer.TabIndex = 4;
+            this.btnCustomer.Text = "Customers";
+            this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomer.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -499,5 +529,6 @@
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2Button btnCustomer;
     }
 }

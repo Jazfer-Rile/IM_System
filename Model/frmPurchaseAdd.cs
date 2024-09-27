@@ -120,17 +120,7 @@ namespace IM_System.Model
                 guna2MessageDialog1.Show("Please removed errors");
                 return;
             }
-            //// Check if any required field is empty
-            //if (string.IsNullOrWhiteSpace(cbProduct.Text) ||
-            //    string.IsNullOrWhiteSpace(txtQty.Text))
-            //{
-            //    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            //    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-            //    guna2MessageDialog1.Show("Please fill in all required fields.");
-       
-            //    return; // Exit the method without adding the item
-            //}
-
+            
             string pid;
             string pname;
             string qty;
@@ -178,6 +168,13 @@ namespace IM_System.Model
             string qry2 = "";//for details table
             int record = 0;
 
+            // Get the selected date from the GunaDateTimePicker
+            DateTime selectedDate = txtDate.Value;
+
+            // Combine the selected date with the current time
+            DateTime dateTimeToSave = new DateTime(selectedDate.Year, selectedDate.Month, selectedDate.Day,
+                                                     DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+
             if (mainID == 0) // insert
             {
                 qry1 = @"INSERT INTO tblMain VALUES (@date, @type, @supID);
@@ -191,7 +188,7 @@ namespace IM_System.Model
 
             SqlCommand cmd1 = new SqlCommand(qry1, MainClass.con);
             cmd1.Parameters.AddWithValue("@id", mainID);
-            cmd1.Parameters.AddWithValue("@date", Convert.ToDateTime(txtDate.Value).Date);
+            cmd1.Parameters.AddWithValue("@date", dateTimeToSave);
             cmd1.Parameters.AddWithValue("@type", "PUR");
             cmd1.Parameters.AddWithValue("@supID", Convert.ToInt32(cbSupplier.SelectedValue));
             if (MainClass.con.State == ConnectionState.Closed)

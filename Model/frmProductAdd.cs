@@ -20,6 +20,8 @@ namespace IM_System
         {
             InitializeComponent();
             txtBarcode.KeyPress += new KeyPressEventHandler(guna2barcodetextbox_KeyPress);
+            txtPrice.KeyPress += new KeyPressEventHandler(guna2pricetextbox_KeyPress);
+            txtCost.KeyPress += new KeyPressEventHandler(guna2costtextbox_KeyPress);
         }
         public int id = 0;
         public int catID = 0;
@@ -37,6 +39,22 @@ namespace IM_System
 
 
         public void guna2barcodetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the input is not a digit or control (like backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ignore the character
+            }
+        }
+        public void guna2pricetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if the input is not a digit or control (like backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Ignore the character
+            }
+        }
+        public void guna2costtextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Check if the input is not a digit or control (like backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))

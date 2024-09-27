@@ -244,21 +244,29 @@ namespace IM_System.Model
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Validate the input
             if (MainClass.Validation(this) == false)
             {
                 guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
                 guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-                guna2MessageDialog1.Show("Please removed errors");
+                guna2MessageDialog1.Show("Please remove errors");
                 return;
             }
 
-            string qry1 = "";//for main Table
-            string qry2 = "";//for details table
+            string qry1; // for main Table
+            string qry2; // for details table
             int record = 0;
+
+            // Get the selected date from the GunaDateTimePicker
+            DateTime selectedDate = txtDate.Value;
+
+            // Combine the selected date with the current time
+            DateTime dateTimeToSave = new DateTime(selectedDate.Year, selectedDate.Month, selectedDate.Day,
+                                                     DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
 
             if (id == 0) // insert
             {
-                qry1 = @"INSERT INTO tblMain VALUES (@date, @type, @supID);
+                qry1 = @"INSERT INTO tblMain (mDate, mType, mSupCusID) VALUES (@date, @type, @supID);
                  SELECT SCOPE_IDENTITY()";
             }
             else
@@ -267,50 +275,53 @@ namespace IM_System.Model
                  WHERE MainID = @id";
             }
 
-            SqlCommand cmd1 = new SqlCommand(qry1, MainClass.con);
-            cmd1.Parameters.AddWithValue("@id", id);
-            cmd1.Parameters.AddWithValue("@date", Convert.ToDateTime(txtDate.Value).Date);
-            cmd1.Parameters.AddWithValue("@type", "SAL");
-            cmd1.Parameters.AddWithValue("@supID", Convert.ToInt32(cbCustomer.SelectedValue));
-            if (MainClass.con.State == ConnectionState.Closed)
+            using (SqlCommand cmd1 = new SqlCommand(qry1, MainClass.con))
             {
-                MainClass.con.Open();
-            }
+                cmd1.Parameters.AddWithValue("@id", id);
+                cmd1.Parameters.AddWithValue("@date", dateTimeToSave);
+                cmd1.Parameters.AddWithValue("@type", "SAL");
+                cmd1.Parameters.AddWithValue("@supID", Convert.ToInt32(cbCustomer.SelectedValue));
 
-            if (id == 0)
-            {
-                id = Convert.ToInt32(cmd1.ExecuteScalar());
-            }
-            else
-            {
-                cmd1.ExecuteNonQuery();
-            }
-            //Insert Details Table
-            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
-            {
-                int did = Convert.ToInt32(row.Cells["dgvid"].Value);
-
-                if (did == 0) // insert
+                if (MainClass.con.State == ConnectionState.Closed)
                 {
-                    qry2 = @"INSERT INTO tblDetails VALUES (@mID, @proID, @qty, @price, @amount, @cost)";
+                    MainClass.con.Open();
+                }
+
+                if (id == 0)
+                {
+                    id = Convert.ToInt32(cmd1.ExecuteScalar());
                 }
                 else
                 {
-                    qry2 = @"UPDATE tblDetails SET dMainID = @mID, productID = @proID,
-                     qty = @qty, price = @price, amount = @amount, cost = @cost
-                     WHERE detailID = @id";
+                    cmd1.ExecuteNonQuery();
                 }
-                SqlCommand cmd2 = new SqlCommand(qry2, MainClass.con);
-                cmd2.Parameters.AddWithValue("@id", did);
-                cmd2.Parameters.AddWithValue("@mID", id);
-                cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproid"].Value));
-                cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvqty"].Value));
-                cmd2.Parameters.AddWithValue("@price", Convert.ToInt32(row.Cells["dgvCost"].Value));
-                cmd2.Parameters.AddWithValue("@amount", Convert.ToInt32(row.Cells["dgvAmount"].Value));
-                cmd2.Parameters.AddWithValue("@cost", Convert.ToInt32(row.Cells["dgvCost"].Value));
-                record += cmd2.ExecuteNonQuery();
-
             }
+
+            // Insert or update the Details Table
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                int did = Convert.ToInt32(row.Cells["dgvid"].Value);
+                string query = did == 0
+                    ? @"INSERT INTO tblDetails (dMainID, productID, qty, price, amount, cost) 
+               VALUES (@mID, @proID, @qty, @price, @amount, @cost)"
+                    : @"UPDATE tblDetails SET dMainID = @mID, productID = @proID,
+               qty = @qty, price = @price, amount = @amount, cost = @cost
+               WHERE detailID = @id";
+
+                using (SqlCommand cmd2 = new SqlCommand(query, MainClass.con))
+                {
+                    cmd2.Parameters.AddWithValue("@id", did);
+                    cmd2.Parameters.AddWithValue("@mID", id);
+                    cmd2.Parameters.AddWithValue("@proID", Convert.ToInt32(row.Cells["dgvproid"].Value));
+                    cmd2.Parameters.AddWithValue("@qty", Convert.ToInt32(row.Cells["dgvqty"].Value));
+                    cmd2.Parameters.AddWithValue("@price", Convert.ToDecimal(row.Cells["dgvCost"].Value));
+                    cmd2.Parameters.AddWithValue("@amount", Convert.ToDecimal(row.Cells["dgvAmount"].Value));
+                    cmd2.Parameters.AddWithValue("@cost", Convert.ToDecimal(row.Cells["dgvCost"].Value));
+                    record += cmd2.ExecuteNonQuery();
+                }
+            }
+
+            // Show success message
             if (record > 0)
             {
                 guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -318,15 +329,16 @@ namespace IM_System.Model
                 guna2MessageDialog1.Show("Saved Successfully");
                 RefreshProductPanel();
 
+                // Reset fields after saving
                 id = 0;
                 cusID = 0;
-                txtDate.Value = DateTime.Now;
-                cbCustomer.SelectedIndex = 0;
-                cbCustomer.SelectedIndex = -1;
-                guna2DataGridView1.Rows.Clear();
-                lblTotal.Text = "0.00";
+                txtDate.Value = DateTime.Now; // Resetting date to now
+                cbCustomer.SelectedIndex = 0; // Set the first customer
+                guna2DataGridView1.Rows.Clear(); // Clear DataGridView
+                lblTotal.Text = "0.00"; // Reset total
             }
         }
+
         private void LoadForEdit()
         {
             string qry = "SELECT * FROM tblDetails INNER JOIN Product ON proID = productID WHERE dMainID = " + id;

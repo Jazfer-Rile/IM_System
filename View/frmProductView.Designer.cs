@@ -264,7 +264,6 @@
             this.dgvSr.MinimumWidth = 70;
             this.dgvSr.Name = "dgvSr";
             this.dgvSr.ReadOnly = true;
-            this.dgvSr.Visible = false;
             this.dgvSr.Width = 70;
             // 
             // dgvid

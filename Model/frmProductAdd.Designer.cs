@@ -233,6 +233,7 @@
             this.txtName.Animated = true;
             this.txtName.AutoRoundedCorners = true;
             this.txtName.BorderRadius = 23;
+            this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

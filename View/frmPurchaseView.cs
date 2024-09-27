@@ -40,12 +40,15 @@ namespace IM_System.View
             lb.Items.Add(dgvSupplier);
             lb.Items.Add(dgvAmount);
 
-            string qry = @"select dMainID , mdate , m.mSupCusID,s.supName, SUM(d.amount) from tblMain m
-                            inner join tblDetails d on d.dMainID = m.MainID
-                            inner join Supplier s on s.supID = m.mSupCusID
-                            where m.mType = 'PUR' and supName like '%" + txtSearch.Text + "%'" +
-                            " group by dMainID , mDate , m.mSupCusID,s.supName";
-                            
+            string qry = @"SELECT dMainID, mDate, m.mSupCusID, s.supName, SUM(d.amount) 
+               FROM tblMain m
+               INNER JOIN tblDetails d ON d.dMainID = m.MainID
+               INNER JOIN Supplier s ON s.supID = m.mSupCusID
+               WHERE m.mType = 'PUR' AND s.supName LIKE '%" + txtSearch.Text + @"%'
+               GROUP BY dMainID, mDate, m.mSupCusID, s.supName
+               ORDER BY mDate DESC";
+
+
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
         }

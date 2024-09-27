@@ -67,10 +67,10 @@ namespace IM_System
             Addcontrols(new frmSupplierView());
         }
 
-        //private void btnCustomer_Click(object sender, EventArgs e)
-        //{
-        //    Addcontrols(new frmCustomerView());
-        //}
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            Addcontrols(new frmCustomerView());
+        }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
