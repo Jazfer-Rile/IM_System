@@ -340,11 +340,11 @@ namespace IM_System.Model
                 // Reset fields after saving
                 id = 0;
                 cusID = 0;
-                txtDate.Value = DateTime.Now; // Resetting date to now
-                cbCustomer.SelectedIndex = -1; // Clear customer selection
-                cbCustomer.SelectedValue = null;
-                guna2DataGridView1.Rows.Clear(); // Clear DataGridView
-                lblTotal.Text = "0.00"; // Reset total
+                txtDate.Value = DateTime.Now;
+                cbCustomer.SelectedIndex = 0;
+                cbCustomer.SelectedIndex = -1;
+                guna2DataGridView1.Rows.Clear();
+                lblTotal.Text = "0.00";
             }
         }
 
