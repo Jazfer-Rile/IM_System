@@ -31,32 +31,48 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashBoard));
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.lblTotalProduct = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2VSeparator5 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.lblDailySales = new System.Windows.Forms.Label();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2VSeparator2 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.lblStockOnHand = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2VSeparator4 = new Guna.UI2.WinForms.Guna2VSeparator();
+            this.lblOutOfStockItems = new System.Windows.Forms.Label();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2VSeparator3 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.lblCriticalItems = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            this.guna2CustomGradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.guna2CustomGradientPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            this.guna2CustomGradientPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
+            this.guna2CustomGradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,9 +83,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(201, 153);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(201, 184);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(467, 379);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1011, 348);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -80,21 +96,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel1);
+            this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel5);
             this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel2);
+            this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel4);
             this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel3);
             this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(876, 181);
+            this.guna2Panel1.Size = new System.Drawing.Size(1420, 166);
             this.guna2Panel1.TabIndex = 1;
-            // 
-            // guna2MessageDialog1
-            // 
-            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.guna2MessageDialog1.Caption = "IMS";
-            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.guna2MessageDialog1.Parent = null;
-            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.guna2MessageDialog1.Text = null;
             // 
             // guna2CustomGradientPanel1
             // 
@@ -110,29 +119,10 @@
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.MediumSeaGreen;
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.MediumSeaGreen;
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Black;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(566, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(277, 148);
             this.guna2CustomGradientPanel1.TabIndex = 2;
-            // 
-            // guna2CustomGradientPanel3
-            // 
-            this.guna2CustomGradientPanel3.BorderRadius = 30;
-            this.guna2CustomGradientPanel3.Controls.Add(this.guna2VSeparator3);
-            this.guna2CustomGradientPanel3.Controls.Add(this.lblCriticalItems);
-            this.guna2CustomGradientPanel3.Controls.Add(this.guna2PictureBox4);
-            this.guna2CustomGradientPanel3.Controls.Add(this.label6);
-            this.guna2CustomGradientPanel3.Controls.Add(this.label7);
-            this.guna2CustomGradientPanel3.CustomizableEdges.BottomRight = false;
-            this.guna2CustomGradientPanel3.CustomizableEdges.TopLeft = false;
-            this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.Crimson;
-            this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.Crimson;
-            this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.Crimson;
-            this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.Black;
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(569, 3);
-            this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(277, 148);
-            this.guna2CustomGradientPanel3.TabIndex = 4;
             // 
             // guna2VSeparator1
             // 
@@ -186,6 +176,77 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Total Product";
             // 
+            // guna2CustomGradientPanel5
+            // 
+            this.guna2CustomGradientPanel5.BorderRadius = 30;
+            this.guna2CustomGradientPanel5.Controls.Add(this.guna2VSeparator5);
+            this.guna2CustomGradientPanel5.Controls.Add(this.lblDailySales);
+            this.guna2CustomGradientPanel5.Controls.Add(this.guna2PictureBox6);
+            this.guna2CustomGradientPanel5.Controls.Add(this.label11);
+            this.guna2CustomGradientPanel5.Controls.Add(this.label12);
+            this.guna2CustomGradientPanel5.CustomizableEdges.BottomRight = false;
+            this.guna2CustomGradientPanel5.CustomizableEdges.TopLeft = false;
+            this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.DarkTurquoise;
+            this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.DarkTurquoise;
+            this.guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.DarkTurquoise;
+            this.guna2CustomGradientPanel5.FillColor4 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
+            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(277, 148);
+            this.guna2CustomGradientPanel5.TabIndex = 3;
+            // 
+            // guna2VSeparator5
+            // 
+            this.guna2VSeparator5.FillColor = System.Drawing.Color.White;
+            this.guna2VSeparator5.FillThickness = 3;
+            this.guna2VSeparator5.Location = new System.Drawing.Point(85, 8);
+            this.guna2VSeparator5.Name = "guna2VSeparator5";
+            this.guna2VSeparator5.Size = new System.Drawing.Size(10, 120);
+            this.guna2VSeparator5.TabIndex = 8;
+            // 
+            // lblDailySales
+            // 
+            this.lblDailySales.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDailySales.ForeColor = System.Drawing.Color.White;
+            this.lblDailySales.Location = new System.Drawing.Point(110, 6);
+            this.lblDailySales.Name = "lblDailySales";
+            this.lblDailySales.Size = new System.Drawing.Size(140, 32);
+            this.lblDailySales.TabIndex = 7;
+            this.lblDailySales.Text = "0";
+            this.lblDailySales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // guna2PictureBox6
+            // 
+            this.guna2PictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox6.Image")));
+            this.guna2PictureBox6.ImageRotate = 0F;
+            this.guna2PictureBox6.Location = new System.Drawing.Point(3, 24);
+            this.guna2PictureBox6.Name = "guna2PictureBox6";
+            this.guna2PictureBox6.Size = new System.Drawing.Size(76, 73);
+            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox6.TabIndex = 4;
+            this.guna2PictureBox6.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(101, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(173, 77);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Total of daily sale";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(101, 38);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 23);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Daily Sales";
+            // 
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.BorderRadius = 30;
@@ -196,11 +257,11 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.label3);
             this.guna2CustomGradientPanel2.CustomizableEdges.BottomRight = false;
             this.guna2CustomGradientPanel2.CustomizableEdges.TopLeft = false;
-            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.DarkTurquoise;
-            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.DarkTurquoise;
-            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.DarkTurquoise;
+            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.PaleGoldenrod;
+            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.PaleGoldenrod;
+            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.PaleGoldenrod;
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.Black;
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(286, 3);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(283, 0);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(277, 148);
             this.guna2CustomGradientPanel2.TabIndex = 3;
@@ -257,6 +318,96 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Stock On Hand";
             // 
+            // guna2CustomGradientPanel4
+            // 
+            this.guna2CustomGradientPanel4.BorderRadius = 30;
+            this.guna2CustomGradientPanel4.Controls.Add(this.guna2VSeparator4);
+            this.guna2CustomGradientPanel4.Controls.Add(this.lblOutOfStockItems);
+            this.guna2CustomGradientPanel4.Controls.Add(this.guna2PictureBox5);
+            this.guna2CustomGradientPanel4.Controls.Add(this.label8);
+            this.guna2CustomGradientPanel4.Controls.Add(this.label9);
+            this.guna2CustomGradientPanel4.CustomizableEdges.BottomRight = false;
+            this.guna2CustomGradientPanel4.CustomizableEdges.TopLeft = false;
+            this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.Crimson;
+            this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.Crimson;
+            this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.Crimson;
+            this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(1133, 0);
+            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(277, 148);
+            this.guna2CustomGradientPanel4.TabIndex = 4;
+            // 
+            // guna2VSeparator4
+            // 
+            this.guna2VSeparator4.FillColor = System.Drawing.Color.White;
+            this.guna2VSeparator4.FillThickness = 3;
+            this.guna2VSeparator4.Location = new System.Drawing.Point(85, 8);
+            this.guna2VSeparator4.Name = "guna2VSeparator4";
+            this.guna2VSeparator4.Size = new System.Drawing.Size(10, 120);
+            this.guna2VSeparator4.TabIndex = 8;
+            // 
+            // lblOutOfStockItems
+            // 
+            this.lblOutOfStockItems.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutOfStockItems.ForeColor = System.Drawing.Color.White;
+            this.lblOutOfStockItems.Location = new System.Drawing.Point(110, 6);
+            this.lblOutOfStockItems.Name = "lblOutOfStockItems";
+            this.lblOutOfStockItems.Size = new System.Drawing.Size(140, 32);
+            this.lblOutOfStockItems.TabIndex = 7;
+            this.lblOutOfStockItems.Text = "0";
+            this.lblOutOfStockItems.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(3, 24);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(76, 73);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox5.TabIndex = 4;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(101, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(173, 77);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Total out of stock items recorded in the inventory";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(101, 38);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 23);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Out of Stock";
+            // 
+            // guna2CustomGradientPanel3
+            // 
+            this.guna2CustomGradientPanel3.BorderRadius = 30;
+            this.guna2CustomGradientPanel3.Controls.Add(this.guna2VSeparator3);
+            this.guna2CustomGradientPanel3.Controls.Add(this.lblCriticalItems);
+            this.guna2CustomGradientPanel3.Controls.Add(this.guna2PictureBox4);
+            this.guna2CustomGradientPanel3.Controls.Add(this.label6);
+            this.guna2CustomGradientPanel3.Controls.Add(this.label7);
+            this.guna2CustomGradientPanel3.CustomizableEdges.BottomRight = false;
+            this.guna2CustomGradientPanel3.CustomizableEdges.TopLeft = false;
+            this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.Orange;
+            this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.Orange;
+            this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.Crimson;
+            this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(850, 0);
+            this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(277, 148);
+            this.guna2CustomGradientPanel3.TabIndex = 4;
+            // 
             // guna2VSeparator3
             // 
             this.guna2VSeparator3.FillColor = System.Drawing.Color.White;
@@ -309,12 +460,21 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Critical Items";
             // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = "IMS";
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = null;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.guna2MessageDialog1.Text = null;
+            // 
             // frmDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(900, 544);
+            this.ClientSize = new System.Drawing.Size(1444, 544);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2PictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
@@ -329,12 +489,18 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
-            this.guna2CustomGradientPanel3.ResumeLayout(false);
-            this.guna2CustomGradientPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.guna2CustomGradientPanel5.ResumeLayout(false);
+            this.guna2CustomGradientPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
             this.guna2CustomGradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            this.guna2CustomGradientPanel4.ResumeLayout(false);
+            this.guna2CustomGradientPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            this.guna2CustomGradientPanel3.ResumeLayout(false);
+            this.guna2CustomGradientPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.ResumeLayout(false);
 
@@ -363,5 +529,17 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator5;
+        private System.Windows.Forms.Label lblDailySales;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
+        private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator4;
+        private System.Windows.Forms.Label lblOutOfStockItems;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

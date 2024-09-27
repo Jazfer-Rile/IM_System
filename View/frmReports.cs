@@ -63,6 +63,8 @@ namespace IM_System.View
                             [reorder]
                         FROM 
                             [IMS].[dbo].[vwCriticalItems]
+                        WHERE 
+                            [Stock] > 0
                         ";
 
             crystalReportViewer1.ReportSource = null;

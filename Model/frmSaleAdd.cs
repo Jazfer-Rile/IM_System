@@ -244,12 +244,20 @@ namespace IM_System.Model
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Validate the input
-            if (MainClass.Validation(this) == false)
+            //// Validate the input
+            //if (MainClass.Validation(this) == false)
+            //{
+            //    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            //    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            //    guna2MessageDialog1.Show("Please remove errors");
+            //    return;
+            //}
+            // Trigger only the validation for the DataGridView
+            if (!MainClass.ValidateDataGridView(guna2DataGridView1))
             {
                 guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
                 guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-                guna2MessageDialog1.Show("Please remove errors");
+                guna2MessageDialog1.Show("Add at least one product to proceed");
                 return;
             }
 
@@ -333,7 +341,8 @@ namespace IM_System.Model
                 id = 0;
                 cusID = 0;
                 txtDate.Value = DateTime.Now; // Resetting date to now
-                cbCustomer.SelectedIndex = 0; // Set the first customer
+                cbCustomer.SelectedIndex = -1; // Clear customer selection
+                cbCustomer.SelectedValue = null;
                 guna2DataGridView1.Rows.Clear(); // Clear DataGridView
                 lblTotal.Text = "0.00"; // Reset total
             }
