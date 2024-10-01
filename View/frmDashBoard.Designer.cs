@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashBoard));
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
@@ -62,7 +61,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -75,20 +73,6 @@
             this.guna2CustomGradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(201, 184);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1011, 348);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2Panel1
             // 
@@ -113,8 +97,6 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2PictureBox2);
             this.guna2CustomGradientPanel1.Controls.Add(this.label4);
             this.guna2CustomGradientPanel1.Controls.Add(this.label5);
-            this.guna2CustomGradientPanel1.CustomizableEdges.BottomRight = false;
-            this.guna2CustomGradientPanel1.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.MediumSeaGreen;
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.MediumSeaGreen;
@@ -184,8 +166,6 @@
             this.guna2CustomGradientPanel5.Controls.Add(this.guna2PictureBox6);
             this.guna2CustomGradientPanel5.Controls.Add(this.label11);
             this.guna2CustomGradientPanel5.Controls.Add(this.label12);
-            this.guna2CustomGradientPanel5.CustomizableEdges.BottomRight = false;
-            this.guna2CustomGradientPanel5.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.DarkTurquoise;
             this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.DarkTurquoise;
             this.guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.DarkTurquoise;
@@ -255,8 +235,6 @@
             this.guna2CustomGradientPanel2.Controls.Add(this.guna2PictureBox3);
             this.guna2CustomGradientPanel2.Controls.Add(this.label2);
             this.guna2CustomGradientPanel2.Controls.Add(this.label3);
-            this.guna2CustomGradientPanel2.CustomizableEdges.BottomRight = false;
-            this.guna2CustomGradientPanel2.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.PaleGoldenrod;
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.PaleGoldenrod;
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.PaleGoldenrod;
@@ -326,8 +304,6 @@
             this.guna2CustomGradientPanel4.Controls.Add(this.guna2PictureBox5);
             this.guna2CustomGradientPanel4.Controls.Add(this.label8);
             this.guna2CustomGradientPanel4.Controls.Add(this.label9);
-            this.guna2CustomGradientPanel4.CustomizableEdges.BottomRight = false;
-            this.guna2CustomGradientPanel4.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.Crimson;
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.Crimson;
             this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.Crimson;
@@ -397,8 +373,6 @@
             this.guna2CustomGradientPanel3.Controls.Add(this.guna2PictureBox4);
             this.guna2CustomGradientPanel3.Controls.Add(this.label6);
             this.guna2CustomGradientPanel3.Controls.Add(this.label7);
-            this.guna2CustomGradientPanel3.CustomizableEdges.BottomRight = false;
-            this.guna2CustomGradientPanel3.CustomizableEdges.TopLeft = false;
             this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.Orange;
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.Orange;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.Crimson;
@@ -476,7 +450,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(1444, 544);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -485,7 +458,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDashBoard";
             this.Load += new System.EventHandler(this.frmDashBoard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
@@ -507,8 +479,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;

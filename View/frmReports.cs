@@ -17,6 +17,9 @@ namespace IM_System.View
         public frmReports()
         {
             InitializeComponent();
+            // Set DateTimePickers to today's date on form load
+            dtpStartDate.Value = DateTime.Today;
+            dtpEndDate.Value = DateTime.Today;
         }
 
         private  DataTable dTable(string qry)
@@ -73,5 +76,78 @@ namespace IM_System.View
             crystalReportViewer1.ReportSource = cr;
             crystalReportViewer1.Refresh();
         }
+
+        private void btnOutofStock_Click(object sender, EventArgs e)
+        {
+            string qry = @"SELECT 
+                          [proID],
+                          [pName],
+                          [pPrice],
+                          [pCost],
+                          [pImage],
+                          [reorder],
+                          [Stock]
+                    FROM 
+                          [IMS].[dbo].[vwCriticalItems]
+                    WHERE 
+                          [Stock] = 0;
+
+                        ";
+
+            crystalReportViewer1.ReportSource = null;
+            rptOutofStocks cr = new rptOutofStocks();
+            cr.SetDataSource(dTable(qry));
+            crystalReportViewer1.ReportSource = cr;
+            crystalReportViewer1.Refresh();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            // Get the selected start date from the DateTimePickers
+            DateTime startDate = dtpStartDate.Value.Date;
+
+            // Set the end date to the end of the selected day (23:59:59)
+            DateTime endDate = dtpEndDate.Value.Date.AddDays(1).AddSeconds(-1);
+
+            // Adjust the query to filter sales records by date range
+            string qry = @"SELECT m.MainID, m.mDate, m.mSupCusID, c.cusName, 
+                   COALESCE(SUM(d.qty), 0) AS totalQuantity, 
+                   COALESCE(SUM(d.amount), 0) AS totalAmount
+                   FROM tblMain m
+                   LEFT JOIN tblDetails d ON d.dMainID = m.MainID
+                   LEFT JOIN Customer c ON c.cusID = m.mSupCusID
+                   WHERE m.mType = 'SAL' 
+                   AND m.mDate BETWEEN @startDate AND @endDate
+                   GROUP BY m.MainID, m.mDate, m.mSupCusID, c.cusName
+                   ORDER BY m.mDate DESC";
+
+            // Set the report source to null before loading the new data
+            crystalReportViewer1.ReportSource = null;
+
+            // Create a new instance of the report
+            rptSales cr = new rptSales();
+
+            // Create a DataTable with the filtered data
+            DataTable salesData = new DataTable();
+            using (SqlCommand cmd = new SqlCommand(qry, MainClass.con))
+            {
+                // Add the parameters to the SQL query
+                cmd.Parameters.AddWithValue("@startDate", startDate);
+                cmd.Parameters.AddWithValue("@endDate", endDate);
+
+                // Use SqlDataAdapter to fill the DataTable
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(salesData);
+            }
+
+            // Set the data source for the report
+            cr.SetDataSource(salesData);
+
+            // Display the report in the CrystalReportViewer
+            crystalReportViewer1.ReportSource = cr;
+            crystalReportViewer1.Refresh();
+        }
+
+
     }
 }

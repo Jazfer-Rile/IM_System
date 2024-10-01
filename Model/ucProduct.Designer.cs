@@ -83,7 +83,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 109);
+            this.label1.Location = new System.Drawing.Point(7, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 32);
             this.label1.TabIndex = 3;
@@ -93,11 +93,11 @@
             // 
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(44, 105);
+            this.lblPrice.Location = new System.Drawing.Point(29, 105);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(75, 40);
+            this.lblPrice.Size = new System.Drawing.Size(104, 40);
             this.lblPrice.TabIndex = 2;
-            this.lblPrice.Text = "0000";
+            this.lblPrice.Text = "000000";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPName

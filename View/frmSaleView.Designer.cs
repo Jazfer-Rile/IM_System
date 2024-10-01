@@ -271,7 +271,7 @@
             // 
             // dgvdate
             // 
-            this.dgvdate.HeaderText = "Date and Time";
+            this.dgvdate.HeaderText = "Date";
             this.dgvdate.MinimumWidth = 100;
             this.dgvdate.Name = "dgvdate";
             this.dgvdate.ReadOnly = true;

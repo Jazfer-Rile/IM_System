@@ -31,13 +31,17 @@ namespace IM_System.View
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOutofStock = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCriticalItem = new Guna.UI2.WinForms.Guna2Button();
             this.btnStock = new Guna.UI2.WinForms.Guna2Button();
             this.btnProductList = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCriticalItem = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.btnSales = new Guna.UI2.WinForms.Guna2Button();
+            this.dtpStartDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +61,7 @@ namespace IM_System.View
             this.crystalReportViewer1.ShowLogo = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(902, 364);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1030, 364);
             this.crystalReportViewer1.TabIndex = 3;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -65,13 +69,17 @@ namespace IM_System.View
             // 
             this.guna2GradientPanel1.AutoRoundedCorners = true;
             this.guna2GradientPanel1.BorderRadius = 63;
-            this.guna2GradientPanel1.Controls.Add(this.label1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button6);
+            this.guna2GradientPanel1.Controls.Add(this.btnOutofStock);
+            this.guna2GradientPanel1.Controls.Add(this.btnCriticalItem);
             this.guna2GradientPanel1.Controls.Add(this.btnStock);
             this.guna2GradientPanel1.Controls.Add(this.btnProductList);
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button4);
-            this.guna2GradientPanel1.Controls.Add(this.btnCriticalItem);
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button3);
+            this.guna2GradientPanel1.Controls.Add(this.label3);
+            this.guna2GradientPanel1.Controls.Add(this.label4);
+            this.guna2GradientPanel1.Controls.Add(this.label2);
+            this.guna2GradientPanel1.Controls.Add(this.dtpEndDate);
+            this.guna2GradientPanel1.Controls.Add(this.btnSales);
+            this.guna2GradientPanel1.Controls.Add(this.dtpStartDate);
+            this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.CustomizableEdges.BottomRight = false;
             this.guna2GradientPanel1.CustomizableEdges.TopLeft = false;
             this.guna2GradientPanel1.CustomizableEdges.TopRight = false;
@@ -82,45 +90,58 @@ namespace IM_System.View
             this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(929, 129);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1054, 129);
             this.guna2GradientPanel1.TabIndex = 12;
             // 
-            // label1
+            // btnOutofStock
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 38);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Report";
+            this.btnOutofStock.Animated = true;
+            this.btnOutofStock.AutoRoundedCorners = true;
+            this.btnOutofStock.BackColor = System.Drawing.Color.Transparent;
+            this.btnOutofStock.BorderColor = System.Drawing.Color.White;
+            this.btnOutofStock.BorderRadius = 21;
+            this.btnOutofStock.BorderThickness = 1;
+            this.btnOutofStock.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnOutofStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnOutofStock.CustomizableEdges.BottomLeft = false;
+            this.btnOutofStock.CustomizableEdges.TopLeft = false;
+            this.btnOutofStock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOutofStock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOutofStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOutofStock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOutofStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnOutofStock.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOutofStock.ForeColor = System.Drawing.Color.White;
+            this.btnOutofStock.Location = new System.Drawing.Point(875, 48);
+            this.btnOutofStock.Name = "btnOutofStock";
+            this.btnOutofStock.Size = new System.Drawing.Size(127, 45);
+            this.btnOutofStock.TabIndex = 9;
+            this.btnOutofStock.Text = "Out of Stock";
+            this.btnOutofStock.Click += new System.EventHandler(this.btnOutofStock_Click);
             // 
-            // guna2Button6
+            // btnCriticalItem
             // 
-            this.guna2Button6.Animated = true;
-            this.guna2Button6.AutoRoundedCorners = true;
-            this.guna2Button6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button6.BorderColor = System.Drawing.Color.White;
-            this.guna2Button6.BorderRadius = 21;
-            this.guna2Button6.BorderThickness = 1;
-            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button6.CustomizableEdges.BottomLeft = false;
-            this.guna2Button6.CustomizableEdges.TopLeft = false;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(785, 52);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(124, 45);
-            this.guna2Button6.TabIndex = 5;
-            this.guna2Button6.Visible = false;
+            this.btnCriticalItem.Animated = true;
+            this.btnCriticalItem.BackColor = System.Drawing.Color.Transparent;
+            this.btnCriticalItem.BorderColor = System.Drawing.Color.White;
+            this.btnCriticalItem.BorderThickness = 1;
+            this.btnCriticalItem.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCriticalItem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCriticalItem.CustomizableEdges.BottomRight = false;
+            this.btnCriticalItem.CustomizableEdges.TopRight = false;
+            this.btnCriticalItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCriticalItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCriticalItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCriticalItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCriticalItem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnCriticalItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCriticalItem.ForeColor = System.Drawing.Color.White;
+            this.btnCriticalItem.Location = new System.Drawing.Point(742, 48);
+            this.btnCriticalItem.Name = "btnCriticalItem";
+            this.btnCriticalItem.Size = new System.Drawing.Size(127, 45);
+            this.btnCriticalItem.TabIndex = 8;
+            this.btnCriticalItem.Text = "Critical Item";
+            this.btnCriticalItem.Click += new System.EventHandler(this.btnCriticalItem_Click);
             // 
             // btnStock
             // 
@@ -130,6 +151,8 @@ namespace IM_System.View
             this.btnStock.BorderThickness = 1;
             this.btnStock.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnStock.CustomizableEdges.BottomRight = false;
+            this.btnStock.CustomizableEdges.TopRight = false;
             this.btnStock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnStock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnStock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -137,9 +160,9 @@ namespace IM_System.View
             this.btnStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnStock.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnStock.ForeColor = System.Drawing.Color.White;
-            this.btnStock.Location = new System.Drawing.Point(265, 52);
+            this.btnStock.Location = new System.Drawing.Point(609, 48);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(124, 45);
+            this.btnStock.Size = new System.Drawing.Size(127, 45);
             this.btnStock.TabIndex = 6;
             this.btnStock.Text = "Stock Balance";
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
@@ -163,86 +186,123 @@ namespace IM_System.View
             this.btnProductList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnProductList.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnProductList.ForeColor = System.Drawing.Color.White;
-            this.btnProductList.Location = new System.Drawing.Point(135, 52);
+            this.btnProductList.Location = new System.Drawing.Point(476, 48);
             this.btnProductList.Name = "btnProductList";
-            this.btnProductList.Size = new System.Drawing.Size(124, 45);
+            this.btnProductList.Size = new System.Drawing.Size(127, 45);
             this.btnProductList.TabIndex = 4;
             this.btnProductList.Text = "Product List";
             this.btnProductList.Click += new System.EventHandler(this.btnProductList_Click);
             // 
-            // guna2Button4
+            // label3
             // 
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.BorderColor = System.Drawing.Color.White;
-            this.guna2Button4.BorderThickness = 1;
-            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(655, 52);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(124, 45);
-            this.guna2Button4.TabIndex = 7;
-            this.guna2Button4.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(365, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 23);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "End Date";
             // 
-            // btnCriticalItem
+            // label4
             // 
-            this.btnCriticalItem.Animated = true;
-            this.btnCriticalItem.BackColor = System.Drawing.Color.Transparent;
-            this.btnCriticalItem.BorderColor = System.Drawing.Color.White;
-            this.btnCriticalItem.BorderRadius = 21;
-            this.btnCriticalItem.BorderThickness = 1;
-            this.btnCriticalItem.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnCriticalItem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnCriticalItem.CustomizableEdges.BottomLeft = false;
-            this.btnCriticalItem.CustomizableEdges.TopLeft = false;
-            this.btnCriticalItem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCriticalItem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCriticalItem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCriticalItem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCriticalItem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnCriticalItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCriticalItem.ForeColor = System.Drawing.Color.White;
-            this.btnCriticalItem.Location = new System.Drawing.Point(395, 52);
-            this.btnCriticalItem.Name = "btnCriticalItem";
-            this.btnCriticalItem.Size = new System.Drawing.Size(124, 45);
-            this.btnCriticalItem.TabIndex = 8;
-            this.btnCriticalItem.Text = "Critical Item";
-            this.btnCriticalItem.Click += new System.EventHandler(this.btnCriticalItem_Click);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(280, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 23);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "To:";
             // 
-            // guna2Button3
+            // label2
             // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.BorderColor = System.Drawing.Color.White;
-            this.guna2Button3.BorderThickness = 1;
-            this.guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(525, 52);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(124, 45);
-            this.guna2Button3.TabIndex = 9;
-            this.guna2Button3.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(134, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 23);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Start Date";
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Animated = true;
+            this.dtpEndDate.AutoRoundedCorners = true;
+            this.dtpEndDate.BackColor = System.Drawing.Color.Transparent;
+            this.dtpEndDate.BorderRadius = 12;
+            this.dtpEndDate.Checked = true;
+            this.dtpEndDate.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpEndDate.ForeColor = System.Drawing.Color.Black;
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(317, 99);
+            this.dtpEndDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpEndDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(128, 27);
+            this.dtpEndDate.TabIndex = 10;
+            this.dtpEndDate.Value = new System.DateTime(2024, 9, 29, 18, 5, 42, 764);
+            // 
+            // btnSales
+            // 
+            this.btnSales.Animated = true;
+            this.btnSales.AutoRoundedCorners = true;
+            this.btnSales.BackColor = System.Drawing.Color.Transparent;
+            this.btnSales.BorderColor = System.Drawing.Color.White;
+            this.btnSales.BorderRadius = 21;
+            this.btnSales.BorderThickness = 1;
+            this.btnSales.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSales.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSales.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSales.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSales.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSales.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSales.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnSales.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSales.ForeColor = System.Drawing.Color.White;
+            this.btnSales.Location = new System.Drawing.Point(226, 48);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(124, 45);
+            this.btnSales.TabIndex = 7;
+            this.btnSales.Text = "Sales";
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Animated = true;
+            this.dtpStartDate.AutoRoundedCorners = true;
+            this.dtpStartDate.BackColor = System.Drawing.Color.Transparent;
+            this.dtpStartDate.BorderRadius = 12;
+            this.dtpStartDate.Checked = true;
+            this.dtpStartDate.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpStartDate.ForeColor = System.Drawing.Color.Black;
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Location = new System.Drawing.Point(138, 99);
+            this.dtpStartDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpStartDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(128, 27);
+            this.dtpStartDate.TabIndex = 10;
+            this.dtpStartDate.Value = new System.DateTime(2024, 9, 29, 18, 5, 42, 764);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 38);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Report";
             // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(929, 516);
+            this.ClientSize = new System.Drawing.Size(1054, 516);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
@@ -261,11 +321,15 @@ namespace IM_System.View
         public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         public Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnStock;
         private Guna.UI2.WinForms.Guna2Button btnProductList;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnSales;
         private Guna.UI2.WinForms.Guna2Button btnCriticalItem;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnOutofStock;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpStartDate;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpEndDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }
