@@ -31,7 +31,7 @@ namespace IM_System.View
             lb.Items.Add(dgvname);
 
             string qry = @"Select * from Category
-                where catName like '%" + txtSearch.Text + "%' order by catID desc";
+                where catName like '%" + txtSearch.Text + "%' order by catName";
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
         }

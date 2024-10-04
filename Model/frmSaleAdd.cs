@@ -23,6 +23,8 @@ namespace IM_System.Model
             IM_System.frmProductAdd instance = new IM_System.frmProductAdd();
             txtBarcode.KeyPress += instance.guna2barcodetextbox_KeyPress;
             txtDate.Value = DateTime.Now;
+            // Attach the reusable CellFormatting
+            guna2DataGridView1.CellFormatting += (sender, e) => MainClass.ApplyPesoFormatting(sender, e, "dgvAmount", "dgvPrice", "dgvCost");
         }
         public int id = 0;
         public int cusID = 0;
@@ -244,15 +246,6 @@ namespace IM_System.Model
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //// Validate the input
-            //if (MainClass.Validation(this) == false)
-            //{
-            //    guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            //    guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-            //    guna2MessageDialog1.Show("Please remove errors");
-            //    return;
-            //}
-            // Trigger only the validation for the DataGridView
             if (!MainClass.ValidateDataGridView(guna2DataGridView1))
             {
                 guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;

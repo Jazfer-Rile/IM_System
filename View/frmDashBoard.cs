@@ -6,8 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Guna.Charts.WinForms;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
+
 
 namespace IM_System.View
 {
@@ -16,7 +19,23 @@ namespace IM_System.View
         public frmDashBoard()
         {
             InitializeComponent();
-        } 
+            InitializeChart();
+        }
+        private void InitializeChart()
+        {
+            // Clear any existing datasets
+            gunaChart1.Datasets.Clear();
+
+            // Create a new line dataset
+            GunaLineDataset dataset = new GunaLineDataset
+            {
+                Label = "Sales",
+            };
+
+            // Add the dataset to the chart
+            gunaChart1.Datasets.Add(dataset);
+        }
+
         private void frmDashBoard_Load(object sender, EventArgs e)
         {
             lblDailySales.Text = GetDailySalesDetails().ToString("#,##0");
@@ -25,6 +44,18 @@ namespace IM_System.View
             lblCriticalItems.Text = GetTotalCriticalItemsCount().ToString("#,##0");
             lblOutOfStockItems.Text = GetTotalOutOfStockItemsCount().ToString("#,##0");
 
+            // Set up report sales combo box
+            cmbReportSales.Items.Add("Daily");
+            cmbReportSales.Items.Add("Weekly");
+            cmbReportSales.Items.Add("Monthly");
+            cmbReportSales.Items.Add("Yearly");
+
+            // Set default selection
+            cmbReportSales.SelectedIndex = 2;
+
+            // Load the sales report based on the selected period
+            cmbReportSales.SelectedIndexChanged += CmbReportSales_SelectedIndexChanged;
+            LoadSalesData("Monthly"); // Load weekly data by default
         }
         private int GetDailySalesDetails()
         {
@@ -185,6 +216,132 @@ namespace IM_System.View
             }
         }
 
+        private void LoadSalesData(string period)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(MainClass.con_string))
+                {
+                    con.Open();
+                    string query = "";
+
+                    // Adjust query based on selected period
+                    if (period == "Daily")
+                    {
+                        query = @"
+                        SELECT DAY(mDate) AS DayNumber, SUM(totalAmount) AS TotalSales
+                        FROM vwSales
+                        WHERE MONTH(mDate) = MONTH(GETDATE()) AND YEAR(mDate) = YEAR(GETDATE())
+                        GROUP BY DAY(mDate)";
+                    }
+                    else if (period == "Weekly")
+                    {
+                        query = @"SELECT 
+                            DATEPART(WEEK, mDate) - DATEPART(WEEK, DATEADD(MONTH, DATEDIFF(MONTH, 0, mDate), 0)) + 1 AS WeekOfMonth, 
+                            SUM(totalAmount) AS TotalSales
+                        FROM 
+                            vwSales
+                        WHERE 
+                            MONTH(mDate) = MONTH(GETDATE()) 
+                            AND YEAR(mDate) = YEAR(GETDATE())
+                        GROUP BY 
+                            DATEPART(WEEK, mDate) - DATEPART(WEEK, DATEADD(MONTH, DATEDIFF(MONTH, 0, mDate), 0)) + 1
+                        ORDER BY 
+                            WeekOfMonth;
+                        ";
+                    }
+                    else if (period == "Monthly")
+                    {
+                        query = @"
+                       SELECT DATEPART(MONTH, mDate) AS MonthNumber, SUM(totalAmount) AS TotalSales
+                        FROM vwSales
+                        WHERE YEAR(mDate) = YEAR(GETDATE())
+                        GROUP BY DATEPART(MONTH, mDate)
+                        ";
+                    }
+                    else if (period == "Yearly")
+                    {
+                        query = @"
+                        SELECT DATEPART(YEAR, mDate) AS YearNumber, SUM(totalAmount) AS TotalSales
+                        FROM vwSales
+                        GROUP BY DATEPART(YEAR, mDate)";
+                    }
+
+                    // Execute the query and populate the chart
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            LoadChartData(reader, period);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                guna2MessageDialog1.Show("An error occurred: " + ex.Message);
+            }
+        }
+        public class DataPoint
+        {
+            public string Label { get; set; }
+            public double Value { get; set; }
+
+            public DataPoint(string label, double value)
+            {
+                Label = label;
+                Value = value;
+            }
+        }
+
+
+        private void LoadChartData(SqlDataReader reader, string period)
+        {
+            // Clear existing data points
+            GunaLineDataset cSales = (GunaLineDataset)gunaChart1.Datasets[0]; // Assuming the first dataset is the line dataset
+            cSales.DataPoints.Clear(); // Clear existing data points
+
+            while (reader.Read())
+            {
+                string label = "";
+                double totalSales = Convert.ToDouble(reader["TotalSales"]);
+
+                // Customize labels based on the period
+                if (period == "Daily")
+                {
+                    label = "Day " + reader["DayNumber"].ToString();
+                }
+                else if (period == "Weekly")
+                {
+                    label = "Week " + reader["WeekOfMonth"].ToString(); 
+                }
+
+                else if (period == "Monthly")
+                {
+                    // Convert month number to month name
+                    int monthNumber = Convert.ToInt32(reader["MonthNumber"]);
+                    label = new DateTime(1, monthNumber, 1).ToString("MMMM"); // Get the full month name
+                }
+                else if (period == "Yearly")
+                {
+                    label = "Year " + reader["YearNumber"].ToString();
+                }
+
+                // Add data point to the chart dataset using LPoint
+                cSales.DataPoints.Add(new Guna.Charts.WinForms.LPoint(label, totalSales));
+            }
+
+            // Redraw the chart to reflect changes
+            gunaChart1.Update();
+        }
+
+
+
+        private void CmbReportSales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedPeriod = cmbReportSales.SelectedItem.ToString();
+            LoadSalesData(selectedPeriod);
+        }
 
     }
 

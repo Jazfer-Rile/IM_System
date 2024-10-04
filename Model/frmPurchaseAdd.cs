@@ -23,6 +23,8 @@ namespace IM_System.Model
             IM_System.frmProductAdd instance = new IM_System.frmProductAdd();
             txtBarcode.KeyPress += instance.guna2barcodetextbox_KeyPress;
             txtQty.KeyPress += new KeyPressEventHandler(txtQty_KeyPress);
+            // Attach the reusable CellFormatting
+            guna2DataGridView1.CellFormatting += (sender, e) => MainClass.ApplyPesoFormatting(sender, e, "dgvAmount", "dgvPrice", "dgvCost");
         }
         public int mainID = 0;
         public int supID = 0;

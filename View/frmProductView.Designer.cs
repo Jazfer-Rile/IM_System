@@ -317,7 +317,6 @@
             this.dgvSale.MinimumWidth = 6;
             this.dgvSale.Name = "dgvSale";
             this.dgvSale.ReadOnly = true;
-            this.dgvSale.Visible = false;
             // 
             // dgvStockBalance
             // 
@@ -325,6 +324,7 @@
             this.dgvStockBalance.MinimumWidth = 6;
             this.dgvStockBalance.Name = "dgvStockBalance";
             this.dgvStockBalance.ReadOnly = true;
+            this.dgvStockBalance.Visible = false;
             // 
             // dgvReorder
             // 

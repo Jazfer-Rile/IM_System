@@ -142,6 +142,20 @@ namespace IM_System
             }
         }
 
+        // This method will handle peso formatting for multiple specified columns
+        public static void ApplyPesoFormatting(object sender, DataGridViewCellFormattingEventArgs e, params string[] columnNames)
+        {
+            Guna.UI2.WinForms.Guna2DataGridView gv = (Guna.UI2.WinForms.Guna2DataGridView)sender;
+
+            // Check if the current column is one of the specified columns
+            if (columnNames.Contains(gv.Columns[e.ColumnIndex].Name) && e.Value != null)
+            {
+                // Format the value as currency with peso sign
+                e.Value = string.Format("₱{0:N2}", Convert.ToDecimal(e.Value));
+                e.FormattingApplied = true;  // Indicate that formatting is applied
+            }
+        }
+
         //For Blur Screen 
         public static void BlurBackground(Form Model)
         {

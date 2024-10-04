@@ -19,6 +19,8 @@ namespace IM_System.View
         {
             InitializeComponent();
             guna2MessageDialog1.Parent = frmMain.Instance;
+            // Attach the reusable CellFormatting
+            guna2DataGridView1.CellFormatting += (sender, e) => MainClass.ApplyPesoFormatting(sender, e, "dgvAmount", "dgvPrice", "dgvCost", "dgvSale");
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

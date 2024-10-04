@@ -48,7 +48,7 @@ namespace IM_System.View
 
 
             string qry = @"Select * from Customer
-                where cusName like '%" + txtSearch.Text + "%' order by cusID desc";
+                where cusName like '%" + txtSearch.Text + "%' order by cusName desc";
 
             MainClass.LoadData(qry, guna2DataGridView1, lb);
         }

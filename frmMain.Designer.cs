@@ -38,6 +38,7 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnSupplier = new Guna.UI2.WinForms.Guna2Button();
             this.btnPurchase = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategory = new Guna.UI2.WinForms.Guna2Button();
@@ -50,10 +51,12 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.CenterPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnManualBackup = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2MessageDialog1
@@ -185,6 +188,34 @@
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.TextOffset = new System.Drawing.Point(20, 0);
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Animated = true;
+            this.btnCustomer.AutoRoundedCorners = true;
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnCustomer.BorderRadius = 31;
+            this.btnCustomer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
+            this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnCustomer.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnCustomer.Location = new System.Drawing.Point(3, 480);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(214, 65);
+            this.btnCustomer.TabIndex = 4;
+            this.btnCustomer.Text = "Customers";
+            this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCustomer.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnSupplier
             // 
@@ -445,7 +476,7 @@
             this.CenterPanel.AutoScroll = true;
             this.CenterPanel.Location = new System.Drawing.Point(226, 52);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(995, 892);
+            this.CenterPanel.Size = new System.Drawing.Size(995, 844);
             this.CenterPanel.TabIndex = 4;
             // 
             // timer1
@@ -454,33 +485,42 @@
             this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnCustomer
+            // guna2Panel2
             // 
-            this.btnCustomer.Animated = true;
-            this.btnCustomer.AutoRoundedCorners = true;
-            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnCustomer.BorderRadius = 31;
-            this.btnCustomer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
-            this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnCustomer.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnCustomer.Location = new System.Drawing.Point(3, 480);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(214, 65);
-            this.btnCustomer.TabIndex = 4;
-            this.btnCustomer.Text = "Customers";
-            this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomer.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.guna2Panel2.Controls.Add(this.btnManualBackup);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel2.Location = new System.Drawing.Point(220, 907);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1013, 49);
+            this.guna2Panel2.TabIndex = 5;
+            // 
+            // btnManualBackup
+            // 
+            this.btnManualBackup.Animated = true;
+            this.btnManualBackup.AutoRoundedCorners = true;
+            this.btnManualBackup.BackColor = System.Drawing.Color.Transparent;
+            this.btnManualBackup.BorderRadius = 20;
+            this.btnManualBackup.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.btnManualBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManualBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManualBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManualBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManualBackup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnManualBackup.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnManualBackup.ForeColor = System.Drawing.Color.White;
+            this.btnManualBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnManualBackup.Image")));
+            this.btnManualBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManualBackup.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnManualBackup.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnManualBackup.Location = new System.Drawing.Point(6, 3);
+            this.btnManualBackup.Name = "btnManualBackup";
+            this.btnManualBackup.Size = new System.Drawing.Size(214, 43);
+            this.btnManualBackup.TabIndex = 1;
+            this.btnManualBackup.Text = "Backup Database";
+            this.btnManualBackup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManualBackup.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnManualBackup.Click += new System.EventHandler(this.btnManualBackup_Click);
             // 
             // frmMain
             // 
@@ -488,6 +528,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.ClientSize = new System.Drawing.Size(1233, 956);
+            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
@@ -504,6 +545,7 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -530,5 +572,7 @@
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btnManualBackup;
     }
 }

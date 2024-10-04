@@ -10,14 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Threading;
 
 namespace IM_System
 {
     public partial class frmMain : Form
     {
         static frmMain _obj;
-        
-       
+        private AutoBackupService autoBackupService; // Create an instance of AutoBackupService
+
+
         public static frmMain Instance
         {
             get { if (_obj == null) { _obj = new frmMain(); } return _obj; }
@@ -25,6 +28,7 @@ namespace IM_System
         public frmMain()
         {
             InitializeComponent();
+            autoBackupService = new AutoBackupService(); // Initialize the backup service
             guna2MessageDialog1.Parent = this;
         }
         
@@ -47,6 +51,9 @@ namespace IM_System
 
             btnDashBoard.PerformClick();
             Noti();
+
+            // Start the automatic monthly backup
+            autoBackupService.PerformAutoBackup();
 
         }
 
@@ -182,5 +189,93 @@ namespace IM_System
             }
         }
 
+        public class AutoBackupService
+        {
+            // Method to perform manual backup
+            public void PerformManualBackup()
+            {
+                string backupFolderPath = @"C:\ManualBackups"; // Folder for manual backups
+                string backupFilePath = Path.Combine(backupFolderPath, $"IMS_ManualBackup_{DateTime.Now:yyyyMMdd_HHmmss}.bak");
+
+                // Ensure the backup folder exists, create it if it doesn't
+                if (!Directory.Exists(backupFolderPath))
+                {
+                    Directory.CreateDirectory(backupFolderPath);
+                }
+
+                string backupQuery = $"BACKUP DATABASE [IMS] TO DISK = '{backupFilePath}' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Manual Backup of IMS';";
+
+                try
+                {
+                    using (SqlConnection connection = MainClass.con) // Use connection from MainClass
+                    {
+                        SqlCommand command = new SqlCommand(backupQuery, connection);
+                        connection.Open();
+                        command.ExecuteNonQuery(); // Perform the backup
+                        connection.Close();
+
+                        Console.WriteLine($"Manual backup completed successfully at {DateTime.Now}.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error during manual backup: {ex.Message}");
+                }
+            }
+
+            // Method to perform automatic monthly backup
+            public void PerformAutoBackup()
+            {
+                if (DateTime.Now.Day == 1) // Perform backup on the 1st of every month
+                {
+                    string backupFolderPath = @"C:\MonthlyBackups"; // Folder for monthly backups
+                    string backupFilePath = Path.Combine(backupFolderPath, $"IMS_Backup_{DateTime.Now:yyyyMMdd_HHmmss}.bak");
+
+                    // Ensure the backup folder exists, create it if it doesn't
+                    if (!Directory.Exists(backupFolderPath))
+                    {
+                        Directory.CreateDirectory(backupFolderPath);
+                    }
+
+                    string backupQuery = $"BACKUP DATABASE [IMS] TO DISK = '{backupFilePath}' WITH FORMAT, MEDIANAME = 'SQLServerBackups', NAME = 'Full Backup of IMS';";
+
+                    try
+                    {
+                        using (SqlConnection connection = MainClass.con) // Use connection from MainClass
+                        {
+                            SqlCommand command = new SqlCommand(backupQuery, connection);
+                            connection.Open();
+                            command.ExecuteNonQuery(); // Perform the backup
+                            connection.Close();
+
+                            Console.WriteLine($"Automatic backup completed successfully at {DateTime.Now}.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error during auto backup: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+
+        private void btnManualBackup_Click(object sender, EventArgs e)
+        {
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+
+            DialogResult result = guna2MessageDialog1.Show("Do you want to perform a manual backup?");
+            // Perform manual backup when the button is clicked
+            if (result == DialogResult.Yes)
+            {
+                // Call the manual backup service
+                autoBackupService.PerformManualBackup();
+
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                guna2MessageDialog1.Show("Manual backup completed successfully.");
+            }
+        }
     }
 }

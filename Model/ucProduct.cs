@@ -82,7 +82,7 @@ namespace IM_System.Model
                 // Out of stock - Red color
                 lblStock.ForeColor = Color.Red;
             }
-            else if (stock <= reorder)
+            else if (stock < reorder)
             {
                 // Critical stock (less than or equal to reorder level) - Yellow color
                 lblStock.ForeColor = Color.Orange;

@@ -19,6 +19,7 @@ namespace IM_System
         private int[] cooldownDurations = { 10, 60, 180, 300 }; // Cooldown durations in seconds for each attempt
         private int currentCooldownIndex = 0; // Index to track the current cooldown duration
         private DateTime cooldownEndTime; // Time when cooldown ends
+
         public frmLogin()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace IM_System
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
+            // Check if the user is still in cooldown period
             if (remainingLoginAttempts <= 0)
             {
                 TimeSpan remainingCooldown = cooldownEndTime - DateTime.Now;
@@ -34,11 +36,11 @@ namespace IM_System
                 return;
             }
 
+            // Validate User
             if (MainClass.IsValidUser(txtUser.Text, txtPass.Text))
             {
-                this.Hide();
-                frmMain frm = new frmMain();
-                frm.Show();
+                this.Hide(); // Hide the login form
+                await ShowSplashScreen(); // Show splash screen with progress bar
             }
             else
             {
@@ -50,22 +52,63 @@ namespace IM_System
                 }
                 else
                 {
-                    currentCooldownIndex++; // Increase cooldown index after every set of 3 failed attempts
+                    // When login attempts are exhausted, start the cooldown
+                    currentCooldownIndex++;
                     if (currentCooldownIndex >= cooldownDurations.Length)
                     {
-                        currentCooldownIndex = cooldownDurations.Length - 1; 
+                        currentCooldownIndex = cooldownDurations.Length - 1; // Max out the cooldown duration
                     }
-                    cooldownEndTime = DateTime.Now.AddSeconds(cooldownDurations[currentCooldownIndex]); // Update cooldown duration
+
+                    cooldownEndTime = DateTime.Now.AddSeconds(cooldownDurations[currentCooldownIndex]); // Set cooldown end time
                     ShowCooldownMessage($"Maximum login attempts reached. Please try again later. Cooldown: {cooldownDurations[currentCooldownIndex]} seconds", "Cooldown");
 
+                    // Disable the login button during the cooldown
+                    btnLogin.Enabled = false;
+                    txtUser.Enabled = false;
+                    txtPass.Enabled = false;
+
                     // Start cooldown countdown asynchronously
-                    await Task.Delay(cooldownDurations[currentCooldownIndex] * 1000); 
+                    await Task.Delay(cooldownDurations[currentCooldownIndex] * 1000);
+
+                    // Re-enable the login button and input fields after cooldown
+                    btnLogin.Enabled = true;
+                    txtUser.Enabled = true;
+                    txtPass.Enabled = true;
+
+                    // Reset the login attempts after the cooldown
                     remainingLoginAttempts = maxLoginAttempts;
                 }
             }
         }
 
+        private async Task ShowSplashScreen()
+        {
+            // Create and show the splash screen with a progress bar
+            frmSplash splashScreen = new frmSplash();
+            splashScreen.Show();
 
+            // Simulate progress bar update asynchronously
+            await UpdateProgressBar(splashScreen);
+
+            // Once progress bar completes, hide splash and show the main form
+            splashScreen.Hide();
+            frmMain frm = new frmMain();
+            frm.Show();
+        }
+
+        private async Task UpdateProgressBar(frmSplash splashScreen)
+        {
+            int progress = 0;
+            splashScreen.guna2ProgressBar1.Value = progress;
+
+            // Simulate the progress bar filling up over time
+            while (progress < 100)
+            {
+                await Task.Delay(50); // Simulate work being done
+                progress += 1; // Increment progress
+                splashScreen.guna2ProgressBar1.Value = progress; // Update progress bar value
+            }
+        }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
@@ -102,6 +145,7 @@ namespace IM_System
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void ShowErrorMessage(string message)
         {
             guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
