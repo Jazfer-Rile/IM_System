@@ -63,6 +63,7 @@
             this.txtEmail.Animated = true;
             this.txtEmail.AutoRoundedCorners = true;
             this.txtEmail.BorderRadius = 23;
+            this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.DefaultText = "";
             this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -78,7 +79,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtEmail.PlaceholderText = "Enter your email";
+            this.txtEmail.PlaceholderText = "Enter supplier email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(360, 48);
             this.txtEmail.TabIndex = 2;
@@ -178,6 +179,7 @@
             this.txtAddress.Animated = true;
             this.txtAddress.AutoRoundedCorners = true;
             this.txtAddress.BorderRadius = 23;
+            this.txtAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.DefaultText = "";
             this.txtAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -193,7 +195,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtAddress.PlaceholderText = "Enter your address";
+            this.txtAddress.PlaceholderText = "Enter supplier address";
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(360, 48);
             this.txtAddress.TabIndex = 3;
@@ -231,6 +233,7 @@
             this.txtName.Animated = true;
             this.txtName.AutoRoundedCorners = true;
             this.txtName.BorderRadius = 23;
+            this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtName.DefaultText = "";
             this.txtName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -246,7 +249,7 @@
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtName.PlaceholderText = "Enter your full name";
+            this.txtName.PlaceholderText = "Enter supplier name";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(360, 48);
             this.txtName.TabIndex = 0;
@@ -282,7 +285,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtPhone.PlaceholderText = "Enter your phone number";
+            this.txtPhone.PlaceholderText = "Enter supplier phone number";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(360, 48);
             this.txtPhone.TabIndex = 1;

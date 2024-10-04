@@ -44,6 +44,35 @@ namespace IM_System
 
             return isValid;
         }
+        // Method to get a single value from a SQL query
+        public static object GetSingleValue(string query)
+        {
+            object result = null;
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                result = cmd.ExecuteScalar();  // ExecuteScalar retrieves a single value (first column of the first row)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();  // Ensure connection is closed after query execution
+                }
+            }
+
+            return result;
+        }
+
         public static void StopBuffering(Panel ctr, bool doubleBuffer)
         {
             try

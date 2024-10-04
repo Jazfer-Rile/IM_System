@@ -70,25 +70,39 @@ namespace IM_System.View
                 //Delete
                 if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDel")
                 {
-
-                    //Confirm Before delete
                     guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
                     guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
 
-                    if (guna2MessageDialog1.Show("Are you sure you want to delete") == DialogResult.Yes)
+                    if (guna2MessageDialog1.Show("Are you sure you want to delete this user?") == DialogResult.Yes)
                     {
                         int id = Convert.ToInt32(guna2DataGridView1.CurrentRow.Cells["dgvid"].Value);
-                        string qry = "Delete from users where userID = " + id + "";
-                        Hashtable ht = new Hashtable();
-                        if (MainClass.SQl(qry, ht) > 0)
+
+                        // Check if the user being deleted is an admin
+                        string checkAdminQuery = "SELECT COUNT(*) FROM Users WHERE uRole = 'Admin'";
+                        int adminCount = Convert.ToInt32(MainClass.GetSingleValue(checkAdminQuery));
+
+                        if (adminCount > 1)
+                        {
+                            string qry = "DELETE FROM Users WHERE userID = " + id;
+                            Hashtable ht = new Hashtable();
+                            if (MainClass.SQl(qry, ht) > 0)
+                            {
+                                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+                                guna2MessageDialog1.Show("Deleted successfully.");
+                                LoadData();
+                            }
+                        }
+                        else
                         {
                             guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-                            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-                            guna2MessageDialog1.Show("Deleted successfuly..");
-                            LoadData();
+                            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+                            guna2MessageDialog1.Show("Cannot delete the last remaining admin.");
                         }
                     }
                 }
+
+
             }
         }
 
