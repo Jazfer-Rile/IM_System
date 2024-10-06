@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
@@ -18,7 +19,7 @@ namespace IM_System
 {
     class MainClass
     {
-        public static readonly string con_string = "Data Source=RILEY\\SQLEXPRESS; Initial Catalog=IMS; Integrated Security=True; TrustServerCertificate=True;";
+        public static readonly string con_string = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         public static SqlConnection con = new SqlConnection(con_string);
 
 
@@ -72,8 +73,24 @@ namespace IM_System
 
             return result;
         }
-
-        public static void StopBuffering(Panel ctr, bool doubleBuffer)
+        // Method to test the connection
+        public static void TestConnection()
+        {
+            try
+            {
+                con.Open();
+                MessageBox.Show("Connection successful!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public static void StopBuffering(Control ctr, bool doubleBuffer)
         {
             try
             {

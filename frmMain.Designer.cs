@@ -53,6 +53,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnManualBackup = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDatabaseBackup = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -139,6 +140,7 @@
             // 
             this.guna2Panel3.AutoScroll = true;
             this.guna2Panel3.BorderRadius = 60;
+            this.guna2Panel3.Controls.Add(this.btnDatabaseBackup);
             this.guna2Panel3.Controls.Add(this.btnLogout);
             this.guna2Panel3.Controls.Add(this.btnCustomer);
             this.guna2Panel3.Controls.Add(this.btnSupplier);
@@ -163,10 +165,11 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLogout.Animated = true;
             this.btnLogout.AutoRoundedCorners = true;
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnLogout.BorderRadius = 31;
+            this.btnLogout.BorderRadius = 22;
             this.btnLogout.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnLogout.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -180,9 +183,9 @@
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnLogout.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLogout.Location = new System.Drawing.Point(3, 836);
+            this.btnLogout.Location = new System.Drawing.Point(3, 844);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(214, 65);
+            this.btnLogout.Size = new System.Drawing.Size(214, 46);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -194,7 +197,7 @@
             this.btnCustomer.Animated = true;
             this.btnCustomer.AutoRoundedCorners = true;
             this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnCustomer.BorderRadius = 31;
+            this.btnCustomer.BorderRadius = 22;
             this.btnCustomer.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCustomer.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -208,9 +211,9 @@
             this.btnCustomer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnCustomer.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnCustomer.Location = new System.Drawing.Point(3, 480);
+            this.btnCustomer.Location = new System.Drawing.Point(3, 418);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(214, 65);
+            this.btnCustomer.Size = new System.Drawing.Size(214, 46);
             this.btnCustomer.TabIndex = 4;
             this.btnCustomer.Text = "Customers";
             this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -222,7 +225,7 @@
             this.btnSupplier.Animated = true;
             this.btnSupplier.AutoRoundedCorners = true;
             this.btnSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnSupplier.BorderRadius = 31;
+            this.btnSupplier.BorderRadius = 22;
             this.btnSupplier.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSupplier.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -236,9 +239,9 @@
             this.btnSupplier.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSupplier.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSupplier.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSupplier.Location = new System.Drawing.Point(3, 409);
+            this.btnSupplier.Location = new System.Drawing.Point(3, 366);
             this.btnSupplier.Name = "btnSupplier";
-            this.btnSupplier.Size = new System.Drawing.Size(214, 65);
+            this.btnSupplier.Size = new System.Drawing.Size(214, 46);
             this.btnSupplier.TabIndex = 4;
             this.btnSupplier.Text = "Supplier";
             this.btnSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -250,7 +253,7 @@
             this.btnPurchase.Animated = true;
             this.btnPurchase.AutoRoundedCorners = true;
             this.btnPurchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnPurchase.BorderRadius = 31;
+            this.btnPurchase.BorderRadius = 22;
             this.btnPurchase.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnPurchase.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnPurchase.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -264,9 +267,9 @@
             this.btnPurchase.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPurchase.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnPurchase.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnPurchase.Location = new System.Drawing.Point(3, 552);
+            this.btnPurchase.Location = new System.Drawing.Point(3, 470);
             this.btnPurchase.Name = "btnPurchase";
-            this.btnPurchase.Size = new System.Drawing.Size(214, 65);
+            this.btnPurchase.Size = new System.Drawing.Size(214, 46);
             this.btnPurchase.TabIndex = 0;
             this.btnPurchase.Text = "Incoming";
             this.btnPurchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -278,7 +281,7 @@
             this.btnCategory.Animated = true;
             this.btnCategory.AutoRoundedCorners = true;
             this.btnCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnCategory.BorderRadius = 31;
+            this.btnCategory.BorderRadius = 22;
             this.btnCategory.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCategory.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnCategory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -292,9 +295,9 @@
             this.btnCategory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCategory.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnCategory.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnCategory.Location = new System.Drawing.Point(3, 267);
+            this.btnCategory.Location = new System.Drawing.Point(3, 262);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(214, 65);
+            this.btnCategory.Size = new System.Drawing.Size(214, 46);
             this.btnCategory.TabIndex = 0;
             this.btnCategory.Text = "Category";
             this.btnCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -317,7 +320,7 @@
             this.btnDashBoard.Animated = true;
             this.btnDashBoard.AutoRoundedCorners = true;
             this.btnDashBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnDashBoard.BorderRadius = 31;
+            this.btnDashBoard.BorderRadius = 22;
             this.btnDashBoard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDashBoard.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnDashBoard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -331,9 +334,9 @@
             this.btnDashBoard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashBoard.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnDashBoard.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnDashBoard.Location = new System.Drawing.Point(0, 196);
+            this.btnDashBoard.Location = new System.Drawing.Point(3, 210);
             this.btnDashBoard.Name = "btnDashBoard";
-            this.btnDashBoard.Size = new System.Drawing.Size(214, 65);
+            this.btnDashBoard.Size = new System.Drawing.Size(214, 46);
             this.btnDashBoard.TabIndex = 0;
             this.btnDashBoard.Text = "Dashboard";
             this.btnDashBoard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -345,7 +348,7 @@
             this.btnReport.Animated = true;
             this.btnReport.AutoRoundedCorners = true;
             this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnReport.BorderRadius = 31;
+            this.btnReport.BorderRadius = 22;
             this.btnReport.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnReport.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -359,9 +362,9 @@
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReport.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnReport.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnReport.Location = new System.Drawing.Point(3, 765);
+            this.btnReport.Location = new System.Drawing.Point(3, 626);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(214, 65);
+            this.btnReport.Size = new System.Drawing.Size(214, 46);
             this.btnReport.TabIndex = 0;
             this.btnReport.Text = "Report";
             this.btnReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -373,7 +376,7 @@
             this.btnUser.Animated = true;
             this.btnUser.AutoRoundedCorners = true;
             this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnUser.BorderRadius = 31;
+            this.btnUser.BorderRadius = 22;
             this.btnUser.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnUser.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -387,9 +390,9 @@
             this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnUser.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnUser.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnUser.Location = new System.Drawing.Point(3, 694);
+            this.btnUser.Location = new System.Drawing.Point(3, 574);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(214, 65);
+            this.btnUser.Size = new System.Drawing.Size(214, 46);
             this.btnUser.TabIndex = 0;
             this.btnUser.Text = "Users";
             this.btnUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -401,7 +404,7 @@
             this.btnSales.Animated = true;
             this.btnSales.AutoRoundedCorners = true;
             this.btnSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnSales.BorderRadius = 31;
+            this.btnSales.BorderRadius = 22;
             this.btnSales.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSales.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnSales.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -415,9 +418,9 @@
             this.btnSales.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSales.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSales.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSales.Location = new System.Drawing.Point(3, 623);
+            this.btnSales.Location = new System.Drawing.Point(3, 522);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(214, 65);
+            this.btnSales.Size = new System.Drawing.Size(214, 46);
             this.btnSales.TabIndex = 0;
             this.btnSales.Text = "Outgoing";
             this.btnSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -429,7 +432,7 @@
             this.btnProduct.Animated = true;
             this.btnProduct.AutoRoundedCorners = true;
             this.btnProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnProduct.BorderRadius = 31;
+            this.btnProduct.BorderRadius = 22;
             this.btnProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -443,9 +446,9 @@
             this.btnProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProduct.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnProduct.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnProduct.Location = new System.Drawing.Point(3, 338);
+            this.btnProduct.Location = new System.Drawing.Point(3, 314);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(214, 65);
+            this.btnProduct.Size = new System.Drawing.Size(214, 46);
             this.btnProduct.TabIndex = 0;
             this.btnProduct.Text = "Product";
             this.btnProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -522,6 +525,35 @@
             this.btnManualBackup.TextOffset = new System.Drawing.Point(20, 0);
             this.btnManualBackup.Click += new System.EventHandler(this.btnManualBackup_Click);
             // 
+            // btnDatabaseBackup
+            // 
+            this.btnDatabaseBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDatabaseBackup.Animated = true;
+            this.btnDatabaseBackup.AutoRoundedCorners = true;
+            this.btnDatabaseBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnDatabaseBackup.BorderRadius = 22;
+            this.btnDatabaseBackup.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDatabaseBackup.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnDatabaseBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDatabaseBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDatabaseBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDatabaseBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDatabaseBackup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnDatabaseBackup.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDatabaseBackup.ForeColor = System.Drawing.Color.White;
+            this.btnDatabaseBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnDatabaseBackup.Image")));
+            this.btnDatabaseBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDatabaseBackup.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnDatabaseBackup.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnDatabaseBackup.Location = new System.Drawing.Point(3, 678);
+            this.btnDatabaseBackup.Name = "btnDatabaseBackup";
+            this.btnDatabaseBackup.Size = new System.Drawing.Size(214, 46);
+            this.btnDatabaseBackup.TabIndex = 1;
+            this.btnDatabaseBackup.Text = "Database Backup";
+            this.btnDatabaseBackup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDatabaseBackup.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnDatabaseBackup.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -574,5 +606,6 @@
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnManualBackup;
+        private Guna.UI2.WinForms.Guna2Button btnDatabaseBackup;
     }
 }

@@ -20,6 +20,8 @@ namespace IM_System.Model
         public frmSaleAdd()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            MainClass.StopBuffering(flowLayoutPanel1, true);
             IM_System.frmProductAdd instance = new IM_System.frmProductAdd();
             txtBarcode.KeyPress += instance.guna2barcodetextbox_KeyPress;
             txtDate.Value = DateTime.Now;

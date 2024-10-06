@@ -39,6 +39,7 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.btnTestConnection = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,12 +202,28 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.guna2MessageDialog1.Text = null;
             // 
+            // btnTestConnection
+            // 
+            this.btnTestConnection.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTestConnection.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTestConnection.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTestConnection.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTestConnection.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTestConnection.ForeColor = System.Drawing.Color.White;
+            this.btnTestConnection.Location = new System.Drawing.Point(264, -2);
+            this.btnTestConnection.Name = "btnTestConnection";
+            this.btnTestConnection.Size = new System.Drawing.Size(180, 45);
+            this.btnTestConnection.TabIndex = 25;
+            this.btnTestConnection.Text = "guna2Button1";
+            this.btnTestConnection.Click += new System.EventHandler(this.btnTestConnection_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(900, 544);
+            this.Controls.Add(this.btnTestConnection);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.guna2VSeparator1);
             this.Controls.Add(this.guna2Button2);
@@ -240,6 +257,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2TextBox txtPass;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2Button btnTestConnection;
     }
 }
 

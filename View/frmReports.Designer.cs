@@ -99,7 +99,7 @@ namespace IM_System.View
             this.btnOutofStock.AutoRoundedCorners = true;
             this.btnOutofStock.BackColor = System.Drawing.Color.Transparent;
             this.btnOutofStock.BorderColor = System.Drawing.Color.White;
-            this.btnOutofStock.BorderRadius = 21;
+            this.btnOutofStock.BorderRadius = 17;
             this.btnOutofStock.BorderThickness = 1;
             this.btnOutofStock.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnOutofStock.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -112,9 +112,9 @@ namespace IM_System.View
             this.btnOutofStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnOutofStock.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnOutofStock.ForeColor = System.Drawing.Color.White;
-            this.btnOutofStock.Location = new System.Drawing.Point(875, 48);
+            this.btnOutofStock.Location = new System.Drawing.Point(875, 56);
             this.btnOutofStock.Name = "btnOutofStock";
-            this.btnOutofStock.Size = new System.Drawing.Size(127, 45);
+            this.btnOutofStock.Size = new System.Drawing.Size(127, 37);
             this.btnOutofStock.TabIndex = 9;
             this.btnOutofStock.Text = "Out of Stock";
             this.btnOutofStock.Click += new System.EventHandler(this.btnOutofStock_Click);
@@ -136,9 +136,9 @@ namespace IM_System.View
             this.btnCriticalItem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnCriticalItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCriticalItem.ForeColor = System.Drawing.Color.White;
-            this.btnCriticalItem.Location = new System.Drawing.Point(742, 48);
+            this.btnCriticalItem.Location = new System.Drawing.Point(742, 56);
             this.btnCriticalItem.Name = "btnCriticalItem";
-            this.btnCriticalItem.Size = new System.Drawing.Size(127, 45);
+            this.btnCriticalItem.Size = new System.Drawing.Size(127, 37);
             this.btnCriticalItem.TabIndex = 8;
             this.btnCriticalItem.Text = "Critical Item";
             this.btnCriticalItem.Click += new System.EventHandler(this.btnCriticalItem_Click);
@@ -160,9 +160,9 @@ namespace IM_System.View
             this.btnStock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnStock.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnStock.ForeColor = System.Drawing.Color.White;
-            this.btnStock.Location = new System.Drawing.Point(609, 48);
+            this.btnStock.Location = new System.Drawing.Point(609, 56);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(127, 45);
+            this.btnStock.Size = new System.Drawing.Size(127, 37);
             this.btnStock.TabIndex = 6;
             this.btnStock.Text = "Stock Balance";
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
@@ -173,7 +173,7 @@ namespace IM_System.View
             this.btnProductList.AutoRoundedCorners = true;
             this.btnProductList.BackColor = System.Drawing.Color.Transparent;
             this.btnProductList.BorderColor = System.Drawing.Color.White;
-            this.btnProductList.BorderRadius = 21;
+            this.btnProductList.BorderRadius = 17;
             this.btnProductList.BorderThickness = 1;
             this.btnProductList.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnProductList.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -186,9 +186,9 @@ namespace IM_System.View
             this.btnProductList.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnProductList.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnProductList.ForeColor = System.Drawing.Color.White;
-            this.btnProductList.Location = new System.Drawing.Point(476, 48);
+            this.btnProductList.Location = new System.Drawing.Point(476, 56);
             this.btnProductList.Name = "btnProductList";
-            this.btnProductList.Size = new System.Drawing.Size(127, 45);
+            this.btnProductList.Size = new System.Drawing.Size(127, 37);
             this.btnProductList.TabIndex = 4;
             this.btnProductList.Text = "Product List";
             this.btnProductList.Click += new System.EventHandler(this.btnProductList_Click);
@@ -248,7 +248,7 @@ namespace IM_System.View
             this.btnSales.AutoRoundedCorners = true;
             this.btnSales.BackColor = System.Drawing.Color.Transparent;
             this.btnSales.BorderColor = System.Drawing.Color.White;
-            this.btnSales.BorderRadius = 21;
+            this.btnSales.BorderRadius = 17;
             this.btnSales.BorderThickness = 1;
             this.btnSales.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSales.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -259,9 +259,9 @@ namespace IM_System.View
             this.btnSales.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.btnSales.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Location = new System.Drawing.Point(226, 48);
+            this.btnSales.Location = new System.Drawing.Point(226, 56);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(124, 45);
+            this.btnSales.Size = new System.Drawing.Size(124, 37);
             this.btnSales.TabIndex = 7;
             this.btnSales.Text = "Sales";
             this.btnSales.Click += new System.EventHandler(this.btnSales_Click);

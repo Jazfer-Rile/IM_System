@@ -473,7 +473,7 @@
             this.guna2Panel2.Controls.Add(this.cmbReportSales);
             this.guna2Panel2.Location = new System.Drawing.Point(58, 201);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1324, 285);
+            this.guna2Panel2.Size = new System.Drawing.Size(1324, 298);
             this.guna2Panel2.TabIndex = 2;
             // 
             // gunaChart1
@@ -490,7 +490,7 @@
             this.gunaChart1.Legend.LabelFont = chartFont1;
             this.gunaChart1.Location = new System.Drawing.Point(14, 71);
             this.gunaChart1.Name = "gunaChart1";
-            this.gunaChart1.Size = new System.Drawing.Size(1297, 183);
+            this.gunaChart1.Size = new System.Drawing.Size(1297, 196);
             this.gunaChart1.TabIndex = 1;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
