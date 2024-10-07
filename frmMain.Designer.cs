@@ -37,6 +37,7 @@
             this.btnMax = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDatabaseBackup = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnSupplier = new Guna.UI2.WinForms.Guna2Button();
@@ -52,12 +53,9 @@
             this.CenterPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnManualBackup = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDatabaseBackup = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2MessageDialog1
@@ -162,6 +160,34 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(220, 904);
             this.guna2Panel3.TabIndex = 3;
+            // 
+            // btnDatabaseBackup
+            // 
+            this.btnDatabaseBackup.Animated = true;
+            this.btnDatabaseBackup.AutoRoundedCorners = true;
+            this.btnDatabaseBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnDatabaseBackup.BorderRadius = 22;
+            this.btnDatabaseBackup.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDatabaseBackup.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnDatabaseBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDatabaseBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDatabaseBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDatabaseBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDatabaseBackup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
+            this.btnDatabaseBackup.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDatabaseBackup.ForeColor = System.Drawing.Color.White;
+            this.btnDatabaseBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnDatabaseBackup.Image")));
+            this.btnDatabaseBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDatabaseBackup.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnDatabaseBackup.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnDatabaseBackup.Location = new System.Drawing.Point(3, 678);
+            this.btnDatabaseBackup.Name = "btnDatabaseBackup";
+            this.btnDatabaseBackup.Size = new System.Drawing.Size(214, 46);
+            this.btnDatabaseBackup.TabIndex = 1;
+            this.btnDatabaseBackup.Text = "Database Backup";
+            this.btnDatabaseBackup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDatabaseBackup.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnDatabaseBackup.Click += new System.EventHandler(this.btnDatabaseBackup_Click);
             // 
             // btnLogout
             // 
@@ -491,68 +517,11 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.guna2Panel2.Controls.Add(this.btnManualBackup);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Panel2.Location = new System.Drawing.Point(220, 907);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1013, 49);
             this.guna2Panel2.TabIndex = 5;
-            // 
-            // btnManualBackup
-            // 
-            this.btnManualBackup.Animated = true;
-            this.btnManualBackup.AutoRoundedCorners = true;
-            this.btnManualBackup.BackColor = System.Drawing.Color.Transparent;
-            this.btnManualBackup.BorderRadius = 20;
-            this.btnManualBackup.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnManualBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnManualBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManualBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManualBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnManualBackup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnManualBackup.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnManualBackup.ForeColor = System.Drawing.Color.White;
-            this.btnManualBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnManualBackup.Image")));
-            this.btnManualBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManualBackup.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnManualBackup.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnManualBackup.Location = new System.Drawing.Point(6, 3);
-            this.btnManualBackup.Name = "btnManualBackup";
-            this.btnManualBackup.Size = new System.Drawing.Size(214, 43);
-            this.btnManualBackup.TabIndex = 1;
-            this.btnManualBackup.Text = "Backup Database";
-            this.btnManualBackup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManualBackup.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnManualBackup.Click += new System.EventHandler(this.btnManualBackup_Click);
-            // 
-            // btnDatabaseBackup
-            // 
-            this.btnDatabaseBackup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDatabaseBackup.Animated = true;
-            this.btnDatabaseBackup.AutoRoundedCorners = true;
-            this.btnDatabaseBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnDatabaseBackup.BorderRadius = 22;
-            this.btnDatabaseBackup.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDatabaseBackup.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnDatabaseBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDatabaseBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDatabaseBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDatabaseBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDatabaseBackup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
-            this.btnDatabaseBackup.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDatabaseBackup.ForeColor = System.Drawing.Color.White;
-            this.btnDatabaseBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnDatabaseBackup.Image")));
-            this.btnDatabaseBackup.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDatabaseBackup.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnDatabaseBackup.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnDatabaseBackup.Location = new System.Drawing.Point(3, 678);
-            this.btnDatabaseBackup.Name = "btnDatabaseBackup";
-            this.btnDatabaseBackup.Size = new System.Drawing.Size(214, 46);
-            this.btnDatabaseBackup.TabIndex = 1;
-            this.btnDatabaseBackup.Text = "Database Backup";
-            this.btnDatabaseBackup.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDatabaseBackup.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnDatabaseBackup.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmMain
             // 
@@ -577,7 +546,6 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -605,7 +573,6 @@
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button btnManualBackup;
         private Guna.UI2.WinForms.Guna2Button btnDatabaseBackup;
     }
 }

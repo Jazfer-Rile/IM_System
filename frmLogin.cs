@@ -160,11 +160,5 @@ namespace IM_System
             guna2MessageDialog1.Show(message, caption);
         }
 
-        private void btnTestConnection_Click(object sender, EventArgs e)
-        {
-            // Call the TestConnection method when the button is clicked
-            MainClass.TestConnection();
-           
-        }
     }
 }

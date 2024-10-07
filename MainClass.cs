@@ -54,6 +54,8 @@ namespace IM_System
                 if (con.State != ConnectionState.Open)
                 {
                     con.Open();
+
+
                 }
 
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -73,23 +75,7 @@ namespace IM_System
 
             return result;
         }
-        // Method to test the connection
-        public static void TestConnection()
-        {
-            try
-            {
-                con.Open();
-                MessageBox.Show("Connection successful!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+
         public static void StopBuffering(Control ctr, bool doubleBuffer)
         {
             try
@@ -103,7 +89,6 @@ namespace IM_System
                 MessageBox.Show(ex.ToString());
             }
         }
-
         // Create property for username
         private static string user;
 

@@ -223,6 +223,12 @@
     <Compile Include="View\frmDashBoard.Designer.cs">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmDatabaseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmDatabaseView.Designer.cs">
+      <DependentUpon>frmDatabaseView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmProductView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmDashBoard.resx">
       <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmDatabaseView.resx">
+      <DependentUpon>frmDatabaseView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmProductView.resx">
       <DependentUpon>frmProductView.cs</DependentUpon>
