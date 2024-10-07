@@ -18,7 +18,7 @@ namespace IM_System
 {
     class MainClass
     {
-        public static readonly string con_string = "Data Source=RILEY\\SQLEXPRESS; Initial Catalog=IMS; Integrated Security=True; TrustServerCertificate=True;";
+        public static readonly string con_string = @"Data Source=RILEY\SQLEXPRESS; Initial Catalog=IMS; Integrated Security=True; TrustServerCertificate=True;";
         public static SqlConnection con = new SqlConnection(con_string);
 
 
