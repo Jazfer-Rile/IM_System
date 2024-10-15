@@ -34,11 +34,22 @@ namespace IM_System.View
         }
         private void btnProductList_Click(object sender, EventArgs e)
         {
-            string qry = @"Select * from Product p inner join Category c on p.pCatID = c.catID";
+            string qry = @"SELECT 
+                        c.catName,
+                        p.proID,
+                        p.pName
+                    FROM 
+                        [IMS].[dbo].[Product] p
+                    JOIN 
+                        [IMS].[dbo].[Category] c
+                    ON 
+                        p.pCatID = c.catID
+                    ORDER BY 
+                        c.catName, p.pName;";
             DataTable dt = dTable(qry);
 
             crystalReportViewer1.ReportSource = null;
-            rptProducts cr = new rptProducts();
+            rptProduct cr = new rptProduct();
             cr.SetDataSource(dt);
             crystalReportViewer1.ReportSource = cr;
             crystalReportViewer1.Refresh();

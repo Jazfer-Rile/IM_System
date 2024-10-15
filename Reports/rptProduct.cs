@@ -16,14 +16,14 @@ namespace IM_System.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptProducts : ReportClass {
+    public class rptProduct : ReportClass {
         
-        public rptProducts() {
+        public rptProduct() {
         }
         
         public override string ResourceName {
             get {
-                return "rptProducts.rpt";
+                return "rptProduct.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace IM_System.Reports {
         
         public override string FullResourceName {
             get {
-                return "IM_System.Reports.rptProducts.rpt";
+                return "IM_System.Reports.rptProduct.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace IM_System.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace IM_System.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace IM_System.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptProducts : Component, ICachedReport {
+    public class CachedrptProduct : Component, ICachedReport {
         
-        public CachedrptProducts() {
+        public CachedrptProduct() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace IM_System.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptProducts rpt = new rptProducts();
+            rptProduct rpt = new rptProduct();
             rpt.Site = this.Site;
             return rpt;
         }

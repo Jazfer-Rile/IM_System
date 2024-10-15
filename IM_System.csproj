@@ -262,10 +262,10 @@
       <DependentUpon>rptOutofStocks.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\rptProducts.cs">
+    <Compile Include="Reports\rptProduct.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptProducts.rpt</DependentUpon>
+      <DependentUpon>rptProduct.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptSales.cs">
@@ -398,9 +398,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptOutofStocks.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rptProducts.rpt">
+    <EmbeddedResource Include="Reports\rptProduct.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptProducts.cs</LastGenOutput>
+      <LastGenOutput>rptProduct.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
