@@ -28,8 +28,16 @@ namespace IM_System
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
+
+            if (MainClass.Validation(this) == false)
+            {
+                guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+                guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+                guna2MessageDialog1.Show("Please fill in all required fields.");
+                return;
+            }
             // Check if the user is still in cooldown period
-            if (remainingLoginAttempts <= 0)
+            else if (remainingLoginAttempts <= 0)
             {
                 TimeSpan remainingCooldown = cooldownEndTime - DateTime.Now;
                 ShowCooldownMessage($"Please wait {remainingCooldown.TotalSeconds:F0} seconds before trying again.", "Cooldown");

@@ -34,15 +34,15 @@ namespace IM_System.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnManualBackup = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.dgvname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -65,17 +65,6 @@ namespace IM_System.View
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(900, 129);
             this.guna2GradientPanel1.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.Location = new System.Drawing.Point(26, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Database List";
             // 
             // btnManualBackup
             // 
@@ -103,6 +92,17 @@ namespace IM_System.View
             this.btnManualBackup.Text = "Backup Database";
             this.btnManualBackup.TextOffset = new System.Drawing.Point(5, 0);
             this.btnManualBackup.Click += new System.EventHandler(this.btnManualBackup_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label1.Location = new System.Drawing.Point(26, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(238, 32);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Database Backup List";
             // 
             // guna2DataGridView1
             // 
@@ -169,15 +169,6 @@ namespace IM_System.View
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
             // 
-            // guna2MessageDialog1
-            // 
-            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.guna2MessageDialog1.Caption = "IMS";
-            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.guna2MessageDialog1.Parent = null;
-            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.guna2MessageDialog1.Text = null;
-            // 
             // dgvname
             // 
             this.dgvname.HeaderText = "Name";
@@ -218,6 +209,15 @@ namespace IM_System.View
             this.dgvDel.ReadOnly = true;
             this.dgvDel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDel.Width = 50;
+            // 
+            // guna2MessageDialog1
+            // 
+            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialog1.Caption = "IMS";
+            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageDialog1.Parent = null;
+            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.guna2MessageDialog1.Text = null;
             // 
             // frmDatabaseView
             // 
