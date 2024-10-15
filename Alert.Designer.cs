@@ -34,10 +34,10 @@ namespace IM_System
             this.lblproID = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClearAll = new Guna.UI2.WinForms.Guna2Button();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblMsg = new System.Windows.Forms.Label();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClearAll = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,28 @@ namespace IM_System
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(370, 75);
             this.guna2Panel1.TabIndex = 9;
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.Animated = true;
+            this.btnClearAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClearAll.BorderColor = System.Drawing.Color.White;
+            this.btnClearAll.BorderRadius = 7;
+            this.btnClearAll.BorderThickness = 1;
+            this.btnClearAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearAll.FillColor = System.Drawing.Color.Transparent;
+            this.btnClearAll.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearAll.ForeColor = System.Drawing.Color.White;
+            this.btnClearAll.Location = new System.Drawing.Point(245, 0);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(89, 23);
+            this.btnClearAll.TabIndex = 8;
+            this.btnClearAll.Text = "Clear All";
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // lblStock
             // 
@@ -109,28 +131,6 @@ namespace IM_System
             this.btnClose.TabIndex = 9;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnClearAll
-            // 
-            this.btnClearAll.Animated = true;
-            this.btnClearAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnClearAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClearAll.BorderColor = System.Drawing.Color.White;
-            this.btnClearAll.BorderRadius = 7;
-            this.btnClearAll.BorderThickness = 1;
-            this.btnClearAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClearAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClearAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClearAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClearAll.FillColor = System.Drawing.Color.Transparent;
-            this.btnClearAll.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearAll.ForeColor = System.Drawing.Color.White;
-            this.btnClearAll.Location = new System.Drawing.Point(245, 0);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(89, 23);
-            this.btnClearAll.TabIndex = 8;
-            this.btnClearAll.Text = "Clear All";
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
@@ -147,6 +147,7 @@ namespace IM_System
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Alert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alert";

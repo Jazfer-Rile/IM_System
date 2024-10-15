@@ -37,16 +37,16 @@
             this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -150,6 +150,30 @@
             this.dgvname.Name = "dgvname";
             this.dgvname.ReadOnly = true;
             // 
+            // dgvEdit
+            // 
+            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvEdit.FillWeight = 50F;
+            this.dgvEdit.HeaderText = "";
+            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
+            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvEdit.MinimumWidth = 50;
+            this.dgvEdit.Name = "dgvEdit";
+            this.dgvEdit.ReadOnly = true;
+            this.dgvEdit.Width = 50;
+            // 
+            // dgvDel
+            // 
+            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDel.FillWeight = 50F;
+            this.dgvDel.HeaderText = "";
+            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
+            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvDel.MinimumWidth = 50;
+            this.dgvDel.Name = "dgvDel";
+            this.dgvDel.ReadOnly = true;
+            this.dgvDel.Width = 50;
+            // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.AutoRoundedCorners = true;
@@ -180,84 +204,6 @@
             this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 8;
             this.label2.Text = "Search";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.Location = new System.Drawing.Point(26, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Category List";
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2VScrollBar1.AutoRoundedCorners = true;
-            this.guna2VScrollBar1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2VScrollBar1.BindingContainer = this.guna2DataGridView1;
-            this.guna2VScrollBar1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2VScrollBar1.BorderRadius = 4;
-            this.guna2VScrollBar1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 110;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(862, 148);
-            this.guna2VScrollBar1.Minimum = 1;
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 10;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 284);
-            this.guna2VScrollBar1.TabIndex = 11;
-            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
-            this.guna2VScrollBar1.Value = 1;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 50;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.FillWeight = 50F;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 50;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 50;
-            // 
-            // dgvEdit
-            // 
-            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvEdit.FillWeight = 50F;
-            this.dgvEdit.HeaderText = "";
-            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
-            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvEdit.MinimumWidth = 50;
-            this.dgvEdit.Name = "dgvEdit";
-            this.dgvEdit.ReadOnly = true;
-            this.dgvEdit.Width = 50;
-            // 
-            // dgvDel
-            // 
-            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDel.FillWeight = 50F;
-            this.dgvDel.HeaderText = "";
-            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
-            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvDel.MinimumWidth = 50;
-            this.dgvDel.Name = "dgvDel";
-            this.dgvDel.ReadOnly = true;
-            this.dgvDel.Width = 50;
             // 
             // btnAdd
             // 
@@ -315,6 +261,60 @@
             this.txtSearch.TabIndex = 7;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label1.Location = new System.Drawing.Point(26, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 32);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Category List";
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2VScrollBar1.AutoRoundedCorners = true;
+            this.guna2VScrollBar1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.BindingContainer = this.guna2DataGridView1;
+            this.guna2VScrollBar1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.BorderRadius = 4;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 110;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(862, 148);
+            this.guna2VScrollBar1.Minimum = 1;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 10;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 284);
+            this.guna2VScrollBar1.TabIndex = 11;
+            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            this.guna2VScrollBar1.Value = 1;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 50;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.FillWeight = 50F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 50;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
             // frmCategoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -326,6 +326,7 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCategoryView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

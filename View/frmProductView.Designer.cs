@@ -34,12 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductView));
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +46,12 @@
             this.dgvReorder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +136,108 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
+            // 
+            // dgvSr
+            // 
+            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSr.FillWeight = 70F;
+            this.dgvSr.HeaderText = "Sr #";
+            this.dgvSr.MinimumWidth = 70;
+            this.dgvSr.Name = "dgvSr";
+            this.dgvSr.ReadOnly = true;
+            this.dgvSr.Width = 70;
+            // 
+            // dgvid
+            // 
+            this.dgvid.HeaderText = "id";
+            this.dgvid.MinimumWidth = 6;
+            this.dgvid.Name = "dgvid";
+            this.dgvid.ReadOnly = true;
+            this.dgvid.Visible = false;
+            // 
+            // dgvname
+            // 
+            this.dgvname.HeaderText = "Name";
+            this.dgvname.MinimumWidth = 6;
+            this.dgvname.Name = "dgvname";
+            this.dgvname.ReadOnly = true;
+            // 
+            // dgvcatID
+            // 
+            this.dgvcatID.HeaderText = "catid";
+            this.dgvcatID.MinimumWidth = 6;
+            this.dgvcatID.Name = "dgvcatID";
+            this.dgvcatID.ReadOnly = true;
+            this.dgvcatID.Visible = false;
+            // 
+            // dgvCategory
+            // 
+            this.dgvCategory.HeaderText = "Category";
+            this.dgvCategory.MinimumWidth = 6;
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.ReadOnly = true;
+            // 
+            // dgvbarcode
+            // 
+            this.dgvbarcode.HeaderText = "Barcode";
+            this.dgvbarcode.MinimumWidth = 6;
+            this.dgvbarcode.Name = "dgvbarcode";
+            this.dgvbarcode.ReadOnly = true;
+            // 
+            // dgvCost
+            // 
+            this.dgvCost.HeaderText = "Cost";
+            this.dgvCost.MinimumWidth = 6;
+            this.dgvCost.Name = "dgvCost";
+            this.dgvCost.ReadOnly = true;
+            this.dgvCost.Visible = false;
+            // 
+            // dgvSale
+            // 
+            this.dgvSale.HeaderText = "Sale Price";
+            this.dgvSale.MinimumWidth = 6;
+            this.dgvSale.Name = "dgvSale";
+            this.dgvSale.ReadOnly = true;
+            // 
+            // dgvStockBalance
+            // 
+            this.dgvStockBalance.HeaderText = "Quantity";
+            this.dgvStockBalance.MinimumWidth = 6;
+            this.dgvStockBalance.Name = "dgvStockBalance";
+            this.dgvStockBalance.ReadOnly = true;
+            this.dgvStockBalance.Visible = false;
+            // 
+            // dgvReorder
+            // 
+            this.dgvReorder.FillWeight = 50F;
+            this.dgvReorder.HeaderText = "Re-Order";
+            this.dgvReorder.MinimumWidth = 50;
+            this.dgvReorder.Name = "dgvReorder";
+            this.dgvReorder.ReadOnly = true;
+            // 
+            // dgvEdit
+            // 
+            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvEdit.FillWeight = 50F;
+            this.dgvEdit.HeaderText = "";
+            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
+            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvEdit.MinimumWidth = 50;
+            this.dgvEdit.Name = "dgvEdit";
+            this.dgvEdit.ReadOnly = true;
+            this.dgvEdit.Width = 50;
+            // 
+            // dgvDel
+            // 
+            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDel.FillWeight = 50F;
+            this.dgvDel.HeaderText = "";
+            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
+            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvDel.MinimumWidth = 50;
+            this.dgvDel.Name = "dgvDel";
+            this.dgvDel.ReadOnly = true;
+            this.dgvDel.Width = 50;
             // 
             // guna2VScrollBar1
             // 
@@ -252,111 +354,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.Location = new System.Drawing.Point(26, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 32);
+            this.label1.Size = new System.Drawing.Size(138, 32);
             this.label1.TabIndex = 6;
             this.label1.Text = "Product List";
-            // 
-            // dgvSr
-            // 
-            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSr.FillWeight = 70F;
-            this.dgvSr.HeaderText = "Sr #";
-            this.dgvSr.MinimumWidth = 70;
-            this.dgvSr.Name = "dgvSr";
-            this.dgvSr.ReadOnly = true;
-            this.dgvSr.Width = 70;
-            // 
-            // dgvid
-            // 
-            this.dgvid.HeaderText = "id";
-            this.dgvid.MinimumWidth = 6;
-            this.dgvid.Name = "dgvid";
-            this.dgvid.ReadOnly = true;
-            this.dgvid.Visible = false;
-            // 
-            // dgvname
-            // 
-            this.dgvname.HeaderText = "Name";
-            this.dgvname.MinimumWidth = 6;
-            this.dgvname.Name = "dgvname";
-            this.dgvname.ReadOnly = true;
-            // 
-            // dgvcatID
-            // 
-            this.dgvcatID.HeaderText = "catid";
-            this.dgvcatID.MinimumWidth = 6;
-            this.dgvcatID.Name = "dgvcatID";
-            this.dgvcatID.ReadOnly = true;
-            this.dgvcatID.Visible = false;
-            // 
-            // dgvCategory
-            // 
-            this.dgvCategory.HeaderText = "Category";
-            this.dgvCategory.MinimumWidth = 6;
-            this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.ReadOnly = true;
-            // 
-            // dgvbarcode
-            // 
-            this.dgvbarcode.HeaderText = "Barcode";
-            this.dgvbarcode.MinimumWidth = 6;
-            this.dgvbarcode.Name = "dgvbarcode";
-            this.dgvbarcode.ReadOnly = true;
-            // 
-            // dgvCost
-            // 
-            this.dgvCost.HeaderText = "Cost";
-            this.dgvCost.MinimumWidth = 6;
-            this.dgvCost.Name = "dgvCost";
-            this.dgvCost.ReadOnly = true;
-            this.dgvCost.Visible = false;
-            // 
-            // dgvSale
-            // 
-            this.dgvSale.HeaderText = "Sale Price";
-            this.dgvSale.MinimumWidth = 6;
-            this.dgvSale.Name = "dgvSale";
-            this.dgvSale.ReadOnly = true;
-            // 
-            // dgvStockBalance
-            // 
-            this.dgvStockBalance.HeaderText = "Quantity";
-            this.dgvStockBalance.MinimumWidth = 6;
-            this.dgvStockBalance.Name = "dgvStockBalance";
-            this.dgvStockBalance.ReadOnly = true;
-            this.dgvStockBalance.Visible = false;
-            // 
-            // dgvReorder
-            // 
-            this.dgvReorder.FillWeight = 50F;
-            this.dgvReorder.HeaderText = "Re-Order";
-            this.dgvReorder.MinimumWidth = 50;
-            this.dgvReorder.Name = "dgvReorder";
-            this.dgvReorder.ReadOnly = true;
-            // 
-            // dgvEdit
-            // 
-            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvEdit.FillWeight = 50F;
-            this.dgvEdit.HeaderText = "";
-            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
-            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvEdit.MinimumWidth = 50;
-            this.dgvEdit.Name = "dgvEdit";
-            this.dgvEdit.ReadOnly = true;
-            this.dgvEdit.Width = 50;
-            // 
-            // dgvDel
-            // 
-            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDel.FillWeight = 50F;
-            this.dgvDel.HeaderText = "";
-            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
-            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvDel.MinimumWidth = 50;
-            this.dgvDel.Name = "dgvDel";
-            this.dgvDel.ReadOnly = true;
-            this.dgvDel.Width = 50;
             // 
             // frmProductView
             // 
@@ -370,6 +370,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(99)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmProductView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

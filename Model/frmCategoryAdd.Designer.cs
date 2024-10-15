@@ -86,7 +86,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(97, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 32);
+            this.label1.Size = new System.Drawing.Size(160, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Add";
             // 
@@ -203,6 +203,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmCategoryAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

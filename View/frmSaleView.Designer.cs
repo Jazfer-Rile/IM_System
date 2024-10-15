@@ -34,12 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaleView));
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,12 @@
             this.dgvAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +130,85 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
+            // 
+            // dgvSr
+            // 
+            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSr.FillWeight = 70F;
+            this.dgvSr.HeaderText = "Sr #";
+            this.dgvSr.MinimumWidth = 70;
+            this.dgvSr.Name = "dgvSr";
+            this.dgvSr.ReadOnly = true;
+            this.dgvSr.Width = 70;
+            // 
+            // dgvid
+            // 
+            this.dgvid.HeaderText = "id";
+            this.dgvid.MinimumWidth = 6;
+            this.dgvid.Name = "dgvid";
+            this.dgvid.ReadOnly = true;
+            this.dgvid.Visible = false;
+            // 
+            // dgvdate
+            // 
+            this.dgvdate.HeaderText = "Date";
+            this.dgvdate.MinimumWidth = 100;
+            this.dgvdate.Name = "dgvdate";
+            this.dgvdate.ReadOnly = true;
+            // 
+            // dgvCusID
+            // 
+            this.dgvCusID.HeaderText = "cusid";
+            this.dgvCusID.MinimumWidth = 6;
+            this.dgvCusID.Name = "dgvCusID";
+            this.dgvCusID.ReadOnly = true;
+            this.dgvCusID.Visible = false;
+            // 
+            // dgvCustomer
+            // 
+            this.dgvCustomer.HeaderText = "Customer";
+            this.dgvCustomer.MinimumWidth = 100;
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.Visible = false;
+            // 
+            // dgvQuantity
+            // 
+            this.dgvQuantity.HeaderText = "Quantity";
+            this.dgvQuantity.MinimumWidth = 6;
+            this.dgvQuantity.Name = "dgvQuantity";
+            this.dgvQuantity.ReadOnly = true;
+            // 
+            // dgvAmount
+            // 
+            this.dgvAmount.HeaderText = "Amount";
+            this.dgvAmount.MinimumWidth = 100;
+            this.dgvAmount.Name = "dgvAmount";
+            this.dgvAmount.ReadOnly = true;
+            // 
+            // dgvEdit
+            // 
+            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvEdit.FillWeight = 50F;
+            this.dgvEdit.HeaderText = "";
+            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
+            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvEdit.MinimumWidth = 50;
+            this.dgvEdit.Name = "dgvEdit";
+            this.dgvEdit.ReadOnly = true;
+            this.dgvEdit.Width = 50;
+            // 
+            // dgvDel
+            // 
+            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvDel.FillWeight = 50F;
+            this.dgvDel.HeaderText = "";
+            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
+            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvDel.MinimumWidth = 50;
+            this.dgvDel.Name = "dgvDel";
+            this.dgvDel.ReadOnly = true;
+            this.dgvDel.Width = 50;
             // 
             // guna2GradientPanel1
             // 
@@ -226,7 +305,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.Location = new System.Drawing.Point(26, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 32);
+            this.label1.Size = new System.Drawing.Size(103, 32);
             this.label1.TabIndex = 6;
             this.label1.Text = "Sold List";
             // 
@@ -251,85 +330,6 @@
             this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
             this.guna2VScrollBar1.Value = 1;
             // 
-            // dgvSr
-            // 
-            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSr.FillWeight = 70F;
-            this.dgvSr.HeaderText = "Sr #";
-            this.dgvSr.MinimumWidth = 70;
-            this.dgvSr.Name = "dgvSr";
-            this.dgvSr.ReadOnly = true;
-            this.dgvSr.Width = 70;
-            // 
-            // dgvid
-            // 
-            this.dgvid.HeaderText = "id";
-            this.dgvid.MinimumWidth = 6;
-            this.dgvid.Name = "dgvid";
-            this.dgvid.ReadOnly = true;
-            this.dgvid.Visible = false;
-            // 
-            // dgvdate
-            // 
-            this.dgvdate.HeaderText = "Date";
-            this.dgvdate.MinimumWidth = 100;
-            this.dgvdate.Name = "dgvdate";
-            this.dgvdate.ReadOnly = true;
-            // 
-            // dgvCusID
-            // 
-            this.dgvCusID.HeaderText = "cusid";
-            this.dgvCusID.MinimumWidth = 6;
-            this.dgvCusID.Name = "dgvCusID";
-            this.dgvCusID.ReadOnly = true;
-            this.dgvCusID.Visible = false;
-            // 
-            // dgvCustomer
-            // 
-            this.dgvCustomer.HeaderText = "Customer";
-            this.dgvCustomer.MinimumWidth = 100;
-            this.dgvCustomer.Name = "dgvCustomer";
-            this.dgvCustomer.ReadOnly = true;
-            this.dgvCustomer.Visible = false;
-            // 
-            // dgvQuantity
-            // 
-            this.dgvQuantity.HeaderText = "Quantity";
-            this.dgvQuantity.MinimumWidth = 6;
-            this.dgvQuantity.Name = "dgvQuantity";
-            this.dgvQuantity.ReadOnly = true;
-            // 
-            // dgvAmount
-            // 
-            this.dgvAmount.HeaderText = "Amount";
-            this.dgvAmount.MinimumWidth = 100;
-            this.dgvAmount.Name = "dgvAmount";
-            this.dgvAmount.ReadOnly = true;
-            // 
-            // dgvEdit
-            // 
-            this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvEdit.FillWeight = 50F;
-            this.dgvEdit.HeaderText = "";
-            this.dgvEdit.Image = ((System.Drawing.Image)(resources.GetObject("dgvEdit.Image")));
-            this.dgvEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvEdit.MinimumWidth = 50;
-            this.dgvEdit.Name = "dgvEdit";
-            this.dgvEdit.ReadOnly = true;
-            this.dgvEdit.Width = 50;
-            // 
-            // dgvDel
-            // 
-            this.dgvDel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvDel.FillWeight = 50F;
-            this.dgvDel.HeaderText = "";
-            this.dgvDel.Image = ((System.Drawing.Image)(resources.GetObject("dgvDel.Image")));
-            this.dgvDel.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvDel.MinimumWidth = 50;
-            this.dgvDel.Name = "dgvDel";
-            this.dgvDel.ReadOnly = true;
-            this.dgvDel.Width = 50;
-            // 
             // frmSaleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -342,6 +342,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(66)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSaleView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSaleView";
