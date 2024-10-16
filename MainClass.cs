@@ -19,10 +19,21 @@ namespace IM_System
 {
     class MainClass
     {
-        public static readonly string con_string = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        // Dynamically build the connection string with the server name
+        public static readonly string con_string = BuildConnectionString();
         public static SqlConnection con = new SqlConnection(con_string);
 
+        private static string BuildConnectionString()
+        {
+            // Get the server name dynamically
+            string serverName = Environment.MachineName + @"\SQLEXPRESS"; // Adjust logic as needed for your environment
 
+            // Retrieve the connection string template from configuration
+            string connectionStringTemplate = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            // Replace the placeholder with the actual server name
+            return connectionStringTemplate.Replace("{SERVER_NAME}", serverName);
+        }
         public static bool IsValidUser(string user, string pass)
         {
             bool isValid = false;

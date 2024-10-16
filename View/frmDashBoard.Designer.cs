@@ -106,7 +106,7 @@
             this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel3);
             this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1420, 166);
+            this.guna2Panel1.Size = new System.Drawing.Size(1410, 166);
             this.guna2Panel1.TabIndex = 1;
             // 
             // guna2CustomGradientPanel1
@@ -471,9 +471,9 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(27)))));
             this.guna2Panel2.Controls.Add(this.gunaChart1);
             this.guna2Panel2.Controls.Add(this.cmbReportSales);
-            this.guna2Panel2.Location = new System.Drawing.Point(58, 201);
+            this.guna2Panel2.Location = new System.Drawing.Point(15, 184);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1324, 298);
+            this.guna2Panel2.Size = new System.Drawing.Size(1407, 415);
             this.guna2Panel2.TabIndex = 2;
             // 
             // gunaChart1
@@ -490,7 +490,7 @@
             this.gunaChart1.Legend.LabelFont = chartFont1;
             this.gunaChart1.Location = new System.Drawing.Point(14, 71);
             this.gunaChart1.Name = "gunaChart1";
-            this.gunaChart1.Size = new System.Drawing.Size(1297, 196);
+            this.gunaChart1.Size = new System.Drawing.Size(1380, 313);
             this.gunaChart1.TabIndex = 1;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
